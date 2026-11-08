@@ -25,9 +25,6 @@ country_event = {
 				leader_class = official
 			}
 		}
-		any_owned_leader = {
-			is_same_value = root.from
-		}
 	}
 	immediate = {
 		from = {
@@ -47,20 +44,10 @@ country_event = {
 			remove_leader_flag = bgltp_granting_native_pick
 
 			# 3. If add_skill = 1 auto-assigned a second trait into traits = "...", revert it!
-			# (available_trait remains untouched, leaving the native yellow [+] picker active)
-			bgltp_revert_auto_trait_effect = yes
-		}
-
-		# 4. Notify player via toast message
-		create_message = {
-			type = MESSAGE_LEADER_LEVEL_UP
-			localization = bgltp_message_leader_level_up_desc
-			days = 30
-			target = from
-			variable = {
-				type = name
-				localization = LEADER
-				scope = from
+			# Only revert if an unknown trait was added, leaving available_trait untouched!
+			if = {
+				limit = { bgltp_has_unknown_trait = yes }
+				bgltp_revert_auto_trait_effect = yes
 			}
 		}
 	}
@@ -78,6 +65,7 @@ country_event = {
 		has_paragon_dlc = no
 	}
 	immediate = {
+		set_country_code_flags = { autopick_leader_traits = no }
 		every_owned_leader = {
 			bgltp_sync_leader_traits_effect = yes
 		}
@@ -97,6 +85,7 @@ event = {
 	immediate = {
 		every_country = {
 			limit = { is_ai = no has_paragon_dlc = no }
+			set_country_code_flags = { autopick_leader_traits = no }
 			every_owned_leader = {
 				bgltp_sync_leader_traits_effect = yes
 			}
