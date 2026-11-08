@@ -1,0 +1,1429 @@
+﻿# Sync known traits on a single leader (Scope: Leader)
+bgltp_sync_leader_traits_effect = {
+	if = { limit = { has_trait = leader_trait_gifted } set_leader_flag = bgltp_known_leader_trait_gifted }
+	else = { remove_leader_flag = bgltp_known_leader_trait_gifted }
+	if = { limit = { has_trait = leader_trait_buccaneer } set_leader_flag = bgltp_known_leader_trait_buccaneer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_buccaneer }
+	if = { limit = { has_trait = leader_trait_trailblazer } set_leader_flag = bgltp_known_leader_trait_trailblazer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_trailblazer }
+	if = { limit = { has_trait = leader_trait_treasure_hoarder } set_leader_flag = bgltp_known_leader_trait_treasure_hoarder }
+	else = { remove_leader_flag = bgltp_known_leader_trait_treasure_hoarder }
+	if = { limit = { has_trait = trait_ruler_corvette_focus } set_leader_flag = bgltp_known_trait_ruler_corvette_focus }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_corvette_focus }
+	if = { limit = { has_trait = trait_ruler_destroyer_focus } set_leader_flag = bgltp_known_trait_ruler_destroyer_focus }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_destroyer_focus }
+	if = { limit = { has_trait = trait_ruler_cruiser_focus } set_leader_flag = bgltp_known_trait_ruler_cruiser_focus }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_cruiser_focus }
+	if = { limit = { has_trait = trait_ruler_battleship_focus } set_leader_flag = bgltp_known_trait_ruler_battleship_focus }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_battleship_focus }
+	if = { limit = { has_trait = leader_trait_fleet_logistician } set_leader_flag = bgltp_known_leader_trait_fleet_logistician }
+	else = { remove_leader_flag = bgltp_known_leader_trait_fleet_logistician }
+	if = { limit = { has_trait = leader_trait_skirmisher } set_leader_flag = bgltp_known_leader_trait_skirmisher }
+	else = { remove_leader_flag = bgltp_known_leader_trait_skirmisher }
+	if = { limit = { has_trait = leader_trait_aggressive } set_leader_flag = bgltp_known_leader_trait_aggressive }
+	else = { remove_leader_flag = bgltp_known_leader_trait_aggressive }
+	if = { limit = { has_trait = leader_trait_cautious } set_leader_flag = bgltp_known_leader_trait_cautious }
+	else = { remove_leader_flag = bgltp_known_leader_trait_cautious }
+	if = { limit = { has_trait = leader_trait_unyielding } set_leader_flag = bgltp_known_leader_trait_unyielding }
+	else = { remove_leader_flag = bgltp_known_leader_trait_unyielding }
+	if = { limit = { has_trait = leader_trait_engineer } set_leader_flag = bgltp_known_leader_trait_engineer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_engineer }
+	if = { limit = { has_trait = leader_trait_trickster } set_leader_flag = bgltp_known_leader_trait_trickster }
+	else = { remove_leader_flag = bgltp_known_leader_trait_trickster }
+	if = { limit = { has_trait = leader_trait_scout } set_leader_flag = bgltp_known_leader_trait_scout }
+	else = { remove_leader_flag = bgltp_known_leader_trait_scout }
+	if = { limit = { has_trait = leader_trait_scout_2 } set_leader_flag = bgltp_known_leader_trait_scout_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_scout_2 }
+	if = { limit = { has_trait = leader_trait_gale_speed } set_leader_flag = bgltp_known_leader_trait_gale_speed }
+	else = { remove_leader_flag = bgltp_known_leader_trait_gale_speed }
+	if = { limit = { has_trait = leader_trait_gale_speed_2 } set_leader_flag = bgltp_known_leader_trait_gale_speed_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_gale_speed_2 }
+	if = { limit = { has_trait = trait_ruler_fortifier } set_leader_flag = bgltp_known_trait_ruler_fortifier }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_fortifier }
+	if = { limit = { has_trait = trait_ruler_fortifier_2 } set_leader_flag = bgltp_known_trait_ruler_fortifier_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_fortifier_2 }
+	if = { limit = { has_trait = leader_trait_armada_logistician } set_leader_flag = bgltp_known_leader_trait_armada_logistician }
+	else = { remove_leader_flag = bgltp_known_leader_trait_armada_logistician }
+	if = { limit = { has_trait = leader_trait_armada_logistician_2 } set_leader_flag = bgltp_known_leader_trait_armada_logistician_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_armada_logistician_2 }
+	if = { limit = { has_trait = trait_ruler_military_pioneer } set_leader_flag = bgltp_known_trait_ruler_military_pioneer }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_military_pioneer }
+	if = { limit = { has_trait = leader_trait_defence_engineer } set_leader_flag = bgltp_known_leader_trait_defence_engineer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_defence_engineer }
+	if = { limit = { has_trait = leader_trait_butcher } set_leader_flag = bgltp_known_leader_trait_butcher }
+	else = { remove_leader_flag = bgltp_known_leader_trait_butcher }
+	if = { limit = { has_trait = leader_trait_restrained } set_leader_flag = bgltp_known_leader_trait_restrained }
+	else = { remove_leader_flag = bgltp_known_leader_trait_restrained }
+	if = { limit = { has_trait = leader_trait_heavy_hitter } set_leader_flag = bgltp_known_leader_trait_heavy_hitter }
+	else = { remove_leader_flag = bgltp_known_leader_trait_heavy_hitter }
+	if = { limit = { has_trait = leader_trait_heavy_hitter_2 } set_leader_flag = bgltp_known_leader_trait_heavy_hitter_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_heavy_hitter_2 }
+	if = { limit = { has_trait = trait_ruler_from_the_ranks } set_leader_flag = bgltp_known_trait_ruler_from_the_ranks }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_from_the_ranks }
+	if = { limit = { has_trait = trait_ruler_from_the_ranks_2 } set_leader_flag = bgltp_known_trait_ruler_from_the_ranks_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_from_the_ranks_2 }
+	if = { limit = { has_trait = trait_ruler_recruiter } set_leader_flag = bgltp_known_trait_ruler_recruiter }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_recruiter }
+	if = { limit = { has_trait = trait_ruler_recruiter_2 } set_leader_flag = bgltp_known_trait_ruler_recruiter_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_recruiter_2 }
+	if = { limit = { has_trait = leader_trait_warden } set_leader_flag = bgltp_known_leader_trait_warden }
+	else = { remove_leader_flag = bgltp_known_leader_trait_warden }
+	if = { limit = { has_trait = leader_trait_resilient } set_leader_flag = bgltp_known_leader_trait_resilient }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resilient }
+	if = { limit = { has_trait = leader_trait_adaptable } set_leader_flag = bgltp_known_leader_trait_adaptable }
+	else = { remove_leader_flag = bgltp_known_leader_trait_adaptable }
+	if = { limit = { has_trait = leader_trait_politician } set_leader_flag = bgltp_known_leader_trait_politician }
+	else = { remove_leader_flag = bgltp_known_leader_trait_politician }
+	if = { limit = { has_trait = leader_trait_capitalist } set_leader_flag = bgltp_known_leader_trait_capitalist }
+	else = { remove_leader_flag = bgltp_known_leader_trait_capitalist }
+	if = { limit = { has_trait = leader_trait_capitalist_2 } set_leader_flag = bgltp_known_leader_trait_capitalist_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_capitalist_2 }
+	if = { limit = { has_trait = leader_trait_private_mines } set_leader_flag = bgltp_known_leader_trait_private_mines }
+	else = { remove_leader_flag = bgltp_known_leader_trait_private_mines }
+	if = { limit = { has_trait = leader_trait_private_mines_2 } set_leader_flag = bgltp_known_leader_trait_private_mines_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_private_mines_2 }
+	if = { limit = { has_trait = leader_trait_homesteader } set_leader_flag = bgltp_known_leader_trait_homesteader }
+	else = { remove_leader_flag = bgltp_known_leader_trait_homesteader }
+	if = { limit = { has_trait = leader_trait_homesteader_2 } set_leader_flag = bgltp_known_leader_trait_homesteader_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_homesteader_2 }
+	if = { limit = { has_trait = trait_ruler_champion_of_the_people } set_leader_flag = bgltp_known_trait_ruler_champion_of_the_people }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_champion_of_the_people }
+	if = { limit = { has_trait = trait_ruler_champion_of_the_people_2 } set_leader_flag = bgltp_known_trait_ruler_champion_of_the_people_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_champion_of_the_people_2 }
+	if = { limit = { has_trait = leader_trait_gifted_2 } set_leader_flag = bgltp_known_leader_trait_gifted_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_gifted_2 }
+	if = { limit = { has_trait = leader_trait_scrapper } set_leader_flag = bgltp_known_leader_trait_scrapper }
+	else = { remove_leader_flag = bgltp_known_leader_trait_scrapper }
+	if = { limit = { has_trait = leader_trait_scrapper_2 } set_leader_flag = bgltp_known_leader_trait_scrapper_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_scrapper_2 }
+	if = { limit = { has_trait = leader_trait_entrepreneur } set_leader_flag = bgltp_known_leader_trait_entrepreneur }
+	else = { remove_leader_flag = bgltp_known_leader_trait_entrepreneur }
+	if = { limit = { has_trait = leader_trait_entrepreneur_2 } set_leader_flag = bgltp_known_leader_trait_entrepreneur_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_entrepreneur_2 }
+	if = { limit = { has_trait = leader_trait_venerated } set_leader_flag = bgltp_known_leader_trait_venerated }
+	else = { remove_leader_flag = bgltp_known_leader_trait_venerated }
+	if = { limit = { has_trait = leader_trait_venerated_2 } set_leader_flag = bgltp_known_leader_trait_venerated_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_venerated_2 }
+	if = { limit = { has_trait = trait_ruler_frontier_spirit } set_leader_flag = bgltp_known_trait_ruler_frontier_spirit }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_frontier_spirit }
+	if = { limit = { has_trait = leader_trait_bureaucrat } set_leader_flag = bgltp_known_leader_trait_bureaucrat }
+	else = { remove_leader_flag = bgltp_known_leader_trait_bureaucrat }
+	if = { limit = { has_trait = trait_ruler_fertility_preacher } set_leader_flag = bgltp_known_trait_ruler_fertility_preacher }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_fertility_preacher }
+	if = { limit = { has_trait = leader_trait_righteous } set_leader_flag = bgltp_known_leader_trait_righteous }
+	else = { remove_leader_flag = bgltp_known_leader_trait_righteous }
+	if = { limit = { has_trait = leader_trait_righteous_2 } set_leader_flag = bgltp_known_leader_trait_righteous_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_righteous_2 }
+	if = { limit = { has_trait = leader_trait_iron_fist } set_leader_flag = bgltp_known_leader_trait_iron_fist }
+	else = { remove_leader_flag = bgltp_known_leader_trait_iron_fist }
+	if = { limit = { has_trait = leader_trait_iron_fist_2 } set_leader_flag = bgltp_known_leader_trait_iron_fist_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_iron_fist_2 }
+	if = { limit = { has_trait = leader_trait_environmental_engineer } set_leader_flag = bgltp_known_leader_trait_environmental_engineer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_environmental_engineer }
+	if = { limit = { has_trait = leader_trait_enlister } set_leader_flag = bgltp_known_leader_trait_enlister }
+	else = { remove_leader_flag = bgltp_known_leader_trait_enlister }
+	if = { limit = { has_trait = leader_trait_shipwright } set_leader_flag = bgltp_known_leader_trait_shipwright }
+	else = { remove_leader_flag = bgltp_known_leader_trait_shipwright }
+	if = { limit = { has_trait = leader_trait_architectural_interest } set_leader_flag = bgltp_known_leader_trait_architectural_interest }
+	else = { remove_leader_flag = bgltp_known_leader_trait_architectural_interest }
+	if = { limit = { has_trait = trait_ruler_investor } set_leader_flag = bgltp_known_trait_ruler_investor }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_investor }
+	if = { limit = { has_trait = trait_ruler_investor_2 } set_leader_flag = bgltp_known_trait_ruler_investor_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_investor_2 }
+	if = { limit = { has_trait = trait_ruler_architectural_sense } set_leader_flag = bgltp_known_trait_ruler_architectural_sense }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_architectural_sense }
+	if = { limit = { has_trait = trait_ruler_architectural_sense_2 } set_leader_flag = bgltp_known_trait_ruler_architectural_sense_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_architectural_sense_2 }
+	if = { limit = { has_trait = trait_ruler_deep_connections } set_leader_flag = bgltp_known_trait_ruler_deep_connections }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_deep_connections }
+	if = { limit = { has_trait = trait_ruler_deep_connections_2 } set_leader_flag = bgltp_known_trait_ruler_deep_connections_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_deep_connections_2 }
+	if = { limit = { has_trait = leader_trait_reformer } set_leader_flag = bgltp_known_leader_trait_reformer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_reformer }
+	if = { limit = { has_trait = leader_trait_reformer_2 } set_leader_flag = bgltp_known_leader_trait_reformer_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_reformer_2 }
+	if = { limit = { has_trait = trait_ruler_space_miner } set_leader_flag = bgltp_known_trait_ruler_space_miner }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_space_miner }
+	if = { limit = { has_trait = trait_ruler_home_in_the_sky } set_leader_flag = bgltp_known_trait_ruler_home_in_the_sky }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_home_in_the_sky }
+	if = { limit = { has_trait = leader_trait_carefree } set_leader_flag = bgltp_known_leader_trait_carefree }
+	else = { remove_leader_flag = bgltp_known_leader_trait_carefree }
+	if = { limit = { has_trait = leader_trait_carefree_2 } set_leader_flag = bgltp_known_leader_trait_carefree_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_carefree_2 }
+	if = { limit = { has_trait = leader_trait_roamer } set_leader_flag = bgltp_known_leader_trait_roamer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_roamer }
+	if = { limit = { has_trait = leader_trait_roamer_2 } set_leader_flag = bgltp_known_leader_trait_roamer_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_roamer_2 }
+	if = { limit = { has_trait = leader_trait_archaeologist } set_leader_flag = bgltp_known_leader_trait_archaeologist }
+	else = { remove_leader_flag = bgltp_known_leader_trait_archaeologist }
+	if = { limit = { has_trait = leader_trait_archaeologist_2 } set_leader_flag = bgltp_known_leader_trait_archaeologist_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_archaeologist_2 }
+	if = { limit = { has_trait = leader_trait_meticulous } set_leader_flag = bgltp_known_leader_trait_meticulous }
+	else = { remove_leader_flag = bgltp_known_leader_trait_meticulous }
+	if = { limit = { has_trait = leader_trait_meticulous_2 } set_leader_flag = bgltp_known_leader_trait_meticulous_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_meticulous_2 }
+	if = { limit = { has_trait = leader_trait_custom_AI_assistant } set_leader_flag = bgltp_known_leader_trait_custom_AI_assistant }
+	else = { remove_leader_flag = bgltp_known_leader_trait_custom_AI_assistant }
+	if = { limit = { has_trait = leader_trait_sapient_AI_assistant } set_leader_flag = bgltp_known_leader_trait_sapient_AI_assistant }
+	else = { remove_leader_flag = bgltp_known_leader_trait_sapient_AI_assistant }
+	if = { limit = { has_trait = leader_trait_academic_dig_site_expert } set_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert }
+	else = { remove_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert }
+	if = { limit = { has_trait = leader_trait_academic_dig_site_expert_2 } set_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert_2 }
+	if = { limit = { has_trait = leader_trait_academic_minor_artifacts_expert } set_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert }
+	else = { remove_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert }
+	if = { limit = { has_trait = leader_trait_academic_minor_artifacts_expert_2 } set_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert_2 }
+	if = { limit = { has_trait = leader_trait_maniacal } set_leader_flag = bgltp_known_leader_trait_maniacal }
+	else = { remove_leader_flag = bgltp_known_leader_trait_maniacal }
+	if = { limit = { has_trait = leader_trait_maniacal_2 } set_leader_flag = bgltp_known_leader_trait_maniacal_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_maniacal_2 }
+	if = { limit = { has_trait = trait_ruler_expansionist } set_leader_flag = bgltp_known_trait_ruler_expansionist }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_expansionist }
+	if = { limit = { has_trait = trait_ruler_expansionist_2 } set_leader_flag = bgltp_known_trait_ruler_expansionist_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_expansionist_2 }
+	if = { limit = { has_trait = leader_trait_expertise_materials } set_leader_flag = bgltp_known_leader_trait_expertise_materials }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_materials }
+	if = { limit = { has_trait = leader_trait_expertise_materials_2 } set_leader_flag = bgltp_known_leader_trait_expertise_materials_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_materials_2 }
+	if = { limit = { has_trait = leader_trait_expertise_propulsion } set_leader_flag = bgltp_known_leader_trait_expertise_propulsion }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_propulsion }
+	if = { limit = { has_trait = leader_trait_expertise_propulsion_2 } set_leader_flag = bgltp_known_leader_trait_expertise_propulsion_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_propulsion_2 }
+	if = { limit = { has_trait = leader_trait_expertise_voidcraft } set_leader_flag = bgltp_known_leader_trait_expertise_voidcraft }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_voidcraft }
+	if = { limit = { has_trait = leader_trait_expertise_voidcraft_2 } set_leader_flag = bgltp_known_leader_trait_expertise_voidcraft_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_voidcraft_2 }
+	if = { limit = { has_trait = leader_trait_expertise_industry } set_leader_flag = bgltp_known_leader_trait_expertise_industry }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_industry }
+	if = { limit = { has_trait = leader_trait_expertise_industry_2 } set_leader_flag = bgltp_known_leader_trait_expertise_industry_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_industry_2 }
+	if = { limit = { has_trait = leader_trait_expertise_field_manipulation } set_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation }
+	if = { limit = { has_trait = leader_trait_expertise_field_manipulation_2 } set_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation_2 }
+	if = { limit = { has_trait = leader_trait_expertise_particles } set_leader_flag = bgltp_known_leader_trait_expertise_particles }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_particles }
+	if = { limit = { has_trait = leader_trait_expertise_particles_2 } set_leader_flag = bgltp_known_leader_trait_expertise_particles_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_particles_2 }
+	if = { limit = { has_trait = leader_trait_expertise_computing } set_leader_flag = bgltp_known_leader_trait_expertise_computing }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_computing }
+	if = { limit = { has_trait = leader_trait_expertise_computing_2 } set_leader_flag = bgltp_known_leader_trait_expertise_computing_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_computing_2 }
+	if = { limit = { has_trait = leader_trait_expertise_psionics } set_leader_flag = bgltp_known_leader_trait_expertise_psionics }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_psionics }
+	if = { limit = { has_trait = leader_trait_expertise_psionics_2 } set_leader_flag = bgltp_known_leader_trait_expertise_psionics_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_psionics_2 }
+	if = { limit = { has_trait = leader_trait_expertise_new_worlds } set_leader_flag = bgltp_known_leader_trait_expertise_new_worlds }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_new_worlds }
+	if = { limit = { has_trait = leader_trait_expertise_new_worlds_2 } set_leader_flag = bgltp_known_leader_trait_expertise_new_worlds_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_new_worlds_2 }
+	if = { limit = { has_trait = leader_trait_expertise_statecraft } set_leader_flag = bgltp_known_leader_trait_expertise_statecraft }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_statecraft }
+	if = { limit = { has_trait = leader_trait_expertise_statecraft_2 } set_leader_flag = bgltp_known_leader_trait_expertise_statecraft_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_statecraft_2 }
+	if = { limit = { has_trait = leader_trait_expertise_biology } set_leader_flag = bgltp_known_leader_trait_expertise_biology }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_biology }
+	if = { limit = { has_trait = leader_trait_expertise_biology_2 } set_leader_flag = bgltp_known_leader_trait_expertise_biology_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_biology_2 }
+	if = { limit = { has_trait = leader_trait_expertise_military_theory } set_leader_flag = bgltp_known_leader_trait_expertise_military_theory }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_military_theory }
+	if = { limit = { has_trait = leader_trait_expertise_military_theory_2 } set_leader_flag = bgltp_known_leader_trait_expertise_military_theory_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_military_theory_2 }
+	if = { limit = { has_trait = leader_trait_expertise_archaeostudies } set_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies }
+	if = { limit = { has_trait = leader_trait_expertise_archaeostudies_2 } set_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies_2 }
+	if = { limit = { has_trait = leader_trait_principled } set_leader_flag = bgltp_known_leader_trait_principled }
+	else = { remove_leader_flag = bgltp_known_leader_trait_principled }
+	if = { limit = { has_trait = leader_trait_principled_2 } set_leader_flag = bgltp_known_leader_trait_principled_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_principled_2 }
+	if = { limit = { has_trait = leader_trait_fleet_organizer } set_leader_flag = bgltp_known_leader_trait_fleet_organizer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_fleet_organizer }
+	if = { limit = { has_trait = leader_trait_fleet_organizer_2 } set_leader_flag = bgltp_known_leader_trait_fleet_organizer_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_fleet_organizer_2 }
+	if = { limit = { has_trait = leader_trait_spycraft } set_leader_flag = bgltp_known_leader_trait_spycraft }
+	else = { remove_leader_flag = bgltp_known_leader_trait_spycraft }
+	if = { limit = { has_trait = leader_trait_spycraft_2 } set_leader_flag = bgltp_known_leader_trait_spycraft_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_spycraft_2 }
+	if = { limit = { has_trait = leader_trait_spark_of_genius } set_leader_flag = bgltp_known_leader_trait_spark_of_genius }
+	else = { remove_leader_flag = bgltp_known_leader_trait_spark_of_genius }
+	if = { limit = { has_trait = leader_trait_spark_of_genius_2 } set_leader_flag = bgltp_known_leader_trait_spark_of_genius_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_spark_of_genius_2 }
+	if = { limit = { has_trait = trait_ruler_industrialist } set_leader_flag = bgltp_known_trait_ruler_industrialist }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_industrialist }
+	if = { limit = { has_trait = trait_ruler_industrialist_2 } set_leader_flag = bgltp_known_trait_ruler_industrialist_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_industrialist_2 }
+	if = { limit = { has_trait = trait_ruler_warlike } set_leader_flag = bgltp_known_trait_ruler_warlike }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_warlike }
+	if = { limit = { has_trait = trait_ruler_warlike_2 } set_leader_flag = bgltp_known_trait_ruler_warlike_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_warlike_2 }
+	if = { limit = { has_trait = trait_ruler_charismatic } set_leader_flag = bgltp_known_trait_ruler_charismatic }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_charismatic }
+	if = { limit = { has_trait = trait_ruler_charismatic_2 } set_leader_flag = bgltp_known_trait_ruler_charismatic_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_charismatic_2 }
+	if = { limit = { has_trait = trait_ruler_feedback_loop } set_leader_flag = bgltp_known_trait_ruler_feedback_loop }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_feedback_loop }
+	if = { limit = { has_trait = trait_ruler_feedback_loop_2 } set_leader_flag = bgltp_known_trait_ruler_feedback_loop_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_feedback_loop_2 }
+	if = { limit = { has_trait = trait_ruler_logistic_understanding } set_leader_flag = bgltp_known_trait_ruler_logistic_understanding }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_logistic_understanding }
+	if = { limit = { has_trait = trait_ruler_logistic_understanding_2 } set_leader_flag = bgltp_known_trait_ruler_logistic_understanding_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_logistic_understanding_2 }
+	if = { limit = { has_trait = trait_ruler_eye_for_talent } set_leader_flag = bgltp_known_trait_ruler_eye_for_talent }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_eye_for_talent }
+	if = { limit = { has_trait = trait_ruler_eye_for_talent_2 } set_leader_flag = bgltp_known_trait_ruler_eye_for_talent_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_eye_for_talent_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_ear_to_the_ground } set_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground }
+	if = { limit = { has_trait = leader_trait_ambassador_ear_to_the_ground_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_whisper_networks } set_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks }
+	if = { limit = { has_trait = leader_trait_ambassador_whisper_networks_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_bully } set_leader_flag = bgltp_known_leader_trait_ambassador_bully }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_bully }
+	if = { limit = { has_trait = leader_trait_ambassador_bully_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_bully_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_bully_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_favor_maker } set_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker }
+	if = { limit = { has_trait = leader_trait_ambassador_favor_maker_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_pact_keeper } set_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper }
+	if = { limit = { has_trait = leader_trait_ambassador_commercial_pact_focus } set_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus }
+	if = { limit = { has_trait = leader_trait_ambassador_commercial_pact_focus_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_research_pact_focus } set_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus }
+	if = { limit = { has_trait = leader_trait_ambassador_research_pact_focus_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_extra_envoys } set_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys }
+	if = { limit = { has_trait = leader_trait_ambassador_extra_envoys_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_commerce_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_commerce_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_industry_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_industry_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_politics_traditions_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_politics_traditions_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_greatergood_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_greatergood_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_galacticreforms_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_galacticreforms_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_ecology_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_ecology_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_galacticstudies_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_galacticstudies_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_divinity_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_divinity_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_mutualdefense_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_mutualdefense_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_rulesofwar_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_rulesofwar_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_defenseprivatization_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_defenseprivatization_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus_2 }
+	if = { limit = { has_trait = leader_trait_resolution_category_sanctions_focus } set_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus }
+	if = { limit = { has_trait = leader_trait_resolution_category_sanctions_focus_2 } set_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus_2 }
+	if = { limit = { has_trait = leader_trait_federal_negotiator } set_leader_flag = bgltp_known_leader_trait_federal_negotiator }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_negotiator }
+	if = { limit = { has_trait = leader_trait_federal_negotiator_2 } set_leader_flag = bgltp_known_leader_trait_federal_negotiator_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_negotiator_2 }
+	if = { limit = { has_trait = leader_trait_federal_greeter } set_leader_flag = bgltp_known_leader_trait_federal_greeter }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_greeter }
+	if = { limit = { has_trait = leader_trait_federal_greeter_2 } set_leader_flag = bgltp_known_leader_trait_federal_greeter_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_greeter_2 }
+	if = { limit = { has_trait = leader_trait_federal_sweet_talker } set_leader_flag = bgltp_known_leader_trait_federal_sweet_talker }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_sweet_talker }
+	if = { limit = { has_trait = leader_trait_federal_sweet_talker_2 } set_leader_flag = bgltp_known_leader_trait_federal_sweet_talker_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_sweet_talker_2 }
+	if = { limit = { has_trait = leader_trait_federal_joint_navy } set_leader_flag = bgltp_known_leader_trait_federal_joint_navy }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_joint_navy }
+	if = { limit = { has_trait = leader_trait_federal_joint_navy_2 } set_leader_flag = bgltp_known_leader_trait_federal_joint_navy_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_federal_joint_navy_2 }
+	if = { limit = { has_trait = leader_trait_planar_theorist } set_leader_flag = bgltp_known_leader_trait_planar_theorist }
+	else = { remove_leader_flag = bgltp_known_leader_trait_planar_theorist }
+	if = { limit = { has_trait = leader_trait_planar_theorist_2 } set_leader_flag = bgltp_known_leader_trait_planar_theorist_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_planar_theorist_2 }
+	if = { limit = { has_trait = leader_trait_academic_astral_rift_expert } set_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert }
+	else = { remove_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert }
+	if = { limit = { has_trait = leader_trait_academic_astral_rift_expert_2 } set_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert_2 }
+	if = { limit = { has_trait = leader_trait_void_hunter } set_leader_flag = bgltp_known_leader_trait_void_hunter }
+	else = { remove_leader_flag = bgltp_known_leader_trait_void_hunter }
+	if = { limit = { has_trait = leader_trait_void_hunter_2 } set_leader_flag = bgltp_known_leader_trait_void_hunter_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_void_hunter_2 }
+	if = { limit = { has_trait = leader_trait_void_tracker } set_leader_flag = bgltp_known_leader_trait_void_tracker }
+	else = { remove_leader_flag = bgltp_known_leader_trait_void_tracker }
+	if = { limit = { has_trait = leader_trait_void_tracker_2 } set_leader_flag = bgltp_known_leader_trait_void_tracker_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_void_tracker_2 }
+	if = { limit = { has_trait = leader_trait_buccaneer_2 } set_leader_flag = bgltp_known_leader_trait_buccaneer_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_buccaneer_2 }
+	if = { limit = { has_trait = leader_trait_buccaneer_3 } set_leader_flag = bgltp_known_leader_trait_buccaneer_3 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_buccaneer_3 }
+	if = { limit = { has_trait = leader_trait_trailblazer_2 } set_leader_flag = bgltp_known_leader_trait_trailblazer_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_trailblazer_2 }
+	if = { limit = { has_trait = leader_trait_trailblazer_3 } set_leader_flag = bgltp_known_leader_trait_trailblazer_3 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_trailblazer_3 }
+	if = { limit = { has_trait = leader_trait_treasure_hoarder_2 } set_leader_flag = bgltp_known_leader_trait_treasure_hoarder_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_treasure_hoarder_2 }
+	if = { limit = { has_trait = leader_trait_treasure_hoarder_3 } set_leader_flag = bgltp_known_leader_trait_treasure_hoarder_3 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_treasure_hoarder_3 }
+	if = { limit = { has_trait = leader_trait_whispering_mind } set_leader_flag = bgltp_known_leader_trait_whispering_mind }
+	else = { remove_leader_flag = bgltp_known_leader_trait_whispering_mind }
+	if = { limit = { has_trait = leader_trait_whispering_mind_2 } set_leader_flag = bgltp_known_leader_trait_whispering_mind_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_whispering_mind_2 }
+	if = { limit = { has_trait = leader_trait_whispering_mind_3 } set_leader_flag = bgltp_known_leader_trait_whispering_mind_3 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_whispering_mind_3 }
+}
+
+# Revert the single trait automatically assigned by the C++ engine on level-up (Scope: Leader)
+bgltp_revert_auto_trait_effect = {
+	if = {
+		limit = { has_trait = leader_trait_scout_2 NOT = { has_leader_flag = bgltp_known_leader_trait_scout_2 } }
+		remove_trait = leader_trait_scout_2
+		add_trait = { trait = leader_trait_scout show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_scout
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_gale_speed_2 NOT = { has_leader_flag = bgltp_known_leader_trait_gale_speed_2 } }
+		remove_trait = leader_trait_gale_speed_2
+		add_trait = { trait = leader_trait_gale_speed show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_gale_speed
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_fortifier_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_fortifier_2 } }
+		remove_trait = trait_ruler_fortifier_2
+		add_trait = { trait = trait_ruler_fortifier show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_fortifier
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_armada_logistician_2 NOT = { has_leader_flag = bgltp_known_leader_trait_armada_logistician_2 } }
+		remove_trait = leader_trait_armada_logistician_2
+		add_trait = { trait = leader_trait_armada_logistician show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_armada_logistician
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_heavy_hitter_2 NOT = { has_leader_flag = bgltp_known_leader_trait_heavy_hitter_2 } }
+		remove_trait = leader_trait_heavy_hitter_2
+		add_trait = { trait = leader_trait_heavy_hitter show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_heavy_hitter
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_from_the_ranks_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_from_the_ranks_2 } }
+		remove_trait = trait_ruler_from_the_ranks_2
+		add_trait = { trait = trait_ruler_from_the_ranks show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_from_the_ranks
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_recruiter_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_recruiter_2 } }
+		remove_trait = trait_ruler_recruiter_2
+		add_trait = { trait = trait_ruler_recruiter show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_recruiter
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_capitalist_2 NOT = { has_leader_flag = bgltp_known_leader_trait_capitalist_2 } }
+		remove_trait = leader_trait_capitalist_2
+		add_trait = { trait = leader_trait_capitalist show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_capitalist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_private_mines_2 NOT = { has_leader_flag = bgltp_known_leader_trait_private_mines_2 } }
+		remove_trait = leader_trait_private_mines_2
+		add_trait = { trait = leader_trait_private_mines show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_private_mines
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_homesteader_2 NOT = { has_leader_flag = bgltp_known_leader_trait_homesteader_2 } }
+		remove_trait = leader_trait_homesteader_2
+		add_trait = { trait = leader_trait_homesteader show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_homesteader
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_champion_of_the_people_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_champion_of_the_people_2 } }
+		remove_trait = trait_ruler_champion_of_the_people_2
+		add_trait = { trait = trait_ruler_champion_of_the_people show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_champion_of_the_people
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_gifted_2 NOT = { has_leader_flag = bgltp_known_leader_trait_gifted_2 } }
+		remove_trait = leader_trait_gifted_2
+		add_trait = { trait = leader_trait_gifted show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_gifted
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_scrapper_2 NOT = { has_leader_flag = bgltp_known_leader_trait_scrapper_2 } }
+		remove_trait = leader_trait_scrapper_2
+		add_trait = { trait = leader_trait_scrapper show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_scrapper
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_entrepreneur_2 NOT = { has_leader_flag = bgltp_known_leader_trait_entrepreneur_2 } }
+		remove_trait = leader_trait_entrepreneur_2
+		add_trait = { trait = leader_trait_entrepreneur show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_entrepreneur
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_venerated_2 NOT = { has_leader_flag = bgltp_known_leader_trait_venerated_2 } }
+		remove_trait = leader_trait_venerated_2
+		add_trait = { trait = leader_trait_venerated show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_venerated
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_righteous_2 NOT = { has_leader_flag = bgltp_known_leader_trait_righteous_2 } }
+		remove_trait = leader_trait_righteous_2
+		add_trait = { trait = leader_trait_righteous show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_righteous
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_iron_fist_2 NOT = { has_leader_flag = bgltp_known_leader_trait_iron_fist_2 } }
+		remove_trait = leader_trait_iron_fist_2
+		add_trait = { trait = leader_trait_iron_fist show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_iron_fist
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_investor_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_investor_2 } }
+		remove_trait = trait_ruler_investor_2
+		add_trait = { trait = trait_ruler_investor show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_investor
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_architectural_sense_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_architectural_sense_2 } }
+		remove_trait = trait_ruler_architectural_sense_2
+		add_trait = { trait = trait_ruler_architectural_sense show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_architectural_sense
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_deep_connections_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_deep_connections_2 } }
+		remove_trait = trait_ruler_deep_connections_2
+		add_trait = { trait = trait_ruler_deep_connections show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_deep_connections
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_reformer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_reformer_2 } }
+		remove_trait = leader_trait_reformer_2
+		add_trait = { trait = leader_trait_reformer show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_reformer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_carefree_2 NOT = { has_leader_flag = bgltp_known_leader_trait_carefree_2 } }
+		remove_trait = leader_trait_carefree_2
+		add_trait = { trait = leader_trait_carefree show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_carefree
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_roamer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_roamer_2 } }
+		remove_trait = leader_trait_roamer_2
+		add_trait = { trait = leader_trait_roamer show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_roamer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_archaeologist_2 NOT = { has_leader_flag = bgltp_known_leader_trait_archaeologist_2 } }
+		remove_trait = leader_trait_archaeologist_2
+		add_trait = { trait = leader_trait_archaeologist show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_archaeologist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_meticulous_2 NOT = { has_leader_flag = bgltp_known_leader_trait_meticulous_2 } }
+		remove_trait = leader_trait_meticulous_2
+		add_trait = { trait = leader_trait_meticulous show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_meticulous
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_academic_dig_site_expert_2 NOT = { has_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert_2 } }
+		remove_trait = leader_trait_academic_dig_site_expert_2
+		add_trait = { trait = leader_trait_academic_dig_site_expert show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_academic_minor_artifacts_expert_2 NOT = { has_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert_2 } }
+		remove_trait = leader_trait_academic_minor_artifacts_expert_2
+		add_trait = { trait = leader_trait_academic_minor_artifacts_expert show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_maniacal_2 NOT = { has_leader_flag = bgltp_known_leader_trait_maniacal_2 } }
+		remove_trait = leader_trait_maniacal_2
+		add_trait = { trait = leader_trait_maniacal show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_maniacal
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_expansionist_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_expansionist_2 } }
+		remove_trait = trait_ruler_expansionist_2
+		add_trait = { trait = trait_ruler_expansionist show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_expansionist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_materials_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_materials_2 } }
+		remove_trait = leader_trait_expertise_materials_2
+		add_trait = { trait = leader_trait_expertise_materials show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_materials
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_propulsion_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_propulsion_2 } }
+		remove_trait = leader_trait_expertise_propulsion_2
+		add_trait = { trait = leader_trait_expertise_propulsion show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_propulsion
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_voidcraft_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_voidcraft_2 } }
+		remove_trait = leader_trait_expertise_voidcraft_2
+		add_trait = { trait = leader_trait_expertise_voidcraft show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_voidcraft
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_industry_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_industry_2 } }
+		remove_trait = leader_trait_expertise_industry_2
+		add_trait = { trait = leader_trait_expertise_industry show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_industry
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_field_manipulation_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation_2 } }
+		remove_trait = leader_trait_expertise_field_manipulation_2
+		add_trait = { trait = leader_trait_expertise_field_manipulation show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_particles_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_particles_2 } }
+		remove_trait = leader_trait_expertise_particles_2
+		add_trait = { trait = leader_trait_expertise_particles show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_particles
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_computing_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_computing_2 } }
+		remove_trait = leader_trait_expertise_computing_2
+		add_trait = { trait = leader_trait_expertise_computing show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_computing
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_psionics_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_psionics_2 } }
+		remove_trait = leader_trait_expertise_psionics_2
+		add_trait = { trait = leader_trait_expertise_psionics show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_psionics
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_new_worlds_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_new_worlds_2 } }
+		remove_trait = leader_trait_expertise_new_worlds_2
+		add_trait = { trait = leader_trait_expertise_new_worlds show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_new_worlds
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_statecraft_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_statecraft_2 } }
+		remove_trait = leader_trait_expertise_statecraft_2
+		add_trait = { trait = leader_trait_expertise_statecraft show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_statecraft
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_biology_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_biology_2 } }
+		remove_trait = leader_trait_expertise_biology_2
+		add_trait = { trait = leader_trait_expertise_biology show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_biology
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_military_theory_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_military_theory_2 } }
+		remove_trait = leader_trait_expertise_military_theory_2
+		add_trait = { trait = leader_trait_expertise_military_theory show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_military_theory
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_archaeostudies_2 NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies_2 } }
+		remove_trait = leader_trait_expertise_archaeostudies_2
+		add_trait = { trait = leader_trait_expertise_archaeostudies show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_principled_2 NOT = { has_leader_flag = bgltp_known_leader_trait_principled_2 } }
+		remove_trait = leader_trait_principled_2
+		add_trait = { trait = leader_trait_principled show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_principled
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_fleet_organizer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_fleet_organizer_2 } }
+		remove_trait = leader_trait_fleet_organizer_2
+		add_trait = { trait = leader_trait_fleet_organizer show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_fleet_organizer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_spycraft_2 NOT = { has_leader_flag = bgltp_known_leader_trait_spycraft_2 } }
+		remove_trait = leader_trait_spycraft_2
+		add_trait = { trait = leader_trait_spycraft show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_spycraft
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_spark_of_genius_2 NOT = { has_leader_flag = bgltp_known_leader_trait_spark_of_genius_2 } }
+		remove_trait = leader_trait_spark_of_genius_2
+		add_trait = { trait = leader_trait_spark_of_genius show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_spark_of_genius
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_industrialist_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_industrialist_2 } }
+		remove_trait = trait_ruler_industrialist_2
+		add_trait = { trait = trait_ruler_industrialist show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_industrialist
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_warlike_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_warlike_2 } }
+		remove_trait = trait_ruler_warlike_2
+		add_trait = { trait = trait_ruler_warlike show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_warlike
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_charismatic_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_charismatic_2 } }
+		remove_trait = trait_ruler_charismatic_2
+		add_trait = { trait = trait_ruler_charismatic show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_charismatic
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_feedback_loop_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_feedback_loop_2 } }
+		remove_trait = trait_ruler_feedback_loop_2
+		add_trait = { trait = trait_ruler_feedback_loop show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_feedback_loop
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_logistic_understanding_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_logistic_understanding_2 } }
+		remove_trait = trait_ruler_logistic_understanding_2
+		add_trait = { trait = trait_ruler_logistic_understanding show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_logistic_understanding
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_eye_for_talent_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_eye_for_talent_2 } }
+		remove_trait = trait_ruler_eye_for_talent_2
+		add_trait = { trait = trait_ruler_eye_for_talent show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_eye_for_talent
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_ear_to_the_ground_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground_2 } }
+		remove_trait = leader_trait_ambassador_ear_to_the_ground_2
+		add_trait = { trait = leader_trait_ambassador_ear_to_the_ground show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_whisper_networks_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks_2 } }
+		remove_trait = leader_trait_ambassador_whisper_networks_2
+		add_trait = { trait = leader_trait_ambassador_whisper_networks show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_bully_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_bully_2 } }
+		remove_trait = leader_trait_ambassador_bully_2
+		add_trait = { trait = leader_trait_ambassador_bully show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_bully
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_favor_maker_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker_2 } }
+		remove_trait = leader_trait_ambassador_favor_maker_2
+		add_trait = { trait = leader_trait_ambassador_favor_maker show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_commercial_pact_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus_2 } }
+		remove_trait = leader_trait_ambassador_commercial_pact_focus_2
+		add_trait = { trait = leader_trait_ambassador_commercial_pact_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_research_pact_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus_2 } }
+		remove_trait = leader_trait_ambassador_research_pact_focus_2
+		add_trait = { trait = leader_trait_ambassador_research_pact_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_extra_envoys_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys_2 } }
+		remove_trait = leader_trait_ambassador_extra_envoys_2
+		add_trait = { trait = leader_trait_ambassador_extra_envoys show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_commerce_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus_2 } }
+		remove_trait = leader_trait_resolution_category_commerce_focus_2
+		add_trait = { trait = leader_trait_resolution_category_commerce_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_industry_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus_2 } }
+		remove_trait = leader_trait_resolution_category_industry_focus_2
+		add_trait = { trait = leader_trait_resolution_category_industry_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_politics_traditions_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus_2 } }
+		remove_trait = leader_trait_resolution_category_politics_traditions_focus_2
+		add_trait = { trait = leader_trait_resolution_category_politics_traditions_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_greatergood_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus_2 } }
+		remove_trait = leader_trait_resolution_category_greatergood_focus_2
+		add_trait = { trait = leader_trait_resolution_category_greatergood_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_galacticreforms_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus_2 } }
+		remove_trait = leader_trait_resolution_category_galacticreforms_focus_2
+		add_trait = { trait = leader_trait_resolution_category_galacticreforms_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_ecology_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus_2 } }
+		remove_trait = leader_trait_resolution_category_ecology_focus_2
+		add_trait = { trait = leader_trait_resolution_category_ecology_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_galacticstudies_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus_2 } }
+		remove_trait = leader_trait_resolution_category_galacticstudies_focus_2
+		add_trait = { trait = leader_trait_resolution_category_galacticstudies_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_divinity_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus_2 } }
+		remove_trait = leader_trait_resolution_category_divinity_focus_2
+		add_trait = { trait = leader_trait_resolution_category_divinity_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_mutualdefense_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus_2 } }
+		remove_trait = leader_trait_resolution_category_mutualdefense_focus_2
+		add_trait = { trait = leader_trait_resolution_category_mutualdefense_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_rulesofwar_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus_2 } }
+		remove_trait = leader_trait_resolution_category_rulesofwar_focus_2
+		add_trait = { trait = leader_trait_resolution_category_rulesofwar_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_defenseprivatization_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus_2 } }
+		remove_trait = leader_trait_resolution_category_defenseprivatization_focus_2
+		add_trait = { trait = leader_trait_resolution_category_defenseprivatization_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus_2 } }
+		remove_trait = leader_trait_resolution_category_intergalacticdirective_focus_2
+		add_trait = { trait = leader_trait_resolution_category_intergalacticdirective_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus_2 } }
+		remove_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus_2
+		add_trait = { trait = leader_trait_resolution_category_bureaucraticsurveillance_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus_2 } }
+		remove_trait = leader_trait_resolution_category_pre_ftl_stances_focus_2
+		add_trait = { trait = leader_trait_resolution_category_pre_ftl_stances_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_sanctions_focus_2 NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus_2 } }
+		remove_trait = leader_trait_resolution_category_sanctions_focus_2
+		add_trait = { trait = leader_trait_resolution_category_sanctions_focus show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_negotiator_2 NOT = { has_leader_flag = bgltp_known_leader_trait_federal_negotiator_2 } }
+		remove_trait = leader_trait_federal_negotiator_2
+		add_trait = { trait = leader_trait_federal_negotiator show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_federal_negotiator
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_greeter_2 NOT = { has_leader_flag = bgltp_known_leader_trait_federal_greeter_2 } }
+		remove_trait = leader_trait_federal_greeter_2
+		add_trait = { trait = leader_trait_federal_greeter show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_federal_greeter
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_sweet_talker_2 NOT = { has_leader_flag = bgltp_known_leader_trait_federal_sweet_talker_2 } }
+		remove_trait = leader_trait_federal_sweet_talker_2
+		add_trait = { trait = leader_trait_federal_sweet_talker show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_federal_sweet_talker
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_joint_navy_2 NOT = { has_leader_flag = bgltp_known_leader_trait_federal_joint_navy_2 } }
+		remove_trait = leader_trait_federal_joint_navy_2
+		add_trait = { trait = leader_trait_federal_joint_navy show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_federal_joint_navy
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_planar_theorist_2 NOT = { has_leader_flag = bgltp_known_leader_trait_planar_theorist_2 } }
+		remove_trait = leader_trait_planar_theorist_2
+		add_trait = { trait = leader_trait_planar_theorist show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_planar_theorist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_academic_astral_rift_expert_2 NOT = { has_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert_2 } }
+		remove_trait = leader_trait_academic_astral_rift_expert_2
+		add_trait = { trait = leader_trait_academic_astral_rift_expert show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_void_hunter_2 NOT = { has_leader_flag = bgltp_known_leader_trait_void_hunter_2 } }
+		remove_trait = leader_trait_void_hunter_2
+		add_trait = { trait = leader_trait_void_hunter show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_void_hunter
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_void_tracker_2 NOT = { has_leader_flag = bgltp_known_leader_trait_void_tracker_2 } }
+		remove_trait = leader_trait_void_tracker_2
+		add_trait = { trait = leader_trait_void_tracker show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_void_tracker
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_buccaneer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_buccaneer_2 } }
+		remove_trait = leader_trait_buccaneer_2
+		add_trait = { trait = leader_trait_buccaneer show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_buccaneer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_buccaneer_3 NOT = { has_leader_flag = bgltp_known_leader_trait_buccaneer_3 } }
+		remove_trait = leader_trait_buccaneer_3
+		add_trait = { trait = leader_trait_buccaneer_2 show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_buccaneer_2
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_trailblazer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_trailblazer_2 } }
+		remove_trait = leader_trait_trailblazer_2
+		add_trait = { trait = leader_trait_trailblazer show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_trailblazer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_trailblazer_3 NOT = { has_leader_flag = bgltp_known_leader_trait_trailblazer_3 } }
+		remove_trait = leader_trait_trailblazer_3
+		add_trait = { trait = leader_trait_trailblazer_2 show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_trailblazer_2
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_treasure_hoarder_2 NOT = { has_leader_flag = bgltp_known_leader_trait_treasure_hoarder_2 } }
+		remove_trait = leader_trait_treasure_hoarder_2
+		add_trait = { trait = leader_trait_treasure_hoarder show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_treasure_hoarder
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_treasure_hoarder_3 NOT = { has_leader_flag = bgltp_known_leader_trait_treasure_hoarder_3 } }
+		remove_trait = leader_trait_treasure_hoarder_3
+		add_trait = { trait = leader_trait_treasure_hoarder_2 show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_treasure_hoarder_2
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_whispering_mind_2 NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind_2 } }
+		remove_trait = leader_trait_whispering_mind_2
+		add_trait = { trait = leader_trait_whispering_mind show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_whispering_mind
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_whispering_mind_3 NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind_3 } }
+		remove_trait = leader_trait_whispering_mind_3
+		add_trait = { trait = leader_trait_whispering_mind_2 show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_whispering_mind_2
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_corvette_focus NOT = { has_leader_flag = bgltp_known_trait_ruler_corvette_focus } }
+		remove_trait = trait_ruler_corvette_focus
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_destroyer_focus NOT = { has_leader_flag = bgltp_known_trait_ruler_destroyer_focus } }
+		remove_trait = trait_ruler_destroyer_focus
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_cruiser_focus NOT = { has_leader_flag = bgltp_known_trait_ruler_cruiser_focus } }
+		remove_trait = trait_ruler_cruiser_focus
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_battleship_focus NOT = { has_leader_flag = bgltp_known_trait_ruler_battleship_focus } }
+		remove_trait = trait_ruler_battleship_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_fleet_logistician NOT = { has_leader_flag = bgltp_known_leader_trait_fleet_logistician } }
+		remove_trait = leader_trait_fleet_logistician
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_skirmisher NOT = { has_leader_flag = bgltp_known_leader_trait_skirmisher } }
+		remove_trait = leader_trait_skirmisher
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_aggressive NOT = { has_leader_flag = bgltp_known_leader_trait_aggressive } }
+		remove_trait = leader_trait_aggressive
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_cautious NOT = { has_leader_flag = bgltp_known_leader_trait_cautious } }
+		remove_trait = leader_trait_cautious
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_unyielding NOT = { has_leader_flag = bgltp_known_leader_trait_unyielding } }
+		remove_trait = leader_trait_unyielding
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_engineer NOT = { has_leader_flag = bgltp_known_leader_trait_engineer } }
+		remove_trait = leader_trait_engineer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_trickster NOT = { has_leader_flag = bgltp_known_leader_trait_trickster } }
+		remove_trait = leader_trait_trickster
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_scout NOT = { has_leader_flag = bgltp_known_leader_trait_scout } }
+		remove_trait = leader_trait_scout
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_gale_speed NOT = { has_leader_flag = bgltp_known_leader_trait_gale_speed } }
+		remove_trait = leader_trait_gale_speed
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_fortifier NOT = { has_leader_flag = bgltp_known_trait_ruler_fortifier } }
+		remove_trait = trait_ruler_fortifier
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_armada_logistician NOT = { has_leader_flag = bgltp_known_leader_trait_armada_logistician } }
+		remove_trait = leader_trait_armada_logistician
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_military_pioneer NOT = { has_leader_flag = bgltp_known_trait_ruler_military_pioneer } }
+		remove_trait = trait_ruler_military_pioneer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_defence_engineer NOT = { has_leader_flag = bgltp_known_leader_trait_defence_engineer } }
+		remove_trait = leader_trait_defence_engineer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_butcher NOT = { has_leader_flag = bgltp_known_leader_trait_butcher } }
+		remove_trait = leader_trait_butcher
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_restrained NOT = { has_leader_flag = bgltp_known_leader_trait_restrained } }
+		remove_trait = leader_trait_restrained
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_heavy_hitter NOT = { has_leader_flag = bgltp_known_leader_trait_heavy_hitter } }
+		remove_trait = leader_trait_heavy_hitter
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_from_the_ranks NOT = { has_leader_flag = bgltp_known_trait_ruler_from_the_ranks } }
+		remove_trait = trait_ruler_from_the_ranks
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_recruiter NOT = { has_leader_flag = bgltp_known_trait_ruler_recruiter } }
+		remove_trait = trait_ruler_recruiter
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_warden NOT = { has_leader_flag = bgltp_known_leader_trait_warden } }
+		remove_trait = leader_trait_warden
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resilient NOT = { has_leader_flag = bgltp_known_leader_trait_resilient } }
+		remove_trait = leader_trait_resilient
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_adaptable NOT = { has_leader_flag = bgltp_known_leader_trait_adaptable } }
+		remove_trait = leader_trait_adaptable
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_politician NOT = { has_leader_flag = bgltp_known_leader_trait_politician } }
+		remove_trait = leader_trait_politician
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_capitalist NOT = { has_leader_flag = bgltp_known_leader_trait_capitalist } }
+		remove_trait = leader_trait_capitalist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_private_mines NOT = { has_leader_flag = bgltp_known_leader_trait_private_mines } }
+		remove_trait = leader_trait_private_mines
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_homesteader NOT = { has_leader_flag = bgltp_known_leader_trait_homesteader } }
+		remove_trait = leader_trait_homesteader
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_champion_of_the_people NOT = { has_leader_flag = bgltp_known_trait_ruler_champion_of_the_people } }
+		remove_trait = trait_ruler_champion_of_the_people
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_scrapper NOT = { has_leader_flag = bgltp_known_leader_trait_scrapper } }
+		remove_trait = leader_trait_scrapper
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_entrepreneur NOT = { has_leader_flag = bgltp_known_leader_trait_entrepreneur } }
+		remove_trait = leader_trait_entrepreneur
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_venerated NOT = { has_leader_flag = bgltp_known_leader_trait_venerated } }
+		remove_trait = leader_trait_venerated
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_frontier_spirit NOT = { has_leader_flag = bgltp_known_trait_ruler_frontier_spirit } }
+		remove_trait = trait_ruler_frontier_spirit
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_bureaucrat NOT = { has_leader_flag = bgltp_known_leader_trait_bureaucrat } }
+		remove_trait = leader_trait_bureaucrat
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_fertility_preacher NOT = { has_leader_flag = bgltp_known_trait_ruler_fertility_preacher } }
+		remove_trait = trait_ruler_fertility_preacher
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_righteous NOT = { has_leader_flag = bgltp_known_leader_trait_righteous } }
+		remove_trait = leader_trait_righteous
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_iron_fist NOT = { has_leader_flag = bgltp_known_leader_trait_iron_fist } }
+		remove_trait = leader_trait_iron_fist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_environmental_engineer NOT = { has_leader_flag = bgltp_known_leader_trait_environmental_engineer } }
+		remove_trait = leader_trait_environmental_engineer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_enlister NOT = { has_leader_flag = bgltp_known_leader_trait_enlister } }
+		remove_trait = leader_trait_enlister
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_shipwright NOT = { has_leader_flag = bgltp_known_leader_trait_shipwright } }
+		remove_trait = leader_trait_shipwright
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_architectural_interest NOT = { has_leader_flag = bgltp_known_leader_trait_architectural_interest } }
+		remove_trait = leader_trait_architectural_interest
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_investor NOT = { has_leader_flag = bgltp_known_trait_ruler_investor } }
+		remove_trait = trait_ruler_investor
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_architectural_sense NOT = { has_leader_flag = bgltp_known_trait_ruler_architectural_sense } }
+		remove_trait = trait_ruler_architectural_sense
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_deep_connections NOT = { has_leader_flag = bgltp_known_trait_ruler_deep_connections } }
+		remove_trait = trait_ruler_deep_connections
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_reformer NOT = { has_leader_flag = bgltp_known_leader_trait_reformer } }
+		remove_trait = leader_trait_reformer
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_space_miner NOT = { has_leader_flag = bgltp_known_trait_ruler_space_miner } }
+		remove_trait = trait_ruler_space_miner
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_home_in_the_sky NOT = { has_leader_flag = bgltp_known_trait_ruler_home_in_the_sky } }
+		remove_trait = trait_ruler_home_in_the_sky
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_carefree NOT = { has_leader_flag = bgltp_known_leader_trait_carefree } }
+		remove_trait = leader_trait_carefree
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_roamer NOT = { has_leader_flag = bgltp_known_leader_trait_roamer } }
+		remove_trait = leader_trait_roamer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_archaeologist NOT = { has_leader_flag = bgltp_known_leader_trait_archaeologist } }
+		remove_trait = leader_trait_archaeologist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_meticulous NOT = { has_leader_flag = bgltp_known_leader_trait_meticulous } }
+		remove_trait = leader_trait_meticulous
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_custom_AI_assistant NOT = { has_leader_flag = bgltp_known_leader_trait_custom_AI_assistant } }
+		remove_trait = leader_trait_custom_AI_assistant
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_sapient_AI_assistant NOT = { has_leader_flag = bgltp_known_leader_trait_sapient_AI_assistant } }
+		remove_trait = leader_trait_sapient_AI_assistant
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_academic_dig_site_expert NOT = { has_leader_flag = bgltp_known_leader_trait_academic_dig_site_expert } }
+		remove_trait = leader_trait_academic_dig_site_expert
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_academic_minor_artifacts_expert NOT = { has_leader_flag = bgltp_known_leader_trait_academic_minor_artifacts_expert } }
+		remove_trait = leader_trait_academic_minor_artifacts_expert
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_maniacal NOT = { has_leader_flag = bgltp_known_leader_trait_maniacal } }
+		remove_trait = leader_trait_maniacal
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_expansionist NOT = { has_leader_flag = bgltp_known_trait_ruler_expansionist } }
+		remove_trait = trait_ruler_expansionist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_materials NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_materials } }
+		remove_trait = leader_trait_expertise_materials
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_propulsion NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_propulsion } }
+		remove_trait = leader_trait_expertise_propulsion
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_voidcraft NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_voidcraft } }
+		remove_trait = leader_trait_expertise_voidcraft
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_industry NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_industry } }
+		remove_trait = leader_trait_expertise_industry
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_field_manipulation NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_field_manipulation } }
+		remove_trait = leader_trait_expertise_field_manipulation
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_particles NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_particles } }
+		remove_trait = leader_trait_expertise_particles
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_computing NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_computing } }
+		remove_trait = leader_trait_expertise_computing
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_psionics NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_psionics } }
+		remove_trait = leader_trait_expertise_psionics
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_new_worlds NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_new_worlds } }
+		remove_trait = leader_trait_expertise_new_worlds
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_statecraft NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_statecraft } }
+		remove_trait = leader_trait_expertise_statecraft
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_biology NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_biology } }
+		remove_trait = leader_trait_expertise_biology
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_military_theory NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_military_theory } }
+		remove_trait = leader_trait_expertise_military_theory
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_expertise_archaeostudies NOT = { has_leader_flag = bgltp_known_leader_trait_expertise_archaeostudies } }
+		remove_trait = leader_trait_expertise_archaeostudies
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_principled NOT = { has_leader_flag = bgltp_known_leader_trait_principled } }
+		remove_trait = leader_trait_principled
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_fleet_organizer NOT = { has_leader_flag = bgltp_known_leader_trait_fleet_organizer } }
+		remove_trait = leader_trait_fleet_organizer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_spycraft NOT = { has_leader_flag = bgltp_known_leader_trait_spycraft } }
+		remove_trait = leader_trait_spycraft
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_spark_of_genius NOT = { has_leader_flag = bgltp_known_leader_trait_spark_of_genius } }
+		remove_trait = leader_trait_spark_of_genius
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_industrialist NOT = { has_leader_flag = bgltp_known_trait_ruler_industrialist } }
+		remove_trait = trait_ruler_industrialist
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_warlike NOT = { has_leader_flag = bgltp_known_trait_ruler_warlike } }
+		remove_trait = trait_ruler_warlike
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_charismatic NOT = { has_leader_flag = bgltp_known_trait_ruler_charismatic } }
+		remove_trait = trait_ruler_charismatic
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_feedback_loop NOT = { has_leader_flag = bgltp_known_trait_ruler_feedback_loop } }
+		remove_trait = trait_ruler_feedback_loop
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_logistic_understanding NOT = { has_leader_flag = bgltp_known_trait_ruler_logistic_understanding } }
+		remove_trait = trait_ruler_logistic_understanding
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_eye_for_talent NOT = { has_leader_flag = bgltp_known_trait_ruler_eye_for_talent } }
+		remove_trait = trait_ruler_eye_for_talent
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_ear_to_the_ground NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_ear_to_the_ground } }
+		remove_trait = leader_trait_ambassador_ear_to_the_ground
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_whisper_networks NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_whisper_networks } }
+		remove_trait = leader_trait_ambassador_whisper_networks
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_bully NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_bully } }
+		remove_trait = leader_trait_ambassador_bully
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_favor_maker NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_favor_maker } }
+		remove_trait = leader_trait_ambassador_favor_maker
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_pact_keeper NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper } }
+		remove_trait = leader_trait_ambassador_pact_keeper
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_commercial_pact_focus NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_commercial_pact_focus } }
+		remove_trait = leader_trait_ambassador_commercial_pact_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_research_pact_focus NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_research_pact_focus } }
+		remove_trait = leader_trait_ambassador_research_pact_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_extra_envoys NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_extra_envoys } }
+		remove_trait = leader_trait_ambassador_extra_envoys
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_commerce_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_commerce_focus } }
+		remove_trait = leader_trait_resolution_category_commerce_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_industry_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_industry_focus } }
+		remove_trait = leader_trait_resolution_category_industry_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_politics_traditions_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_politics_traditions_focus } }
+		remove_trait = leader_trait_resolution_category_politics_traditions_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_greatergood_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_greatergood_focus } }
+		remove_trait = leader_trait_resolution_category_greatergood_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_galacticreforms_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_galacticreforms_focus } }
+		remove_trait = leader_trait_resolution_category_galacticreforms_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_ecology_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_ecology_focus } }
+		remove_trait = leader_trait_resolution_category_ecology_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_galacticstudies_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_galacticstudies_focus } }
+		remove_trait = leader_trait_resolution_category_galacticstudies_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_divinity_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_divinity_focus } }
+		remove_trait = leader_trait_resolution_category_divinity_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_mutualdefense_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_mutualdefense_focus } }
+		remove_trait = leader_trait_resolution_category_mutualdefense_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_rulesofwar_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_rulesofwar_focus } }
+		remove_trait = leader_trait_resolution_category_rulesofwar_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_defenseprivatization_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_defenseprivatization_focus } }
+		remove_trait = leader_trait_resolution_category_defenseprivatization_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_intergalacticdirective_focus } }
+		remove_trait = leader_trait_resolution_category_intergalacticdirective_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_bureaucraticsurveillance_focus } }
+		remove_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_pre_ftl_stances_focus } }
+		remove_trait = leader_trait_resolution_category_pre_ftl_stances_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_resolution_category_sanctions_focus NOT = { has_leader_flag = bgltp_known_leader_trait_resolution_category_sanctions_focus } }
+		remove_trait = leader_trait_resolution_category_sanctions_focus
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_negotiator NOT = { has_leader_flag = bgltp_known_leader_trait_federal_negotiator } }
+		remove_trait = leader_trait_federal_negotiator
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_greeter NOT = { has_leader_flag = bgltp_known_leader_trait_federal_greeter } }
+		remove_trait = leader_trait_federal_greeter
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_sweet_talker NOT = { has_leader_flag = bgltp_known_leader_trait_federal_sweet_talker } }
+		remove_trait = leader_trait_federal_sweet_talker
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_federal_joint_navy NOT = { has_leader_flag = bgltp_known_leader_trait_federal_joint_navy } }
+		remove_trait = leader_trait_federal_joint_navy
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_planar_theorist NOT = { has_leader_flag = bgltp_known_leader_trait_planar_theorist } }
+		remove_trait = leader_trait_planar_theorist
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_academic_astral_rift_expert NOT = { has_leader_flag = bgltp_known_leader_trait_academic_astral_rift_expert } }
+		remove_trait = leader_trait_academic_astral_rift_expert
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_void_hunter NOT = { has_leader_flag = bgltp_known_leader_trait_void_hunter } }
+		remove_trait = leader_trait_void_hunter
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_void_tracker NOT = { has_leader_flag = bgltp_known_leader_trait_void_tracker } }
+		remove_trait = leader_trait_void_tracker
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_whispering_mind NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind } }
+		remove_trait = leader_trait_whispering_mind
+	}
+	bgltp_sync_leader_traits_effect = yes
+}
+
+# Complete one manual trait pick and handle queued picks if the leader gained multiple levels (Scope: Leader)
+bgltp_finish_pick_effect = {
+	bgltp_sync_leader_traits_effect = yes
+	change_variable = { which = bgltp_pending_picks value = -1 }
+	if = {
+		limit = { check_variable = { which = bgltp_pending_picks value > 0 } }
+		leader_event = { id = bgltp.10 }
+	}
+	else = {
+		set_variable = { which = bgltp_pending_picks value = 0 }
+		remove_leader_flag = bgltp_selecting_trait
+	}
+}
+

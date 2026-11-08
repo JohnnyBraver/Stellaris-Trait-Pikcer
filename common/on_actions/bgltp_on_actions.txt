@@ -1,0 +1,47 @@
+﻿on_game_start_country = {
+	events = {
+		bgltp.2
+	}
+}
+
+on_single_player_save_game_load = {
+	events = {
+		bgltp.3
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		bgltp.2
+	}
+}
+
+on_leader_hired = {
+	events = {
+		bgltp.4
+	}
+}
+
+on_leader_spawned = {
+	events = {
+		bgltp.4
+	}
+}
+
+on_leader_assigned = {
+	events = {
+		bgltp.4
+	}
+}
+
+on_ruler_set = {
+	events = {
+		bgltp.2
+	}
+}
+
+on_leader_level_up = {
+	events = {
+		bgltp.1
+	}
+}
