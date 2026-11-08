@@ -5573,3 +5573,98 @@ leader_event = {
 }
 
 
+
+# ==============================================================================
+# DEV TOOL: Console Event event bgltp.99 (Scope = Country)
+# Sets owned leaders to (Next Level - 1 XP) so they level up on the next XP tick
+# ==============================================================================
+country_event = {
+	id = bgltp.99
+	title = bgltp.99.name
+	desc = bgltp.99.desc
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_leader = {
+			limit = { is_ruler = yes has_base_skill < 10 }
+			save_event_target_as = bgltp_dev_ruler
+		}
+		random_owned_leader = {
+			limit = { is_councilor = yes is_ruler = no has_base_skill < 10 }
+			save_event_target_as = bgltp_dev_councilor
+		}
+		random_owned_leader = {
+			limit = { leader_class = commander has_base_skill < 10 }
+			save_event_target_as = bgltp_dev_commander
+		}
+		random_owned_leader = {
+			limit = { leader_class = scientist has_base_skill < 10 }
+			save_event_target_as = bgltp_dev_scientist
+		}
+		random_owned_leader = {
+			limit = { leader_class = official has_base_skill < 10 }
+			save_event_target_as = bgltp_dev_official
+		}
+	}
+
+	# Option 1: Ruler -> Next Level - 1 XP
+	option = {
+		name = bgltp.99.ruler
+		trigger = { exists = event_target:bgltp_dev_ruler }
+		event_target:bgltp_dev_ruler = {
+			add_experience = value:bgltp_xp_to_next_level_minus_one
+		}
+	}
+
+	# Option 2: Random Commander -> Next Level - 1 XP
+	option = {
+		name = bgltp.99.commander
+		trigger = { exists = event_target:bgltp_dev_commander }
+		event_target:bgltp_dev_commander = {
+			add_experience = value:bgltp_xp_to_next_level_minus_one
+		}
+	}
+
+	# Option 3: Random Scientist -> Next Level - 1 XP
+	option = {
+		name = bgltp.99.scientist
+		trigger = { exists = event_target:bgltp_dev_scientist }
+		event_target:bgltp_dev_scientist = {
+			add_experience = value:bgltp_xp_to_next_level_minus_one
+		}
+	}
+
+	# Option 4: Random Official -> Next Level - 1 XP
+	option = {
+		name = bgltp.99.official
+		trigger = { exists = event_target:bgltp_dev_official }
+		event_target:bgltp_dev_official = {
+			add_experience = value:bgltp_xp_to_next_level_minus_one
+		}
+	}
+
+	# Option 5: ALL Owned Leaders -> Next Level - 1 XP
+	option = {
+		name = bgltp.99.all
+		every_owned_leader = {
+			limit = { has_base_skill < 10 }
+			add_experience = value:bgltp_xp_to_next_level_minus_one
+		}
+	}
+
+	# Option 6: Give +5 XP to all leaders (immediately triggers level-up for any at Next Level - 1)
+	option = {
+		name = bgltp.99.nudge
+		every_owned_leader = {
+			limit = { has_base_skill < 10 }
+			add_experience = 5
+		}
+	}
+
+	# Close
+	option = {
+		name = bgltp.99.close
+		default_hide_option = yes
+	}
+}

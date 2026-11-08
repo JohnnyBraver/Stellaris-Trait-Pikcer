@@ -1,0 +1,17 @@
+﻿# Exact XP needed to reach (Next Level - 1 XP) for levels 1 through 9
+# Formula from 00_defines.txt: 100 * L + 150 * L * (L + 1)
+bgltp_xp_to_next_level_minus_one = {
+	base = 0
+	modifier = { add = 399 has_base_skill = 1 }
+	modifier = { add = 1099 has_base_skill = 2 }
+	modifier = { add = 2099 has_base_skill = 3 }
+	modifier = { add = 3399 has_base_skill = 4 }
+	modifier = { add = 4999 has_base_skill = 5 }
+	modifier = { add = 6899 has_base_skill = 6 }
+	modifier = { add = 9099 has_base_skill = 7 }
+	modifier = { add = 11599 has_base_skill = 8 }
+	modifier = { add = 14399 has_base_skill = 9 }
+	subtract = trigger:has_experience
+	round = floor
+	min = 0
+}
