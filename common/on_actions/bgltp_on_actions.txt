@@ -57,3 +57,42 @@ on_leader_level_up = {
 		bgltp.1
 	}
 }
+
+# ==============================================================================
+# EXPLORATION & COMBAT PRE-XP SYNC
+# ==============================================================================
+anomaly_success = {
+	events = {
+		bgltp.7
+	}
+}
+
+on_survey_planet = {
+	events = {
+		bgltp.7
+	}
+}
+
+on_arch_stage_finished = {
+	events = {
+		bgltp.8
+	}
+}
+
+on_arch_site_finished = {
+	events = {
+		bgltp.8
+	}
+}
+
+on_astral_rift_exploration_complete = {
+	events = {
+		bgltp.8
+	}
+}
+
+on_fleet_exit_battle = {
+	events = {
+		bgltp.8
+	}
+}

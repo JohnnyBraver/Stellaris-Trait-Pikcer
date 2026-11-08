@@ -143,6 +143,58 @@ country_event = {
 }
 
 # ==============================================================================
+# SYNC SCIENTIST ON ANOMALY SUCCESS & PLANET SURVEY (Scope = Ship)
+# ==============================================================================
+ship_event = {
+	id = bgltp.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = {
+			is_ai = no
+			has_paragon_dlc = no
+		}
+		OR = {
+			exists = leader
+			fleet = { exists = leader }
+		}
+	}
+	immediate = {
+		if = {
+			limit = { exists = leader }
+			leader = { bgltp_sync_leader_traits_effect = yes }
+		}
+		else_if = {
+			limit = { fleet = { exists = leader } }
+			fleet = { leader = { bgltp_sync_leader_traits_effect = yes } }
+		}
+	}
+}
+
+# ==============================================================================
+# SYNC LEADER ON DIG SITE, ASTRAL RIFT & BATTLE COMPLETION (Scope = Fleet)
+# ==============================================================================
+fleet_event = {
+	id = bgltp.8
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = leader
+		exists = owner
+		owner = {
+			is_ai = no
+			has_paragon_dlc = no
+		}
+	}
+	immediate = {
+		leader = {
+			bgltp_sync_leader_traits_effect = yes
+		}
+	}
+}
+
+# ==============================================================================
 # DEV TOOL: Console Event event bgltp.99 (Scope = Country)
 # Sets owned leaders to (Next Level - 1 XP) so they level up on the next XP tick
 # ==============================================================================
