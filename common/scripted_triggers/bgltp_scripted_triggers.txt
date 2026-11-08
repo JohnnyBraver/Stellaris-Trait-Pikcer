@@ -1,4 +1,4 @@
-﻿# Scripted trigger to check if a leader has any upgradable trait
+# Scripted trigger to check if a leader has any upgradable trait
 bgltp_has_any_upgradable_trait = {
 	OR = {
 		AND = { has_trait = leader_trait_scout NOT = { has_trait = leader_trait_scout_2 } }

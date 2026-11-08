@@ -1,4 +1,4 @@
-﻿namespace = bgltp
+namespace = bgltp
 
 # Intercept auto-assigned trait on leader level-up: try native yellow [+] picker first, fallback to 4-trait weighted popup if C++ auto-assigns
 country_event = {

@@ -1,4 +1,4 @@
-﻿# Exact XP needed to reach (Next Level - 1 XP) for levels 1 through 9
+# Exact XP needed to reach (Next Level - 1 XP) for levels 1 through 9
 # Formula from 00_defines.txt: 100 * L + 150 * L * (L + 1)
 bgltp_xp_to_next_level_minus_one = {
 	base = 0

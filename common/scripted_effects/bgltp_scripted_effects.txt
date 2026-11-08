@@ -1,4 +1,4 @@
-﻿# Sync known traits on a single leader (Scope: Leader)
+# Sync known traits on a single leader (Scope: Leader)
 bgltp_sync_leader_traits_effect = {
 	if = { limit = { has_trait = leader_trait_gifted } set_leader_flag = bgltp_known_leader_trait_gifted }
 	else = { remove_leader_flag = bgltp_known_leader_trait_gifted }
