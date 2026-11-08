@@ -545,7 +545,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_corvette_focus
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_corvette_focus }
 							NOT = { has_trait = trait_ruler_destroyer_focus }
 							NOT = { has_trait = trait_ruler_cruiser_focus }
@@ -567,7 +567,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_destroyer_focus
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_destroyer_focus }
 							NOT = { has_trait = trait_ruler_corvette_focus }
 							NOT = { has_trait = trait_ruler_cruiser_focus }
@@ -589,7 +589,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_cruiser_focus
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_cruiser_focus }
 							NOT = { has_trait = trait_ruler_corvette_focus }
 							NOT = { has_trait = trait_ruler_destroyer_focus }
@@ -611,7 +611,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_battleship_focus
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_battleship_focus }
 							NOT = { has_trait = trait_ruler_corvette_focus }
 							NOT = { has_trait = trait_ruler_destroyer_focus }
@@ -633,7 +633,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_fleet_logistician
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_fleet_logistician }
 							has_paragon_dlc = no
 						}
@@ -649,7 +649,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_skirmisher
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_skirmisher }
 							can_leader_get_council_trait_trigger = yes
 						}
@@ -665,7 +665,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_aggressive
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_aggressive }
 							NOT = { has_trait = leader_trait_cautious }
 						}
@@ -681,7 +681,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_cautious
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_cautious }
 							NOT = { has_trait = leader_trait_aggressive }
 						}
@@ -697,7 +697,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_unyielding
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_unyielding }
 							NOT = { has_trait = leader_trait_nervous }
 							NOT = { has_trait = leader_trait_nervous_2 }
@@ -735,7 +735,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_trickster
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_trickster }
 							NOT = { has_trait = leader_trait_unyielding }
 							NOT = { has_trait = leader_trait_reckless }
@@ -773,7 +773,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_gale_speed
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_gale_speed }
 							NOT = { has_trait = leader_trait_gale_speed_2 }
 							NOT = { has_trait = leader_trait_lethargic }
@@ -793,7 +793,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_fortifier
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_fortifier }
 							NOT = { has_trait = trait_ruler_fortifier_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -811,7 +811,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_armada_logistician
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_armada_logistician }
 							NOT = { has_trait = leader_trait_armada_logistician_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -829,7 +829,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_military_pioneer
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_military_pioneer }
 							can_leader_get_council_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
@@ -846,7 +846,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_defence_engineer
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_defence_engineer }
 							can_leader_get_council_trait_trigger = yes
 							trait_is_nomad_check = no
@@ -863,7 +863,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_butcher
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_butcher }
 							NOT = { has_trait = leader_trait_armchair_commander }
 							NOT = { has_trait = leader_trait_armchair_commander_2 }
@@ -882,7 +882,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_restrained
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_restrained }
 							NOT = { has_trait = leader_trait_victory_or_death }
 							NOT = { has_trait = leader_trait_victory_or_death_2 }
@@ -901,7 +901,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_heavy_hitter
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_heavy_hitter }
 							NOT = { has_trait = leader_trait_heavy_hitter_2 }
 							trait_is_crisis_faction_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_general }
@@ -918,7 +918,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_from_the_ranks
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_from_the_ranks }
 							NOT = { has_trait = trait_ruler_from_the_ranks_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -936,7 +936,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_recruiter
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_recruiter }
 							NOT = { has_trait = trait_ruler_recruiter_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -954,7 +954,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_warden
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_warden }
 							trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
 						}
@@ -1242,7 +1242,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_frontier_spirit
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = trait_ruler_frontier_spirit }
 							can_leader_get_council_trait_trigger = yes
 							has_paragon_dlc = no trait_is_wilderness_check = no
@@ -1279,7 +1279,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_fertility_preacher
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = trait_ruler_fertility_preacher }
 							can_leader_get_council_trait_trigger = yes
 							trait_is_crisis_faction_check = no trait_is_wilderness_check = no exists = owner owner = { OR = { NOT = { has_origin = origin_synthetic_fertility } AND = { has_origin = origin_synthetic_fertility has_technology = tech_synthetic_workers } } }
@@ -1318,7 +1318,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_iron_fist
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_iron_fist }
 							NOT = { has_trait = leader_trait_iron_fist_2 }
 							trait_is_crisis_faction_check = no trait_is_gestalt_check = no exists = owner owner = { allows_slavery = yes }
@@ -1355,7 +1355,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_enlister
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_enlister }
 							trait_is_crisis_faction_check = no
 						}
@@ -1371,7 +1371,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_shipwright
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_shipwright }
 							NOT = { has_trait = leader_trait_irenic }
 							NOT = { has_trait = leader_trait_irenic_2 }
@@ -1410,7 +1410,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_investor
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = trait_ruler_investor }
 							NOT = { has_trait = trait_ruler_investor_2 }
 							NOT = { has_trait = leader_trait_insider_trading }
@@ -1430,7 +1430,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_architectural_sense
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = trait_ruler_architectural_sense }
 							NOT = { has_trait = trait_ruler_architectural_sense_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1448,7 +1448,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_deep_connections
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = trait_ruler_deep_connections }
 							NOT = { has_trait = trait_ruler_deep_connections_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1466,7 +1466,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_reformer
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_reformer }
 							NOT = { has_trait = leader_trait_reformer_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1484,7 +1484,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_space_miner
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = trait_ruler_space_miner }
 							can_leader_get_council_trait_trigger = yes
 							has_paragon_dlc = no
@@ -1501,7 +1501,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_home_in_the_sky
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = trait_ruler_home_in_the_sky }
 							can_leader_get_council_trait_trigger = yes
 							has_paragon_dlc = no
@@ -1518,7 +1518,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_carefree
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_carefree }
 							NOT = { has_trait = leader_trait_carefree_2 }
 							NOT = { has_trait = leader_trait_meticulous }
@@ -1561,7 +1561,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_archaeologist
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_archaeologist }
 							NOT = { has_trait = leader_trait_archaeologist_2 }
 						}
@@ -1577,7 +1577,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_meticulous
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_meticulous }
 							NOT = { has_trait = leader_trait_meticulous_2 }
 							NOT = { has_trait = leader_trait_carefree }
@@ -1596,7 +1596,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_custom_AI_assistant
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_custom_AI_assistant }
 							NOT = { has_trait = leader_trait_sapient_AI_assistant }
 							exists = owner
@@ -1614,7 +1614,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_sapient_AI_assistant
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_sapient_AI_assistant }
 							NOT = { has_trait = leader_trait_custom_AI_assistant }
 							exists = owner
@@ -1633,7 +1633,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_academic_dig_site_expert
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_academic_dig_site_expert }
 							NOT = { has_trait = leader_trait_academic_dig_site_expert_2 }
 							OR = { has_paragon_dlc = no has_trait = subclass_scientist_scholar }
@@ -1650,7 +1650,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_academic_minor_artifacts_expert
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_academic_minor_artifacts_expert }
 							NOT = { has_trait = leader_trait_academic_minor_artifacts_expert_2 }
 							exists = owner
@@ -1669,7 +1669,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_maniacal
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_maniacal }
 							NOT = { has_trait = leader_trait_maniacal_2 }
 							NOT = { has_trait = leader_trait_paranoid }
@@ -1689,7 +1689,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_expansionist
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = trait_ruler_expansionist }
 							NOT = { has_trait = trait_ruler_expansionist_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1707,7 +1707,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_materials
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_materials }
 							NOT = { has_trait = leader_trait_expertise_materials_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1725,7 +1725,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_propulsion
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_propulsion }
 							NOT = { has_trait = leader_trait_expertise_propulsion_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1743,7 +1743,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_voidcraft
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_voidcraft }
 							NOT = { has_trait = leader_trait_expertise_voidcraft_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1761,7 +1761,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_industry
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_industry }
 							NOT = { has_trait = leader_trait_expertise_industry_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1779,7 +1779,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_field_manipulation
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_field_manipulation }
 							NOT = { has_trait = leader_trait_expertise_field_manipulation_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1797,7 +1797,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_particles
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_particles }
 							NOT = { has_trait = leader_trait_expertise_particles_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1815,7 +1815,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_computing
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_computing }
 							NOT = { has_trait = leader_trait_expertise_computing_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1833,7 +1833,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_psionics
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_psionics }
 							NOT = { has_trait = leader_trait_expertise_psionics_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1851,7 +1851,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_new_worlds
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_new_worlds }
 							NOT = { has_trait = leader_trait_expertise_new_worlds_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1869,7 +1869,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_statecraft
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_statecraft }
 							NOT = { has_trait = leader_trait_expertise_statecraft_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1887,7 +1887,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_biology
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_biology }
 							NOT = { has_trait = leader_trait_expertise_biology_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1905,7 +1905,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_military_theory
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_military_theory }
 							NOT = { has_trait = leader_trait_expertise_military_theory_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1923,7 +1923,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_expertise_archaeostudies
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_expertise_archaeostudies }
 							NOT = { has_trait = leader_trait_expertise_archaeostudies_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1941,7 +1941,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_principled
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_principled }
 							NOT = { has_trait = leader_trait_principled_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1958,7 +1958,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_fleet_organizer
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_fleet_organizer }
 							NOT = { has_trait = leader_trait_fleet_organizer_2 }
 							NOT = { has_trait = leader_trait_nervous }
@@ -1977,7 +1977,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_spycraft
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_spycraft }
 							NOT = { has_trait = leader_trait_spycraft_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -1994,7 +1994,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_spark_of_genius
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_spark_of_genius }
 							NOT = { has_trait = leader_trait_spark_of_genius_2 }
 							NOT = { has_trait = leader_trait_paranoid }
@@ -2033,7 +2033,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_trait_ruler_warlike
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = trait_ruler_warlike }
 							NOT = { has_trait = trait_ruler_warlike_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2137,7 +2137,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_ear_to_the_ground
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_ear_to_the_ground }
 							NOT = { has_trait = leader_trait_ambassador_ear_to_the_ground_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2155,7 +2155,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_whisper_networks
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_whisper_networks }
 							NOT = { has_trait = leader_trait_ambassador_whisper_networks_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2173,7 +2173,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_bully
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_bully }
 							NOT = { has_trait = leader_trait_ambassador_bully_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2191,7 +2191,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_favor_maker
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_favor_maker }
 							NOT = { has_trait = leader_trait_ambassador_favor_maker_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2209,7 +2209,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_pact_keeper
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_pact_keeper }
 							can_leader_get_council_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
@@ -2226,7 +2226,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_commercial_pact_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_commercial_pact_focus }
 							NOT = { has_trait = leader_trait_ambassador_commercial_pact_focus_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2244,7 +2244,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_research_pact_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_research_pact_focus }
 							NOT = { has_trait = leader_trait_ambassador_research_pact_focus_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2262,7 +2262,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_ambassador_extra_envoys
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_extra_envoys }
 							NOT = { has_trait = leader_trait_ambassador_extra_envoys_2 }
 							can_leader_get_council_trait_trigger = yes
@@ -2280,7 +2280,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_commerce_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_commerce_focus }
 							NOT = { has_trait = leader_trait_resolution_category_commerce_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2297,7 +2297,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_industry_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_industry_focus }
 							NOT = { has_trait = leader_trait_resolution_category_industry_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2314,7 +2314,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_politics_traditions_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_politics_traditions_focus }
 							NOT = { has_trait = leader_trait_resolution_category_politics_traditions_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2331,7 +2331,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_greatergood_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_greatergood_focus }
 							NOT = { has_trait = leader_trait_resolution_category_greatergood_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2348,7 +2348,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticreforms_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_galacticreforms_focus }
 							NOT = { has_trait = leader_trait_resolution_category_galacticreforms_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2365,7 +2365,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_ecology_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_ecology_focus }
 							NOT = { has_trait = leader_trait_resolution_category_ecology_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2382,7 +2382,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticstudies_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_galacticstudies_focus }
 							NOT = { has_trait = leader_trait_resolution_category_galacticstudies_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2399,7 +2399,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_divinity_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_divinity_focus }
 							NOT = { has_trait = leader_trait_resolution_category_divinity_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2416,7 +2416,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_mutualdefense_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_mutualdefense_focus }
 							NOT = { has_trait = leader_trait_resolution_category_mutualdefense_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2433,7 +2433,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_rulesofwar_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_rulesofwar_focus }
 							NOT = { has_trait = leader_trait_resolution_category_rulesofwar_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2450,7 +2450,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_defenseprivatization_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_defenseprivatization_focus }
 							NOT = { has_trait = leader_trait_resolution_category_defenseprivatization_focus_2 }
 							has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2467,7 +2467,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_intergalacticdirective_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus }
 							NOT = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus_2 }
 							has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2484,7 +2484,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_bureaucraticsurveillance_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus }
 							NOT = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus_2 }
 							has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2501,7 +2501,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_pre_ftl_stances_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus }
 							NOT = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus_2 }
 							has_first_contact_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2518,7 +2518,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_resolution_category_sanctions_focus
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_resolution_category_sanctions_focus }
 							NOT = { has_trait = leader_trait_resolution_category_sanctions_focus_2 }
 							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2535,7 +2535,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_federal_negotiator
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_federal_negotiator }
 							NOT = { has_trait = leader_trait_federal_negotiator_2 }
 							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2552,7 +2552,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_federal_greeter
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_federal_greeter }
 							NOT = { has_trait = leader_trait_federal_greeter_2 }
 							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2569,7 +2569,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_federal_sweet_talker
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_federal_sweet_talker }
 							NOT = { has_trait = leader_trait_federal_sweet_talker_2 }
 							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2586,7 +2586,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_federal_joint_navy
 						NAND = {
-							leader_class = o
+							leader_class = official
 							NOT = { has_trait = leader_trait_federal_joint_navy }
 							NOT = { has_trait = leader_trait_federal_joint_navy_2 }
 							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2603,7 +2603,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_planar_theorist
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_planar_theorist }
 							NOT = { has_trait = leader_trait_planar_theorist_2 }
 							exists = owner
@@ -2623,7 +2623,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_academic_astral_rift_expert
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_academic_astral_rift_expert }
 							NOT = { has_trait = leader_trait_academic_astral_rift_expert_2 }
 							exists = owner
@@ -2642,7 +2642,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_void_hunter
 						NAND = {
-							leader_class = c
+							leader_class = commander
 							NOT = { has_trait = leader_trait_void_hunter }
 							NOT = { has_trait = leader_trait_void_hunter_2 }
 							has_grand_archive_dlc = yes exists = owner owner = { has_encountered_any_fauna = yes }
@@ -2659,7 +2659,7 @@ bgltp_roll_4_traits_effect = {
 					OR = {
 						has_leader_flag = bgltp_offered_leader_trait_void_tracker
 						NAND = {
-							leader_class = s
+							leader_class = scientist
 							NOT = { has_trait = leader_trait_void_tracker }
 							NOT = { has_trait = leader_trait_void_tracker_2 }
 							exists = owner

@@ -11,12 +11,19 @@ country_event = {
 		exists = from
 		from = {
 			is_pool_leader = no
-			NOT = { has_leader_flag = bgltp_granting_native_pick }
+			NOT = {
+				has_leader_flag = bgltp_granting_native_pick
+				has_leader_flag = retirement_is_default
+				has_leader_flag = block_leader_level_up_events
+			}
 			OR = {
 				leader_class = commander
 				leader_class = scientist
 				leader_class = official
 			}
+		}
+		any_owned_leader = {
+			is_same_value = root.from
 		}
 	}
 	immediate = {
@@ -24,29 +31,13 @@ country_event = {
 			# 1. Revert the random trait that C++ auto-picked on level-up
 			bgltp_revert_auto_trait_effect = yes
 
-			# 2. Attempt to grant the native C++ yellow [+] trait selection (set_skill = lvl - 1, add_skill = 1)
-			set_leader_flag = bgltp_granting_native_pick
-			export_trigger_value_to_variable = {
-				trigger = has_base_skill
-				variable = bgltp_lvl
-			}
-			change_variable = { which = bgltp_lvl value = -1 }
-			set_skill = bgltp_lvl
-			add_skill = 1
-			clear_variable = bgltp_lvl
-			remove_leader_flag = bgltp_granting_native_pick
-
-			# 3. If add_skill = 1 auto-picked a trait instead of lighting up the yellow [+] button, revert it and open our 4-trait weighted popup!
+			# 2. Roll 4 role-weighted eligible traits and open our level-up trait selection popup
+			change_variable = { which = bgltp_pending_picks value = 1 }
 			if = {
-				limit = { bgltp_has_unknown_trait = yes }
-				bgltp_revert_auto_trait_effect = yes
-				change_variable = { which = bgltp_pending_picks value = 1 }
-				if = {
-					limit = { NOT = { has_leader_flag = bgltp_selecting_trait } }
-					set_leader_flag = bgltp_selecting_trait
-					bgltp_roll_4_traits_effect = yes
-					leader_event = { id = bgltp.10 }
-				}
+				limit = { NOT = { has_leader_flag = bgltp_selecting_trait } }
+				set_leader_flag = bgltp_selecting_trait
+				bgltp_roll_4_traits_effect = yes
+				leader_event = { id = bgltp.10 }
 			}
 		}
 	}
@@ -5587,23 +5578,23 @@ country_event = {
 
 	immediate = {
 		random_owned_leader = {
-			limit = { is_ruler = yes has_base_skill < 10 }
+			limit = { is_pool_leader = no is_ruler = yes has_base_skill < 10 }
 			save_event_target_as = bgltp_dev_ruler
 		}
 		random_owned_leader = {
-			limit = { is_councilor = yes is_ruler = no has_base_skill < 10 }
+			limit = { is_pool_leader = no is_councilor = yes is_ruler = no has_base_skill < 10 }
 			save_event_target_as = bgltp_dev_councilor
 		}
 		random_owned_leader = {
-			limit = { leader_class = commander has_base_skill < 10 }
+			limit = { is_pool_leader = no NOT = { has_leader_flag = retirement_is_default } leader_class = commander has_base_skill < 10 }
 			save_event_target_as = bgltp_dev_commander
 		}
 		random_owned_leader = {
-			limit = { leader_class = scientist has_base_skill < 10 }
+			limit = { is_pool_leader = no NOT = { has_leader_flag = retirement_is_default } leader_class = scientist has_base_skill < 10 }
 			save_event_target_as = bgltp_dev_scientist
 		}
 		random_owned_leader = {
-			limit = { leader_class = official has_base_skill < 10 }
+			limit = { is_pool_leader = no NOT = { has_leader_flag = retirement_is_default } leader_class = official has_base_skill < 10 }
 			save_event_target_as = bgltp_dev_official
 		}
 	}
@@ -5648,7 +5639,16 @@ country_event = {
 	option = {
 		name = bgltp.99.all
 		every_owned_leader = {
-			limit = { has_base_skill < 10 }
+			limit = {
+				is_pool_leader = no
+				NOT = { has_leader_flag = retirement_is_default }
+				has_base_skill < 10
+				OR = {
+					leader_class = commander
+					leader_class = scientist
+					leader_class = official
+				}
+			}
 			add_experience = value:bgltp_xp_to_next_level_minus_one
 		}
 	}
@@ -5657,7 +5657,16 @@ country_event = {
 	option = {
 		name = bgltp.99.nudge
 		every_owned_leader = {
-			limit = { has_base_skill < 10 }
+			limit = {
+				is_pool_leader = no
+				NOT = { has_leader_flag = retirement_is_default }
+				has_base_skill < 10
+				OR = {
+					leader_class = commander
+					leader_class = scientist
+					leader_class = official
+				}
+			}
 			add_experience = 5
 		}
 	}
