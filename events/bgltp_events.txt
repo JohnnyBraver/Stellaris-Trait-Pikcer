@@ -226,7 +226,7 @@ country_event = {
 		name = bgltp.99.ruler
 		trigger = { exists = event_target:bgltp_dev_ruler }
 		event_target:bgltp_dev_ruler = {
-			add_experience = value:bgltp_xp_to_next_level_minus_one
+			bgltp_grant_xp_to_next_level_minus_one_effect = yes
 		}
 	}
 
@@ -235,7 +235,7 @@ country_event = {
 		name = bgltp.99.commander
 		trigger = { exists = event_target:bgltp_dev_commander }
 		event_target:bgltp_dev_commander = {
-			add_experience = value:bgltp_xp_to_next_level_minus_one
+			bgltp_grant_xp_to_next_level_minus_one_effect = yes
 		}
 	}
 
@@ -244,7 +244,7 @@ country_event = {
 		name = bgltp.99.scientist
 		trigger = { exists = event_target:bgltp_dev_scientist }
 		event_target:bgltp_dev_scientist = {
-			add_experience = value:bgltp_xp_to_next_level_minus_one
+			bgltp_grant_xp_to_next_level_minus_one_effect = yes
 		}
 	}
 
@@ -253,7 +253,7 @@ country_event = {
 		name = bgltp.99.official
 		trigger = { exists = event_target:bgltp_dev_official }
 		event_target:bgltp_dev_official = {
-			add_experience = value:bgltp_xp_to_next_level_minus_one
+			bgltp_grant_xp_to_next_level_minus_one_effect = yes
 		}
 	}
 
@@ -266,16 +266,17 @@ country_event = {
 				NOT = { has_leader_flag = retirement_is_default }
 				has_base_skill < 10
 				OR = {
+					is_ruler = yes
 					leader_class = commander
 					leader_class = scientist
 					leader_class = official
 				}
 			}
-			add_experience = value:bgltp_xp_to_next_level_minus_one
+			bgltp_grant_xp_to_next_level_minus_one_effect = yes
 		}
 	}
 
-	# Option 6: Give +5 XP to all leaders (immediately triggers level-up for any at Next Level - 1)
+	# Option 6: Nudge (+5 XP to All leaders on the brink)
 	option = {
 		name = bgltp.99.nudge
 		every_owned_leader = {
@@ -284,6 +285,7 @@ country_event = {
 				NOT = { has_leader_flag = retirement_is_default }
 				has_base_skill < 10
 				OR = {
+					is_ruler = yes
 					leader_class = commander
 					leader_class = scientist
 					leader_class = official
@@ -293,9 +295,8 @@ country_event = {
 		}
 	}
 
-	# Close
+	# Option 7: Close (Cleanly dismiss dialog)
 	option = {
 		name = bgltp.99.close
-		default_hide_option = yes
 	}
 }

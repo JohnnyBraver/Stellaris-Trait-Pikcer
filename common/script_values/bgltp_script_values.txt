@@ -1,16 +1,20 @@
-# Exact XP needed to reach (Next Level - 1 XP) for levels 1 through 9
-# Vanilla Cygnus v4.5.3 LEADER_EXP_COSTS: { 200 475 825 1250 1750 2325 2975 3700 4500 }
-bgltp_xp_to_next_level_minus_one = {
+# Cumulative XP needed to reach (Next Level - 1 XP) for levels 1 through 9
+# Base Game Cygnus v4.5.3 cumulative thresholds: 400, 1100, 2100, 3400, 5000, 6900, 9100, 11600, 14400
+bgltp_target_xp_threshold = {
 	base = 0
-	modifier = { add = 199 has_base_skill = 1 }
-	modifier = { add = 474 has_base_skill = 2 }
-	modifier = { add = 824 has_base_skill = 3 }
-	modifier = { add = 1249 has_base_skill = 4 }
-	modifier = { add = 1749 has_base_skill = 5 }
-	modifier = { add = 2324 has_base_skill = 6 }
-	modifier = { add = 2974 has_base_skill = 7 }
-	modifier = { add = 3699 has_base_skill = 8 }
-	modifier = { add = 4499 has_base_skill = 9 }
+	modifier = { add = 399 has_base_skill = 1 }
+	modifier = { add = 1099 has_base_skill = 2 }
+	modifier = { add = 2099 has_base_skill = 3 }
+	modifier = { add = 3399 has_base_skill = 4 }
+	modifier = { add = 4999 has_base_skill = 5 }
+	modifier = { add = 6899 has_base_skill = 6 }
+	modifier = { add = 9099 has_base_skill = 7 }
+	modifier = { add = 11599 has_base_skill = 8 }
+	modifier = { add = 14399 has_base_skill = 9 }
+}
+
+bgltp_xp_to_next_level_minus_one = {
+	base = value:bgltp_target_xp_threshold
 	subtract = trigger:has_experience
 	round = floor
 	min = 0

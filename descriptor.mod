@@ -5,4 +5,4 @@ tags={
 	"Utilities"
 }
 name="Base Game Leader Trait Picker"
-supported_version="v4.*.*"
+supported_version="4.*"
