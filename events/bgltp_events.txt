@@ -67,7 +67,7 @@ country_event = {
 }
 
 # ==============================================================================
-# SYNC ON GAME START & RECRUITMENT
+# SYNC ON MONTHLY PULSE, GAME START & RULER CHANGE (Scope = Country)
 # ==============================================================================
 country_event = {
 	id = bgltp.2
@@ -84,14 +84,12 @@ country_event = {
 		every_pool_leader = {
 			bgltp_sync_leader_traits_effect = yes
 		}
-		if = {
-			limit = { NOT = { has_country_flag = bgltp_pulse_active } }
-			set_country_flag = bgltp_pulse_active
-			country_event = { id = bgltp.6 days = 2 }
-		}
 	}
 }
 
+# ==============================================================================
+# SYNC ON SAVE GAME LOAD (Scope = Global)
+# ==============================================================================
 event = {
 	id = bgltp.3
 	hide_window = yes
@@ -105,15 +103,13 @@ event = {
 			every_pool_leader = {
 				bgltp_sync_leader_traits_effect = yes
 			}
-			if = {
-				limit = { NOT = { has_country_flag = bgltp_pulse_active } }
-				set_country_flag = bgltp_pulse_active
-				country_event = { id = bgltp.6 days = 2 }
-			}
 		}
 	}
 }
 
+# ==============================================================================
+# SYNC ON LEADER ASSIGNMENT / UNASSIGNMENT / HIRE (Scope = Leader)
+# ==============================================================================
 leader_event = {
 	id = bgltp.4
 	hide_window = yes
@@ -127,6 +123,9 @@ leader_event = {
 	}
 }
 
+# ==============================================================================
+# SYNC ON LEADER SPAWN / POOL ADD (Scope = Country, From = Leader)
+# ==============================================================================
 country_event = {
 	id = bgltp.5
 	hide_window = yes
@@ -143,22 +142,6 @@ country_event = {
 	}
 }
 
-country_event = {
-	id = bgltp.6
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		is_ai = no
-		has_paragon_dlc = no
-	}
-	immediate = {
-		every_owned_leader = {
-			bgltp_sync_leader_traits_effect = yes
-		}
-		country_event = { id = bgltp.6 days = 2 }
-	}
-}
-
 # ==============================================================================
 # DEV TOOL: Console Event event bgltp.99 (Scope = Country)
 # Sets owned leaders to (Next Level - 1 XP) so they level up on the next XP tick
@@ -171,6 +154,10 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		# Sync all owned leaders immediately so newly picked traits are registered before testing
+		every_owned_leader = {
+			bgltp_sync_leader_traits_effect = yes
+		}
 		random_owned_leader = {
 			limit = { is_pool_leader = no is_ruler = yes has_base_skill < 10 }
 			save_event_target_as = bgltp_dev_ruler

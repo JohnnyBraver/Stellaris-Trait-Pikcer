@@ -13,8 +13,8 @@ Allows manual leader trait selection upon level-up in the **Stellaris Base Game*
   - When a leader levels up via XP (`on_leader_level_up`), the mod reverts the random trait auto-assigned by the C++ engine and triggers the native C++ trait selection drawer (`available_trait = 4 weighted options + existing trait upgrades`).
 - **Level-Up Toast Notification:**
   - Sends a standard toast message notification (`MESSAGE_LEADER_LEVEL_UP`) alerting the player that the leader leveled up and has a trait selection waiting.
-- **2-Day Known Trait Synchronization:**
-  - A background pulse (`bgltp.6`) automatically registers newly picked traits into the mod's known traits registry every 2 in-game days, protecting player choices from future level-up resets.
+- **Zero Background Loops (Monthly Pulse & Assignment Sync):**
+  - Newly picked traits are automatically registered via native game triggers: on the 1st of every month (`on_monthly_pulse_country`), on leader assignment/reassignment (`on_leader_assigned`), upon hiring (`on_leader_hired`), and on game load. No custom background timers or event loops are needed.
 - **Starting Skill Bonus Compatible (*War Machines*, *Distinguished Admiralty*, etc.):**
   - Leaders generated in the recruitment pool with higher starting levels keep their rolled traits without re-prompting.
 - **Save-Game Compatible & Negative Traits Untouched.**
