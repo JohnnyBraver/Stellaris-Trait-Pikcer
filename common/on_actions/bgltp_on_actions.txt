@@ -22,15 +22,27 @@ on_leader_hired = {
 	}
 }
 
-on_leader_spawned = {
+on_leader_assigned = {
 	events = {
 		bgltp.4
 	}
 }
 
-on_leader_assigned = {
+on_leader_unassigned = {
 	events = {
 		bgltp.4
+	}
+}
+
+on_leader_spawned = {
+	events = {
+		bgltp.5
+	}
+}
+
+on_added_to_leader_pool = {
+	events = {
+		bgltp.5
 	}
 }
 

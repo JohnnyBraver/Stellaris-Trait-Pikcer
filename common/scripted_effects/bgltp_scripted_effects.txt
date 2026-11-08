@@ -416,6 +416,2288 @@ bgltp_sync_leader_traits_effect = {
 	else = { remove_leader_flag = bgltp_known_leader_trait_whispering_mind_3 }
 }
 
+# Clear rolled 4-trait draw flags on a single leader (Scope: Leader)
+bgltp_clear_offered_traits_effect = {
+	remove_leader_flag = bgltp_offered_trait_ruler_corvette_focus
+	remove_leader_flag = bgltp_offered_trait_ruler_destroyer_focus
+	remove_leader_flag = bgltp_offered_trait_ruler_cruiser_focus
+	remove_leader_flag = bgltp_offered_trait_ruler_battleship_focus
+	remove_leader_flag = bgltp_offered_leader_trait_fleet_logistician
+	remove_leader_flag = bgltp_offered_leader_trait_skirmisher
+	remove_leader_flag = bgltp_offered_leader_trait_aggressive
+	remove_leader_flag = bgltp_offered_leader_trait_cautious
+	remove_leader_flag = bgltp_offered_leader_trait_unyielding
+	remove_leader_flag = bgltp_offered_leader_trait_engineer
+	remove_leader_flag = bgltp_offered_leader_trait_trickster
+	remove_leader_flag = bgltp_offered_leader_trait_scout
+	remove_leader_flag = bgltp_offered_leader_trait_gale_speed
+	remove_leader_flag = bgltp_offered_trait_ruler_fortifier
+	remove_leader_flag = bgltp_offered_leader_trait_armada_logistician
+	remove_leader_flag = bgltp_offered_trait_ruler_military_pioneer
+	remove_leader_flag = bgltp_offered_leader_trait_defence_engineer
+	remove_leader_flag = bgltp_offered_leader_trait_butcher
+	remove_leader_flag = bgltp_offered_leader_trait_restrained
+	remove_leader_flag = bgltp_offered_leader_trait_heavy_hitter
+	remove_leader_flag = bgltp_offered_trait_ruler_from_the_ranks
+	remove_leader_flag = bgltp_offered_trait_ruler_recruiter
+	remove_leader_flag = bgltp_offered_leader_trait_warden
+	remove_leader_flag = bgltp_offered_leader_trait_resilient
+	remove_leader_flag = bgltp_offered_leader_trait_adaptable
+	remove_leader_flag = bgltp_offered_leader_trait_politician
+	remove_leader_flag = bgltp_offered_leader_trait_capitalist
+	remove_leader_flag = bgltp_offered_leader_trait_private_mines
+	remove_leader_flag = bgltp_offered_leader_trait_homesteader
+	remove_leader_flag = bgltp_offered_trait_ruler_champion_of_the_people
+	remove_leader_flag = bgltp_offered_leader_trait_scrapper
+	remove_leader_flag = bgltp_offered_leader_trait_entrepreneur
+	remove_leader_flag = bgltp_offered_leader_trait_venerated
+	remove_leader_flag = bgltp_offered_trait_ruler_frontier_spirit
+	remove_leader_flag = bgltp_offered_leader_trait_bureaucrat
+	remove_leader_flag = bgltp_offered_trait_ruler_fertility_preacher
+	remove_leader_flag = bgltp_offered_leader_trait_righteous
+	remove_leader_flag = bgltp_offered_leader_trait_iron_fist
+	remove_leader_flag = bgltp_offered_leader_trait_environmental_engineer
+	remove_leader_flag = bgltp_offered_leader_trait_enlister
+	remove_leader_flag = bgltp_offered_leader_trait_shipwright
+	remove_leader_flag = bgltp_offered_leader_trait_architectural_interest
+	remove_leader_flag = bgltp_offered_trait_ruler_investor
+	remove_leader_flag = bgltp_offered_trait_ruler_architectural_sense
+	remove_leader_flag = bgltp_offered_trait_ruler_deep_connections
+	remove_leader_flag = bgltp_offered_leader_trait_reformer
+	remove_leader_flag = bgltp_offered_trait_ruler_space_miner
+	remove_leader_flag = bgltp_offered_trait_ruler_home_in_the_sky
+	remove_leader_flag = bgltp_offered_leader_trait_carefree
+	remove_leader_flag = bgltp_offered_leader_trait_roamer
+	remove_leader_flag = bgltp_offered_leader_trait_archaeologist
+	remove_leader_flag = bgltp_offered_leader_trait_meticulous
+	remove_leader_flag = bgltp_offered_leader_trait_custom_AI_assistant
+	remove_leader_flag = bgltp_offered_leader_trait_sapient_AI_assistant
+	remove_leader_flag = bgltp_offered_leader_trait_academic_dig_site_expert
+	remove_leader_flag = bgltp_offered_leader_trait_academic_minor_artifacts_expert
+	remove_leader_flag = bgltp_offered_leader_trait_maniacal
+	remove_leader_flag = bgltp_offered_trait_ruler_expansionist
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_materials
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_propulsion
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_voidcraft
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_industry
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_field_manipulation
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_particles
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_computing
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_psionics
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_new_worlds
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_statecraft
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_biology
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_military_theory
+	remove_leader_flag = bgltp_offered_leader_trait_expertise_archaeostudies
+	remove_leader_flag = bgltp_offered_leader_trait_principled
+	remove_leader_flag = bgltp_offered_leader_trait_fleet_organizer
+	remove_leader_flag = bgltp_offered_leader_trait_spycraft
+	remove_leader_flag = bgltp_offered_leader_trait_spark_of_genius
+	remove_leader_flag = bgltp_offered_trait_ruler_industrialist
+	remove_leader_flag = bgltp_offered_trait_ruler_warlike
+	remove_leader_flag = bgltp_offered_trait_ruler_charismatic
+	remove_leader_flag = bgltp_offered_trait_ruler_feedback_loop
+	remove_leader_flag = bgltp_offered_trait_ruler_logistic_understanding
+	remove_leader_flag = bgltp_offered_trait_ruler_eye_for_talent
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_ear_to_the_ground
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_whisper_networks
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_bully
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_favor_maker
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_pact_keeper
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_commercial_pact_focus
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_research_pact_focus
+	remove_leader_flag = bgltp_offered_leader_trait_ambassador_extra_envoys
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_commerce_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_industry_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_politics_traditions_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_greatergood_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticreforms_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_ecology_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticstudies_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_divinity_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_mutualdefense_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_rulesofwar_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_defenseprivatization_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_intergalacticdirective_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_bureaucraticsurveillance_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_pre_ftl_stances_focus
+	remove_leader_flag = bgltp_offered_leader_trait_resolution_category_sanctions_focus
+	remove_leader_flag = bgltp_offered_leader_trait_federal_negotiator
+	remove_leader_flag = bgltp_offered_leader_trait_federal_greeter
+	remove_leader_flag = bgltp_offered_leader_trait_federal_sweet_talker
+	remove_leader_flag = bgltp_offered_leader_trait_federal_joint_navy
+	remove_leader_flag = bgltp_offered_leader_trait_planar_theorist
+	remove_leader_flag = bgltp_offered_leader_trait_academic_astral_rift_expert
+	remove_leader_flag = bgltp_offered_leader_trait_void_hunter
+	remove_leader_flag = bgltp_offered_leader_trait_void_tracker
+	remove_leader_flag = bgltp_offered_leader_trait_whispering_mind
+}
+
+# Roll 4 random eligible non-upgrade traits for the fallback popup (Scope: Leader)
+bgltp_roll_4_traits_effect = {
+	bgltp_clear_offered_traits_effect = yes
+	while = {
+		count = 4
+		random_list = {
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_corvette_focus
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_corvette_focus }
+							NOT = { has_trait = trait_ruler_destroyer_focus }
+							NOT = { has_trait = trait_ruler_cruiser_focus }
+							NOT = { has_trait = trait_ruler_battleship_focus }
+							exists = owner
+							owner = { has_technology = tech_destroyers }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_corvette_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_destroyer_focus
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_destroyer_focus }
+							NOT = { has_trait = trait_ruler_corvette_focus }
+							NOT = { has_trait = trait_ruler_cruiser_focus }
+							NOT = { has_trait = trait_ruler_battleship_focus }
+							exists = owner
+							owner = { has_technology = tech_destroyers }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_destroyer_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_cruiser_focus
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_cruiser_focus }
+							NOT = { has_trait = trait_ruler_corvette_focus }
+							NOT = { has_trait = trait_ruler_destroyer_focus }
+							NOT = { has_trait = trait_ruler_battleship_focus }
+							exists = owner
+							owner = { has_technology = tech_cruisers }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_cruiser_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_battleship_focus
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_battleship_focus }
+							NOT = { has_trait = trait_ruler_corvette_focus }
+							NOT = { has_trait = trait_ruler_destroyer_focus }
+							NOT = { has_trait = trait_ruler_cruiser_focus }
+							exists = owner
+							owner = { has_technology = tech_battleships }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_battleship_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_fleet_logistician
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_fleet_logistician }
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_fleet_logistician
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_skirmisher
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_skirmisher }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_skirmisher
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_aggressive
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_aggressive }
+							NOT = { has_trait = leader_trait_cautious }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_aggressive
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_cautious
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_cautious }
+							NOT = { has_trait = leader_trait_aggressive }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_cautious
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_unyielding
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_unyielding }
+							NOT = { has_trait = leader_trait_nervous }
+							NOT = { has_trait = leader_trait_nervous_2 }
+							NOT = { has_trait = leader_trait_slipshod }
+							NOT = { has_trait = leader_trait_slipshod_2 }
+							NOT = { has_trait = leader_trait_trickster }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_unyielding
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_engineer
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+							}
+							NOT = { has_trait = leader_trait_engineer }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_engineer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_trickster
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_trickster }
+							NOT = { has_trait = leader_trait_unyielding }
+							NOT = { has_trait = leader_trait_reckless }
+							NOT = { has_trait = leader_trait_reckless_2 }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_trickster
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_scout
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+							}
+							NOT = { has_trait = leader_trait_scout }
+							NOT = { has_trait = leader_trait_scout_2 }
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_scout
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_gale_speed
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_gale_speed }
+							NOT = { has_trait = leader_trait_gale_speed_2 }
+							NOT = { has_trait = leader_trait_lethargic }
+							NOT = { has_trait = leader_trait_lethargic_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor exists = event_target:officer }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_gale_speed
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_fortifier
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_fortifier }
+							NOT = { has_trait = trait_ruler_fortifier_2 }
+							can_leader_get_council_trait_trigger = yes
+							owner = { is_nomadic = no } OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_fortifier
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_armada_logistician
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_armada_logistician }
+							NOT = { has_trait = leader_trait_armada_logistician_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_armada_logistician
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_military_pioneer
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_military_pioneer }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_military_pioneer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_defence_engineer
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_defence_engineer }
+							can_leader_get_council_trait_trigger = yes
+							trait_is_nomad_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_defence_engineer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_butcher
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_butcher }
+							NOT = { has_trait = leader_trait_armchair_commander }
+							NOT = { has_trait = leader_trait_armchair_commander_2 }
+							NOT = { has_trait = leader_trait_restrained }
+							trait_is_crisis_faction_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_butcher
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_restrained
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_restrained }
+							NOT = { has_trait = leader_trait_victory_or_death }
+							NOT = { has_trait = leader_trait_victory_or_death_2 }
+							NOT = { has_trait = leader_trait_butcher }
+							trait_is_crisis_faction_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_restrained
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_heavy_hitter
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_heavy_hitter }
+							NOT = { has_trait = leader_trait_heavy_hitter_2 }
+							trait_is_crisis_faction_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_general }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_heavy_hitter
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_from_the_ranks
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_from_the_ranks }
+							NOT = { has_trait = trait_ruler_from_the_ranks_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_from_the_ranks
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_recruiter
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_recruiter }
+							NOT = { has_trait = trait_ruler_recruiter_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_recruiter
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_warden
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_warden }
+							trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_warden
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resilient
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_resilient }
+							trait_is_crisis_faction_check = no is_immortal = no owner? = { is_toxic_baths_empire = no }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resilient
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_adaptable
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_adaptable }
+							NOT = { has_trait = leader_trait_stubborn }
+							NOT = { has_trait = leader_trait_stubborn_2 }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_adaptable
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_politician
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_politician }
+							can_leader_get_council_trait_trigger = yes
+							OR = { is_gestalt = no AND = { is_gestalt = yes is_councilor = yes } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_politician
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_capitalist
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_capitalist }
+							NOT = { has_trait = leader_trait_capitalist_2 }
+							NOT = { has_trait = leader_trait_private_mines }
+							NOT = { has_trait = leader_trait_private_mines_2 }
+							NOT = { has_trait = leader_trait_homesteader }
+							NOT = { has_trait = leader_trait_homesteader_2 }
+							NOT = { has_trait = leader_trait_scrapper }
+							NOT = { has_trait = leader_trait_scrapper_2 }
+							NOT = { has_trait = leader_trait_entrepreneur }
+							NOT = { has_trait = leader_trait_entrepreneur_2 }
+							NOT = { has_trait = leader_trait_venerated }
+							NOT = { has_trait = leader_trait_venerated_2 }
+							trait_is_crisis_faction_check = no trait_is_wilderness_check = no has_global_flag = game_started has_base_skill > 1 NOT = { has_leader_flag = block_homeworld_traits }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_capitalist
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_private_mines
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_private_mines }
+							NOT = { has_trait = leader_trait_private_mines_2 }
+							NOT = { has_trait = leader_trait_capitalist }
+							NOT = { has_trait = leader_trait_capitalist_2 }
+							NOT = { has_trait = leader_trait_homesteader }
+							NOT = { has_trait = leader_trait_homesteader_2 }
+							NOT = { has_trait = leader_trait_scrapper }
+							NOT = { has_trait = leader_trait_scrapper_2 }
+							NOT = { has_trait = leader_trait_entrepreneur }
+							NOT = { has_trait = leader_trait_entrepreneur_2 }
+							NOT = { has_trait = leader_trait_venerated }
+							NOT = { has_trait = leader_trait_venerated_2 }
+							trait_is_crisis_faction_check = no trait_is_wilderness_check = no trait_is_nomad_check = no has_global_flag = game_started has_base_skill > 1 NOT = { has_leader_flag = block_homeworld_traits }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_private_mines
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_homesteader
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_homesteader }
+							NOT = { has_trait = leader_trait_homesteader_2 }
+							NOT = { has_trait = leader_trait_capitalist }
+							NOT = { has_trait = leader_trait_capitalist_2 }
+							NOT = { has_trait = leader_trait_private_mines }
+							NOT = { has_trait = leader_trait_private_mines_2 }
+							NOT = { has_trait = leader_trait_scrapper }
+							NOT = { has_trait = leader_trait_scrapper_2 }
+							NOT = { has_trait = leader_trait_entrepreneur }
+							NOT = { has_trait = leader_trait_entrepreneur_2 }
+							NOT = { has_trait = leader_trait_venerated }
+							NOT = { has_trait = leader_trait_venerated_2 }
+							trait_is_crisis_faction_check = no trait_is_wilderness_check = no has_global_flag = game_started has_base_skill > 1 exists = owner owner = { country_uses_food = yes } NOT = { has_leader_flag = block_homeworld_traits }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_homesteader
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_champion_of_the_people
+						NAND = {
+							OR = {
+								leader_class = scientist
+								leader_class = official
+								leader_class = commander
+							}
+							NOT = { has_trait = trait_ruler_champion_of_the_people }
+							NOT = { has_trait = trait_ruler_champion_of_the_people_2 }
+							NOT = { has_trait = leader_trait_tyrannical }
+							NOT = { has_trait = leader_trait_tyrannical_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_gestalt = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_champion_of_the_people
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_scrapper
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_scrapper }
+							NOT = { has_trait = leader_trait_scrapper_2 }
+							NOT = { has_trait = leader_trait_capitalist }
+							NOT = { has_trait = leader_trait_capitalist_2 }
+							NOT = { has_trait = leader_trait_private_mines }
+							NOT = { has_trait = leader_trait_private_mines_2 }
+							NOT = { has_trait = leader_trait_homesteader }
+							NOT = { has_trait = leader_trait_homesteader_2 }
+							NOT = { has_trait = leader_trait_entrepreneur }
+							NOT = { has_trait = leader_trait_entrepreneur_2 }
+							NOT = { has_trait = leader_trait_venerated }
+							NOT = { has_trait = leader_trait_venerated_2 }
+							trait_is_crisis_faction_check = no trait_is_wilderness_check = no has_global_flag = game_started has_base_skill > 1 NOT = { has_leader_flag = block_homeworld_traits }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_scrapper
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_entrepreneur
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_entrepreneur }
+							NOT = { has_trait = leader_trait_entrepreneur_2 }
+							NOT = { has_trait = leader_trait_capitalist }
+							NOT = { has_trait = leader_trait_capitalist_2 }
+							NOT = { has_trait = leader_trait_private_mines }
+							NOT = { has_trait = leader_trait_private_mines_2 }
+							NOT = { has_trait = leader_trait_homesteader }
+							NOT = { has_trait = leader_trait_homesteader_2 }
+							NOT = { has_trait = leader_trait_scrapper }
+							NOT = { has_trait = leader_trait_scrapper_2 }
+							NOT = { has_trait = leader_trait_venerated }
+							NOT = { has_trait = leader_trait_venerated_2 }
+							trait_is_crisis_faction_check = no has_global_flag = game_started has_base_skill > 1 exists = owner owner = { country_uses_consumer_goods = yes } NOT = { has_leader_flag = block_homeworld_traits }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_entrepreneur
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_venerated
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_venerated }
+							NOT = { has_trait = leader_trait_venerated_2 }
+							NOT = { has_trait = leader_trait_capitalist }
+							NOT = { has_trait = leader_trait_capitalist_2 }
+							NOT = { has_trait = leader_trait_private_mines }
+							NOT = { has_trait = leader_trait_private_mines_2 }
+							NOT = { has_trait = leader_trait_homesteader }
+							NOT = { has_trait = leader_trait_homesteader_2 }
+							NOT = { has_trait = leader_trait_scrapper }
+							NOT = { has_trait = leader_trait_scrapper_2 }
+							NOT = { has_trait = leader_trait_entrepreneur }
+							NOT = { has_trait = leader_trait_entrepreneur_2 }
+							trait_is_crisis_faction_check = no has_global_flag = game_started has_base_skill > 1 NOT = { has_leader_flag = block_homeworld_traits }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_venerated
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_frontier_spirit
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = trait_ruler_frontier_spirit }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no trait_is_wilderness_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_frontier_spirit
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_bureaucrat
+						NAND = {
+							OR = {
+								leader_class = official
+								leader_class = commander
+								leader_class = scientist
+							}
+							NOT = { has_trait = leader_trait_bureaucrat }
+							trait_is_crisis_faction_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_bureaucrat
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_fertility_preacher
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = trait_ruler_fertility_preacher }
+							can_leader_get_council_trait_trigger = yes
+							trait_is_crisis_faction_check = no trait_is_wilderness_check = no exists = owner owner = { OR = { NOT = { has_origin = origin_synthetic_fertility } AND = { has_origin = origin_synthetic_fertility has_technology = tech_synthetic_workers } } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_fertility_preacher
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_righteous
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_righteous }
+							NOT = { has_trait = leader_trait_righteous_2 }
+							NOT = { has_trait = leader_trait_corrupt }
+							NOT = { has_trait = leader_trait_corrupt_2 }
+							trait_is_crisis_faction_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_righteous
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_iron_fist
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_iron_fist }
+							NOT = { has_trait = leader_trait_iron_fist_2 }
+							trait_is_crisis_faction_check = no trait_is_gestalt_check = no exists = owner owner = { allows_slavery = yes }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_iron_fist
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_environmental_engineer
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = official
+								leader_class = scientist
+							}
+							NOT = { has_trait = leader_trait_environmental_engineer }
+							trait_is_crisis_faction_check = no trait_is_nomad_check = no exists = owner owner = { has_blocker_removal_tech = yes }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_environmental_engineer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_enlister
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_enlister }
+							trait_is_crisis_faction_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_enlister
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_shipwright
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_shipwright }
+							NOT = { has_trait = leader_trait_irenic }
+							NOT = { has_trait = leader_trait_irenic_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_shipwright
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_architectural_interest
+						NAND = {
+							OR = {
+								leader_class = official
+								leader_class = scientist
+							}
+							NOT = { has_trait = leader_trait_architectural_interest }
+							NOT = { has_trait = leader_trait_procrastinator }
+							NOT = { has_trait = leader_trait_procrastinator_2 }
+							trait_is_crisis_faction_check = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_architectural_interest
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_investor
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = trait_ruler_investor }
+							NOT = { has_trait = trait_ruler_investor_2 }
+							NOT = { has_trait = leader_trait_insider_trading }
+							NOT = { has_trait = leader_trait_insider_trading_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_economy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_investor
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_architectural_sense
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = trait_ruler_architectural_sense }
+							NOT = { has_trait = trait_ruler_architectural_sense_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_economy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_architectural_sense
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_deep_connections
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = trait_ruler_deep_connections }
+							NOT = { has_trait = trait_ruler_deep_connections_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_deep_connections
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_reformer
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_reformer }
+							NOT = { has_trait = leader_trait_reformer_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_gestalt = no OR = { has_paragon_dlc = no has_trait = subclass_official_economy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_reformer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_space_miner
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = trait_ruler_space_miner }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_space_miner
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_home_in_the_sky
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = trait_ruler_home_in_the_sky }
+							can_leader_get_council_trait_trigger = yes
+							has_paragon_dlc = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_home_in_the_sky
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_carefree
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_carefree }
+							NOT = { has_trait = leader_trait_carefree_2 }
+							NOT = { has_trait = leader_trait_meticulous }
+							NOT = { has_trait = leader_trait_meticulous_2 }
+							NOT = { has_trait = leader_trait_neurotic }
+							NOT = { has_trait = leader_trait_neurotic_2 }
+							is_ruler = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_carefree
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_roamer
+						NAND = {
+							OR = {
+								leader_class = scientist
+								leader_class = commander
+							}
+							NOT = { has_trait = leader_trait_roamer }
+							NOT = { has_trait = leader_trait_roamer_2 }
+							NOT = { has_trait = leader_trait_neurotic }
+							NOT = { has_trait = leader_trait_neurotic_2 }
+							is_ruler = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_roamer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_archaeologist
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_archaeologist }
+							NOT = { has_trait = leader_trait_archaeologist_2 }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_archaeologist
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_meticulous
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_meticulous }
+							NOT = { has_trait = leader_trait_meticulous_2 }
+							NOT = { has_trait = leader_trait_carefree }
+							NOT = { has_trait = leader_trait_carefree_2 }
+							is_ruler = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_meticulous
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_custom_AI_assistant
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_custom_AI_assistant }
+							NOT = { has_trait = leader_trait_sapient_AI_assistant }
+							exists = owner
+							owner = { has_technology = tech_self_aware_logic }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_custom_AI_assistant
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_sapient_AI_assistant
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_sapient_AI_assistant }
+							NOT = { has_trait = leader_trait_custom_AI_assistant }
+							exists = owner
+							owner = { has_technology = tech_sapient_ai }
+							NOT = { owner = { has_policy_flag = ai_outlawed } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_sapient_AI_assistant
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_academic_dig_site_expert
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_academic_dig_site_expert }
+							NOT = { has_trait = leader_trait_academic_dig_site_expert_2 }
+							OR = { has_paragon_dlc = no has_trait = subclass_scientist_scholar }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_academic_dig_site_expert
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_academic_minor_artifacts_expert
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_academic_minor_artifacts_expert }
+							NOT = { has_trait = leader_trait_academic_minor_artifacts_expert_2 }
+							exists = owner
+							owner = { has_technology = tech_archaeostudies }
+							has_ancrel = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_scholar }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_academic_minor_artifacts_expert
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_maniacal
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_maniacal }
+							NOT = { has_trait = leader_trait_maniacal_2 }
+							NOT = { has_trait = leader_trait_paranoid }
+							NOT = { has_trait = leader_trait_paranoid_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_maniacal
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_expansionist
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = trait_ruler_expansionist }
+							NOT = { has_trait = trait_ruler_expansionist_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_expansionist
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_materials
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_materials }
+							NOT = { has_trait = leader_trait_expertise_materials_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_engineering = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_materials
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_propulsion
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_propulsion }
+							NOT = { has_trait = leader_trait_expertise_propulsion_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_engineering = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_propulsion
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_voidcraft
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_voidcraft }
+							NOT = { has_trait = leader_trait_expertise_voidcraft_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_engineering = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_voidcraft
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_industry
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_industry }
+							NOT = { has_trait = leader_trait_expertise_industry_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_engineering = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_industry
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_field_manipulation
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_field_manipulation }
+							NOT = { has_trait = leader_trait_expertise_field_manipulation_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_physics = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_field_manipulation
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_particles
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_particles }
+							NOT = { has_trait = leader_trait_expertise_particles_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_physics = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_particles
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_computing
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_computing }
+							NOT = { has_trait = leader_trait_expertise_computing_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_physics = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_computing
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_psionics
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_psionics }
+							NOT = { has_trait = leader_trait_expertise_psionics_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_society = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor } OR = { has_psionic_leader_trait = yes AND = { exists = owner owner = { OR = { has_technology = tech_psionic_theory has_origin = origin_shroudwalker_apprentice } } } species = { has_psionic_species_trait = yes } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_psionics
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_new_worlds
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_new_worlds }
+							NOT = { has_trait = leader_trait_expertise_new_worlds_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_society = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_new_worlds
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_statecraft
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_statecraft }
+							NOT = { has_trait = leader_trait_expertise_statecraft_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_society = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_statecraft
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_biology
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_biology }
+							NOT = { has_trait = leader_trait_expertise_biology_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_society = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_biology
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_military_theory
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_military_theory }
+							NOT = { has_trait = leader_trait_expertise_military_theory_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_society = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_military_theory
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_expertise_archaeostudies
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_expertise_archaeostudies }
+							NOT = { has_trait = leader_trait_expertise_archaeostudies_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_specialist_researcher_society = no can_leader_get_council_trait_trigger = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_councilor } has_ancrel = yes exists = owner owner = { OR = { has_origin = origin_remnants has_ascension_perk = ap_archaeoengineers any_system_within_border = { any_archaeological_site = { is_site_completed = yes } } any_owned_nonprimary_starbase = { is_waystation_starbase = yes solar_system? = { any_archaeological_site = { is_site_completed = yes } } } any_owned_planet = { has_active_building = building_archaeostudies_faculty } } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_expertise_archaeostudies
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_principled
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_principled }
+							NOT = { has_trait = leader_trait_principled_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_principled
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_fleet_organizer
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_fleet_organizer }
+							NOT = { has_trait = leader_trait_fleet_organizer_2 }
+							NOT = { has_trait = leader_trait_nervous }
+							NOT = { has_trait = leader_trait_nervous_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_fleet_organizer
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_spycraft
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_spycraft }
+							NOT = { has_trait = leader_trait_spycraft_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_spycraft
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_spark_of_genius
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_spark_of_genius }
+							NOT = { has_trait = leader_trait_spark_of_genius_2 }
+							NOT = { has_trait = leader_trait_paranoid }
+							NOT = { has_trait = leader_trait_paranoid_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_spark_of_genius
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_industrialist
+						NAND = {
+							OR = {
+								leader_class = official
+								leader_class = scientist
+							}
+							NOT = { has_trait = trait_ruler_industrialist }
+							NOT = { has_trait = trait_ruler_industrialist_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_industrialist
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_warlike
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = trait_ruler_warlike }
+							NOT = { has_trait = trait_ruler_warlike_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_warlike
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_charismatic
+						NAND = {
+							OR = {
+								leader_class = scientist
+								leader_class = official
+								leader_class = commander
+							}
+							NOT = { has_trait = trait_ruler_charismatic }
+							NOT = { has_trait = trait_ruler_charismatic_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_charismatic
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_feedback_loop
+						NAND = {
+							OR = {
+								leader_class = scientist
+								leader_class = official
+								leader_class = commander
+							}
+							NOT = { has_trait = trait_ruler_feedback_loop }
+							NOT = { has_trait = trait_ruler_feedback_loop_2 }
+							NOT = { has_trait = leader_trait_tyrannical }
+							NOT = { has_trait = leader_trait_tyrannical_2 }
+							can_leader_get_council_trait_trigger = yes
+							is_gestalt = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_feedback_loop
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_logistic_understanding
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = trait_ruler_logistic_understanding }
+							NOT = { has_trait = trait_ruler_logistic_understanding_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_logistic_understanding
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_trait_ruler_eye_for_talent
+						NAND = {
+							OR = {
+								leader_class = scientist
+								leader_class = official
+								leader_class = commander
+							}
+							NOT = { has_trait = trait_ruler_eye_for_talent }
+							NOT = { has_trait = trait_ruler_eye_for_talent_2 }
+							can_leader_get_council_trait_trigger = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_trait_ruler_eye_for_talent
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_ear_to_the_ground
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_ear_to_the_ground }
+							NOT = { has_trait = leader_trait_ambassador_ear_to_the_ground_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_ear_to_the_ground
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_whisper_networks
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_whisper_networks }
+							NOT = { has_trait = leader_trait_ambassador_whisper_networks_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_whisper_networks
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_bully
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_bully }
+							NOT = { has_trait = leader_trait_ambassador_bully_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { is_homicidal = no }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_bully
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_favor_maker
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_favor_maker }
+							NOT = { has_trait = leader_trait_ambassador_favor_maker_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_favor_maker
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_pact_keeper
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_pact_keeper }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_pact_keeper
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_commercial_pact_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_commercial_pact_focus }
+							NOT = { has_trait = leader_trait_ambassador_commercial_pact_focus_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { has_valid_civic = civic_fanatic_purifiers has_valid_civic = civic_inwards_perfection is_gestalt = yes is_criminal_syndicate = yes } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_commercial_pact_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_research_pact_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_research_pact_focus }
+							NOT = { has_trait = leader_trait_ambassador_research_pact_focus_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_research_pact_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_ambassador_extra_envoys
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_ambassador_extra_envoys }
+							NOT = { has_trait = leader_trait_ambassador_extra_envoys_2 }
+							can_leader_get_council_trait_trigger = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_ambassador_extra_envoys
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_commerce_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_commerce_focus }
+							NOT = { has_trait = leader_trait_resolution_category_commerce_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_commerce_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_industry_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_industry_focus }
+							NOT = { has_trait = leader_trait_resolution_category_industry_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_industry_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_politics_traditions_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_politics_traditions_focus }
+							NOT = { has_trait = leader_trait_resolution_category_politics_traditions_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_politics_traditions_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_greatergood_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_greatergood_focus }
+							NOT = { has_trait = leader_trait_resolution_category_greatergood_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_greatergood_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticreforms_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_galacticreforms_focus }
+							NOT = { has_trait = leader_trait_resolution_category_galacticreforms_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticreforms_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_ecology_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_ecology_focus }
+							NOT = { has_trait = leader_trait_resolution_category_ecology_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_ecology_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticstudies_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_galacticstudies_focus }
+							NOT = { has_trait = leader_trait_resolution_category_galacticstudies_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticstudies_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_divinity_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_divinity_focus }
+							NOT = { has_trait = leader_trait_resolution_category_divinity_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_divinity_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_mutualdefense_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_mutualdefense_focus }
+							NOT = { has_trait = leader_trait_resolution_category_mutualdefense_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_mutualdefense_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_rulesofwar_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_rulesofwar_focus }
+							NOT = { has_trait = leader_trait_resolution_category_rulesofwar_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_rulesofwar_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_defenseprivatization_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_defenseprivatization_focus }
+							NOT = { has_trait = leader_trait_resolution_category_defenseprivatization_focus_2 }
+							has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_defenseprivatization_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_intergalacticdirective_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus }
+							NOT = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus_2 }
+							has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_intergalacticdirective_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_bureaucraticsurveillance_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus }
+							NOT = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus_2 }
+							has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_bureaucraticsurveillance_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_pre_ftl_stances_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus }
+							NOT = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus_2 }
+							has_first_contact_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_pre_ftl_stances_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_resolution_category_sanctions_focus
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_resolution_category_sanctions_focus }
+							NOT = { has_trait = leader_trait_resolution_category_sanctions_focus_2 }
+							OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_resolution_category_sanctions_focus
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_federal_negotiator
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_federal_negotiator }
+							NOT = { has_trait = leader_trait_federal_negotiator_2 }
+							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_federal_negotiator
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_federal_greeter
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_federal_greeter }
+							NOT = { has_trait = leader_trait_federal_greeter_2 }
+							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_federal_greeter
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_federal_sweet_talker
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_federal_sweet_talker }
+							NOT = { has_trait = leader_trait_federal_sweet_talker_2 }
+							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_federal_sweet_talker
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_federal_joint_navy
+						NAND = {
+							leader_class = o
+							NOT = { has_trait = leader_trait_federal_joint_navy }
+							NOT = { has_trait = leader_trait_federal_joint_navy_2 }
+							OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_federal_joint_navy
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_planar_theorist
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_planar_theorist }
+							NOT = { has_trait = leader_trait_planar_theorist_2 }
+							exists = owner
+							owner = { has_technology = tech_rift_sphere }
+							can_leader_get_council_trait_trigger = yes
+							has_astral_planes_dlc = yes is_ruler = no
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = yes }
+				modifier = { factor = 0.5 is_councilor = no }
+				set_leader_flag = bgltp_offered_leader_trait_planar_theorist
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_academic_astral_rift_expert
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_academic_astral_rift_expert }
+							NOT = { has_trait = leader_trait_academic_astral_rift_expert_2 }
+							exists = owner
+							owner = { has_technology = tech_rift_sphere }
+							has_astral_planes_dlc = yes OR = { has_paragon_dlc = no has_trait = subclass_scientist_scholar }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_academic_astral_rift_expert
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_void_hunter
+						NAND = {
+							leader_class = c
+							NOT = { has_trait = leader_trait_void_hunter }
+							NOT = { has_trait = leader_trait_void_hunter_2 }
+							has_grand_archive_dlc = yes exists = owner owner = { has_encountered_any_fauna = yes }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_void_hunter
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_void_tracker
+						NAND = {
+							leader_class = s
+							NOT = { has_trait = leader_trait_void_tracker }
+							NOT = { has_trait = leader_trait_void_tracker_2 }
+							exists = owner
+							owner = { has_technology = tech_gravity_wells }
+							has_grand_archive_dlc = yes
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_void_tracker
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_whispering_mind
+						NAND = {
+							OR = {
+								leader_class = commander
+								leader_class = scientist
+								leader_class = official
+							}
+							NOT = { has_trait = leader_trait_whispering_mind }
+							NOT = { has_trait = leader_trait_whispering_mind_2 }
+							NOT = { has_trait = leader_trait_whispering_mind_3 }
+							has_shroud_dlc = yes exists = owner owner = { has_country_flag = knowledge_accord }
+						}
+					}
+				}
+				modifier = { factor = 2.0 is_councilor = no }
+				modifier = { factor = 0.5 is_councilor = yes }
+				set_leader_flag = bgltp_offered_leader_trait_whispering_mind
+			}
+		}
+	}
+}
+
 # Revert the single trait automatically assigned by the C++ engine on level-up (Scope: Leader)
 bgltp_revert_auto_trait_effect = {
 	if = {
@@ -1415,10 +3697,12 @@ bgltp_revert_auto_trait_effect = {
 
 # Complete one manual trait pick and handle queued picks if the leader gained multiple levels (Scope: Leader)
 bgltp_finish_pick_effect = {
+	bgltp_clear_offered_traits_effect = yes
 	bgltp_sync_leader_traits_effect = yes
 	change_variable = { which = bgltp_pending_picks value = -1 }
 	if = {
 		limit = { check_variable = { which = bgltp_pending_picks value > 0 } }
+		bgltp_roll_4_traits_effect = yes
 		leader_event = { id = bgltp.10 }
 	}
 	else = {
