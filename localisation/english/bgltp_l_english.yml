@@ -273,3 +273,4 @@
  bgltp.99.all:0 "§YAll Owned Leaders§! -> Next Level - 1 XP"
  bgltp.99.nudge:0 "§GAll Owned Leaders: +5 XP (Trigger Level-Up Now)§!"
  bgltp.99.close:0 "Close"
+ bgltp_message_leader_level_up_desc:0 "§Y$LEADER$§! has reached a new skill level and has a trait choice waiting!\n\n§GClick to inspect in Leaders view!§!"
