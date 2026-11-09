@@ -1,21 +1,21 @@
-# Cumulative XP needed to reach (Next Level - 1 XP) for levels 1 through 9
+# Cumulative XP needed to reach next level for levels 1 through 9
 # Base Game Cygnus v4.5.3 cumulative thresholds: 400, 1100, 2100, 3400, 5000, 6900, 9100, 11600, 14400
 bgltp_target_xp_threshold = {
 	base = 0
-	modifier = { add = 399 has_base_skill = 1 }
-	modifier = { add = 1099 has_base_skill = 2 }
-	modifier = { add = 2099 has_base_skill = 3 }
-	modifier = { add = 3399 has_base_skill = 4 }
-	modifier = { add = 4999 has_base_skill = 5 }
-	modifier = { add = 6899 has_base_skill = 6 }
-	modifier = { add = 9099 has_base_skill = 7 }
-	modifier = { add = 11599 has_base_skill = 8 }
-	modifier = { add = 14399 has_base_skill = 9 }
+	modifier = { add = 400 has_base_skill = 1 }
+	modifier = { add = 1100 has_base_skill = 2 }
+	modifier = { add = 2100 has_base_skill = 3 }
+	modifier = { add = 3400 has_base_skill = 4 }
+	modifier = { add = 5000 has_base_skill = 5 }
+	modifier = { add = 6900 has_base_skill = 6 }
+	modifier = { add = 9100 has_base_skill = 7 }
+	modifier = { add = 11600 has_base_skill = 8 }
+	modifier = { add = 14400 has_base_skill = 9 }
 }
 
-bgltp_xp_to_next_level_minus_one = {
+bgltp_xp_to_next_level = {
 	base = value:bgltp_target_xp_threshold
 	subtract = trigger:has_experience
 	round = floor
-	min = 0
+	min = 1
 }

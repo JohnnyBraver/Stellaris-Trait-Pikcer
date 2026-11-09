@@ -221,43 +221,43 @@ country_event = {
 		}
 	}
 
-	# Option 1: Ruler -> Next Level - 1 XP
+	# Option 1: Ruler -> Level Up
 	option = {
 		name = bgltp.99.ruler
 		trigger = { exists = event_target:bgltp_dev_ruler }
 		event_target:bgltp_dev_ruler = {
-			bgltp_grant_xp_to_next_level_minus_one_effect = yes
+			bgltp_grant_level_up_effect = yes
 		}
 	}
 
-	# Option 2: Random Commander -> Next Level - 1 XP
+	# Option 2: Random Commander -> Level Up
 	option = {
 		name = bgltp.99.commander
 		trigger = { exists = event_target:bgltp_dev_commander }
 		event_target:bgltp_dev_commander = {
-			bgltp_grant_xp_to_next_level_minus_one_effect = yes
+			bgltp_grant_level_up_effect = yes
 		}
 	}
 
-	# Option 3: Random Scientist -> Next Level - 1 XP
+	# Option 3: Random Scientist -> Level Up
 	option = {
 		name = bgltp.99.scientist
 		trigger = { exists = event_target:bgltp_dev_scientist }
 		event_target:bgltp_dev_scientist = {
-			bgltp_grant_xp_to_next_level_minus_one_effect = yes
+			bgltp_grant_level_up_effect = yes
 		}
 	}
 
-	# Option 4: Random Official -> Next Level - 1 XP
+	# Option 4: Random Official -> Level Up
 	option = {
 		name = bgltp.99.official
 		trigger = { exists = event_target:bgltp_dev_official }
 		event_target:bgltp_dev_official = {
-			bgltp_grant_xp_to_next_level_minus_one_effect = yes
+			bgltp_grant_level_up_effect = yes
 		}
 	}
 
-	# Option 5: ALL Owned Leaders -> Next Level - 1 XP
+	# Option 5: ALL Owned Leaders -> Level Up
 	option = {
 		name = bgltp.99.all
 		every_owned_leader = {
@@ -272,30 +272,11 @@ country_event = {
 					leader_class = official
 				}
 			}
-			bgltp_grant_xp_to_next_level_minus_one_effect = yes
+			bgltp_grant_level_up_effect = yes
 		}
 	}
 
-	# Option 6: Nudge (+5 XP to All leaders on the brink)
-	option = {
-		name = bgltp.99.nudge
-		every_owned_leader = {
-			limit = {
-				is_pool_leader = no
-				NOT = { has_leader_flag = retirement_is_default }
-				has_base_skill < 10
-				OR = {
-					is_ruler = yes
-					leader_class = commander
-					leader_class = scientist
-					leader_class = official
-				}
-			}
-			add_experience = 5
-		}
-	}
-
-	# Option 7: Close (Cleanly dismiss dialog)
+	# Option 6: Close (Cleanly dismiss dialog)
 	option = {
 		name = bgltp.99.close
 	}

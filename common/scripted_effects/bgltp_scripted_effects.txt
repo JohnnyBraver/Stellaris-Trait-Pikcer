@@ -3712,29 +3712,29 @@ bgltp_finish_pick_effect = {
 }
 
 
-# Grant leader exact XP needed to reach (Next Level - 1 XP), taking into account current XP (Scope: Leader)
-bgltp_grant_xp_to_next_level_minus_one_effect = {
+# Grant leader exact XP needed to level up immediately, taking into account current XP (Scope: Leader)
+bgltp_grant_level_up_effect = {
 	if = {
 		limit = { has_base_skill < 10 }
 		# Base Game Cygnus 4.5.3 cumulative XP thresholds:
-		# Level 1 -> 2: 400 XP (Target: 399)
-		# Level 2 -> 3: 1100 XP (Target: 1099)
-		# Level 3 -> 4: 2100 XP (Target: 2099)
-		# Level 4 -> 5: 3400 XP (Target: 3399)
-		# Level 5 -> 6: 5000 XP (Target: 4999)
-		# Level 6 -> 7: 6900 XP (Target: 6899)
-		# Level 7 -> 8: 9100 XP (Target: 9099)
-		# Level 8 -> 9: 11600 XP (Target: 11599)
-		# Level 9 -> 10: 14400 XP (Target: 14399)
-		set_variable = { which = bgltp_target_xp value = 399 }
-		if = { limit = { has_base_skill = 2 } set_variable = { which = bgltp_target_xp value = 1099 } }
-		else_if = { limit = { has_base_skill = 3 } set_variable = { which = bgltp_target_xp value = 2099 } }
-		else_if = { limit = { has_base_skill = 4 } set_variable = { which = bgltp_target_xp value = 3399 } }
-		else_if = { limit = { has_base_skill = 5 } set_variable = { which = bgltp_target_xp value = 4999 } }
-		else_if = { limit = { has_base_skill = 6 } set_variable = { which = bgltp_target_xp value = 6899 } }
-		else_if = { limit = { has_base_skill = 7 } set_variable = { which = bgltp_target_xp value = 9099 } }
-		else_if = { limit = { has_base_skill = 8 } set_variable = { which = bgltp_target_xp value = 11599 } }
-		else_if = { limit = { has_base_skill = 9 } set_variable = { which = bgltp_target_xp value = 14399 } }
+		# Level 1 -> 2: 400 XP
+		# Level 2 -> 3: 1100 XP
+		# Level 3 -> 4: 2100 XP
+		# Level 4 -> 5: 3400 XP
+		# Level 5 -> 6: 5000 XP
+		# Level 6 -> 7: 6900 XP
+		# Level 7 -> 8: 9100 XP
+		# Level 8 -> 9: 11600 XP
+		# Level 9 -> 10: 14400 XP
+		set_variable = { which = bgltp_target_xp value = 400 }
+		if = { limit = { has_base_skill = 2 } set_variable = { which = bgltp_target_xp value = 1100 } }
+		else_if = { limit = { has_base_skill = 3 } set_variable = { which = bgltp_target_xp value = 2100 } }
+		else_if = { limit = { has_base_skill = 4 } set_variable = { which = bgltp_target_xp value = 3400 } }
+		else_if = { limit = { has_base_skill = 5 } set_variable = { which = bgltp_target_xp value = 5000 } }
+		else_if = { limit = { has_base_skill = 6 } set_variable = { which = bgltp_target_xp value = 6900 } }
+		else_if = { limit = { has_base_skill = 7 } set_variable = { which = bgltp_target_xp value = 9100 } }
+		else_if = { limit = { has_base_skill = 8 } set_variable = { which = bgltp_target_xp value = 11600 } }
+		else_if = { limit = { has_base_skill = 9 } set_variable = { which = bgltp_target_xp value = 14400 } }
 
 		# Read leader's actual current experience
 		set_variable = { which = bgltp_cur_xp value = 0 }
@@ -3749,7 +3749,7 @@ bgltp_grant_xp_to_next_level_minus_one_effect = {
 			value = bgltp_cur_xp
 		}
 
-		# Add XP only if positive
+		# Add XP if positive, otherwise add 1 XP if already at or beyond threshold
 		if = {
 			limit = {
 				check_variable = {
@@ -3759,8 +3759,16 @@ bgltp_grant_xp_to_next_level_minus_one_effect = {
 			}
 			add_experience = bgltp_target_xp
 		}
+		else = {
+			add_experience = 1
+		}
 
 		clear_variable = bgltp_target_xp
 		clear_variable = bgltp_cur_xp
 	}
+}
+
+# Alias for backwards compatibility
+bgltp_grant_xp_to_next_level_minus_one_effect = {
+	bgltp_grant_level_up_effect = yes
 }
