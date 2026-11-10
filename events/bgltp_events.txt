@@ -15,6 +15,7 @@ country_event = {
 		exists = from
 		from = {
 			has_base_skill > 1
+			has_experience > 0
 			is_pool_leader = no
 			NOT = {
 				has_leader_flag = bgltp_granting_native_pick
