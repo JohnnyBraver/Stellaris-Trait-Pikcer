@@ -9,10 +9,12 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		has_global_flag = game_started
 		is_ai = no
 		has_paragon_dlc = no
 		exists = from
 		from = {
+			has_base_skill > 1
 			is_pool_leader = no
 			NOT = {
 				has_leader_flag = bgltp_granting_native_pick
