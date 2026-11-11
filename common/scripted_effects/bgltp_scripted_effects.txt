@@ -1,5 +1,6 @@
 # Sync known traits on a single leader (Scope: Leader)
 bgltp_sync_leader_traits_effect = {
+	set_leader_flag = bgltp_seen
 	if = { limit = { has_trait = leader_trait_gifted } set_leader_flag = bgltp_known_leader_trait_gifted }
 	else = { remove_leader_flag = bgltp_known_leader_trait_gifted }
 	if = { limit = { has_trait = leader_trait_buccaneer } set_leader_flag = bgltp_known_leader_trait_buccaneer }
@@ -3771,4 +3772,48 @@ bgltp_grant_level_up_effect = {
 # Alias for backwards compatibility
 bgltp_grant_xp_to_next_level_minus_one_effect = {
 	bgltp_grant_level_up_effect = yes
+}
+
+# Start the self-rescheduling daily sync once per country (Scope: Country)
+bgltp_start_daily_sync_effect = {
+	if = {
+		limit = { NOT = { has_country_flag = bgltp_daily_sync_active } }
+		set_country_flag = bgltp_daily_sync_active
+		country_event = { id = bgltp.6 days = 1 }
+	}
+}
+# Run the full trait scan only when the leader's trait count/points changed since the last scan (Scope: Leader)
+# Signature = num_traits * 1000 + num_trait_points (tier upgrades change points, not count).
+bgltp_sync_if_changed_effect = {
+	set_variable = { which = bgltp_sig_now value = 0 }
+	export_trigger_value_to_variable = { trigger = num_traits variable = bgltp_sig_now }
+	multiply_variable = { which = bgltp_sig_now value = 1000 }
+	set_variable = { which = bgltp_sig_pts value = 0 }
+	export_trigger_value_to_variable = { trigger = num_trait_points variable = bgltp_sig_pts }
+	change_variable = { which = bgltp_sig_now value = bgltp_sig_pts }
+	if = {
+		limit = {
+			OR = {
+				NOT = { has_leader_flag = bgltp_sig_set }
+				NOT = { check_variable = { which = bgltp_sig value = bgltp_sig_now } }
+			}
+		}
+		bgltp_sync_leader_traits_effect = yes
+		set_variable = { which = bgltp_sig value = bgltp_sig_now }
+		set_leader_flag = bgltp_sig_set
+	}
+	clear_variable = bgltp_sig_now
+	clear_variable = bgltp_sig_pts
+}
+# Grant one extra level-up-style trait pick without changing level or XP (Scope: Leader)
+# Reuses the bgltp.10 picker; queues if a pick is already open.
+bgltp_grant_free_pick_effect = {
+	bgltp_sync_leader_traits_effect = yes
+	change_variable = { which = bgltp_pending_picks value = 1 }
+	if = {
+		limit = { NOT = { has_leader_flag = bgltp_selecting_trait } }
+		set_leader_flag = bgltp_selecting_trait
+		bgltp_roll_4_traits_effect = yes
+		leader_event = { id = bgltp.10 }
+	}
 }

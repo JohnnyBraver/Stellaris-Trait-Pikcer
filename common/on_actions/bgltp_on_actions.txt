@@ -54,6 +54,7 @@ on_ruler_set = {
 
 on_leader_level_up = {
 	events = {
+		bgltp.97
 		bgltp.1
 	}
 }

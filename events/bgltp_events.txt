@@ -15,7 +15,7 @@ country_event = {
 		exists = from
 		from = {
 			has_base_skill > 1
-			has_experience > 0
+			has_leader_flag = bgltp_seen
 			is_pool_leader = no
 			NOT = {
 				has_leader_flag = retirement_is_default
@@ -66,6 +66,31 @@ country_event = {
 		every_pool_leader = {
 			bgltp_sync_leader_traits_effect = yes
 		}
+		bgltp_start_daily_sync_effect = yes
+	}
+}
+
+# ==============================================================================
+# DAILY SYNC FOR LEADERS THAT CAN LEVEL UP (Scope = Country)
+# Self-rescheduling (1 day). Covers XP that arrives from sources without a hook
+# (event grants, engine passive XP). Level 10 leaders cannot level up and are skipped.
+# ==============================================================================
+country_event = {
+	id = bgltp.6
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { is_ai = no has_paragon_dlc = no }
+			every_owned_leader = {
+				limit = {
+					NOT = { has_leader_flag = bgltp_selecting_trait }
+					bgltp_can_level_up_soon_trigger = yes
+				}
+				bgltp_sync_if_changed_effect = yes
+			}
+		}
+		country_event = { id = bgltp.6 days = 1 }
 	}
 }
 
@@ -87,6 +112,7 @@ event = {
 			every_pool_leader = {
 				bgltp_sync_leader_traits_effect = yes
 			}
+			bgltp_start_daily_sync_effect = yes
 		}
 	}
 }
@@ -5700,5 +5726,136 @@ country_event = {
 	# Option 6: Close (Cleanly dismiss dialog)
 	option = {
 		name = bgltp.99.close
+	}
+}
+
+# ==============================================================================
+# DEV TOOL: Console Event event bgltp.98 (Scope = Country)
+# Grants a level-up-style trait pick WITHOUT leveling up (recover a lost trait pick)
+# ==============================================================================
+country_event = {
+	id = bgltp.98
+	title = bgltp.98.name
+	desc = bgltp.98.desc
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_leader = {
+			limit = { NOT = { has_leader_flag = bgltp_selecting_trait } }
+			bgltp_sync_leader_traits_effect = yes
+		}
+		random_owned_leader = {
+			limit = { is_pool_leader = no is_ruler = yes }
+			save_event_target_as = bgltp_free_ruler
+		}
+		random_owned_leader = {
+			limit = { is_pool_leader = no is_councilor = yes is_ruler = no }
+			save_event_target_as = bgltp_free_councilor
+		}
+		random_owned_leader = {
+			limit = { is_pool_leader = no NOT = { has_leader_flag = retirement_is_default } leader_class = commander }
+			save_event_target_as = bgltp_free_commander
+		}
+		random_owned_leader = {
+			limit = { is_pool_leader = no NOT = { has_leader_flag = retirement_is_default } leader_class = scientist }
+			save_event_target_as = bgltp_free_scientist
+		}
+		random_owned_leader = {
+			limit = { is_pool_leader = no NOT = { has_leader_flag = retirement_is_default } leader_class = official }
+			save_event_target_as = bgltp_free_official
+		}
+		random_owned_leader = {
+			limit = { is_councilor_type = councilor_gestalt_legion }
+			save_event_target_as = bgltp_free_node_legion
+		}
+		random_owned_leader = {
+			limit = { is_councilor_type = councilor_gestalt_cognitive }
+			save_event_target_as = bgltp_free_node_cognitive
+		}
+		random_owned_leader = {
+			limit = { is_councilor_type = councilor_gestalt_regulatory }
+			save_event_target_as = bgltp_free_node_regulatory
+		}
+		random_owned_leader = {
+			limit = { is_councilor_type = councilor_gestalt_growth }
+			save_event_target_as = bgltp_free_node_growth
+		}	}
+
+	option = {
+		name = bgltp.98.ruler
+		trigger = { exists = event_target:bgltp_free_ruler }
+		event_target:bgltp_free_ruler = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.councilor
+		trigger = { exists = event_target:bgltp_free_councilor }
+		event_target:bgltp_free_councilor = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.commander
+		trigger = { exists = event_target:bgltp_free_commander }
+		event_target:bgltp_free_commander = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.scientist
+		trigger = { exists = event_target:bgltp_free_scientist }
+		event_target:bgltp_free_scientist = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.official
+		trigger = { exists = event_target:bgltp_free_official }
+		event_target:bgltp_free_official = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.node_legion
+		trigger = { exists = event_target:bgltp_free_node_legion }
+		event_target:bgltp_free_node_legion = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.node_cognitive
+		trigger = { exists = event_target:bgltp_free_node_cognitive }
+		event_target:bgltp_free_node_cognitive = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.node_regulatory
+		trigger = { exists = event_target:bgltp_free_node_regulatory }
+		event_target:bgltp_free_node_regulatory = { bgltp_grant_free_pick_effect = yes }
+	}
+	option = {
+		name = bgltp.98.node_growth
+		trigger = { exists = event_target:bgltp_free_node_growth }
+		event_target:bgltp_free_node_growth = { bgltp_grant_free_pick_effect = yes }
+	}	option = {
+		name = bgltp.98.close
+	}
+}
+# ==============================================================================
+# DIAGNOSTIC: logs every level-up and which bgltp.1 filters pass (Scope = Country, From = Leader)
+# Output goes to game.log. Remove from on_actions once the node issue is solved.
+# ==============================================================================
+country_event = {
+	id = bgltp.97
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		from = {
+			log = "BGLTP levelup: [This.GetName]"
+			if = { limit = { has_base_skill > 1 } log = "BGLTP  base_skill>1 yes" }
+			if = { limit = { has_experience > 0 } log = "BGLTP  experience>0 yes" }
+			if = { limit = { has_leader_flag = bgltp_seen } log = "BGLTP  seen flag yes" }
+			if = { limit = { is_pool_leader = no } log = "BGLTP  not_pool yes" }
+			if = { limit = { has_leader_flag = retirement_is_default } log = "BGLTP  FLAG retirement_is_default" }
+			if = { limit = { has_leader_flag = block_leader_level_up_events } log = "BGLTP  FLAG block_leader_level_up_events" }
+			if = { limit = { has_leader_flag = bgltp_selecting_trait } log = "BGLTP  FLAG bgltp_selecting_trait (stuck?)" }
+			if = { limit = { is_ruler = yes } log = "BGLTP  is_ruler" }
+			if = { limit = { leader_class = commander } log = "BGLTP  class commander" }
+			if = { limit = { leader_class = scientist } log = "BGLTP  class scientist" }
+			if = { limit = { leader_class = official } log = "BGLTP  class official" }
+			if = { limit = { is_gestalt_node = yes } log = "BGLTP  is_gestalt_node" }
+		}
+		if = { limit = { is_ai = yes } log = "BGLTP  country is_ai" }
+		if = { limit = { has_paragon_dlc = yes } log = "BGLTP  has_paragon_dlc" }
+		if = { limit = { NOT = { has_global_flag = game_started } } log = "BGLTP  game_started flag MISSING" }
 	}
 }
