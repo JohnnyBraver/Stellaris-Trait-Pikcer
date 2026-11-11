@@ -2,21 +2,43 @@
 
 Allows manual leader trait selection upon level-up in the **Stellaris Base Game** (without requiring the *Galactic Paragons* DLC).
 
-## Branches
-- **`main` (Default / Recommended):** Uses the **Native C++ Yellow `[+]` Trait Picker UI** with a level-up toast notification reminder. When a leader levels up, their card in the Leaders view lights up with the glowing yellow `[+]` button, opening the native 4-trait selection drawer.
-- **`event-popup-picker`:** Alternative mode using a **Story Event Popup** upon level-up. Displays a 4-trait role-weighted dialog with an optional category browser to hand-pick any valid trait.
+## How It Works & Engine Architecture
+
+In Stellaris v4.5.3 (Cygnus), leader trait selection behavior is governed by the C++ engine binary (`stellaris.exe`):
+1. **Day 1 Starting Bonus Leaders (Native Yellow `[+]` Drawer):**
+   - Leaders initialized during galaxy generation with bonus starting levels (e.g., *Warbots* +2 Commander level, *Vaults of Knowledge*, *Distinguished Admiralty*) have their unspent trait selections (`m_available_trait_selections`) populated directly at creation (`create_leader`), bypassing `CLeader::LevelUp`.
+   - On Day 1, these starting leaders natively display the glowing yellow `[+]` button and open the native 4-option trait drawer. The mod protects these initial leaders (`has_global_flag = game_started`, `has_base_skill > 1`, `has_experience > 0`) so players can use the native drawer on Day 1.
+2. **Mid-Game Level-Ups (4-Option Weighted Event Popup Dialog):**
+   - For any mid-game level-up from XP or events without the *Galactic Paragons* DLC, `CLeader::ShouldAutopickTraits()` in `stellaris.exe` is hardcoded to return `true` (`if (!HasDLC(GALACTIC_PARAGONS)) return true;`). As a result, the C++ engine automatically assigns a random trait and clears unspent picks *before* script on-actions run.
+   - The mod intercepts the level-up via `on_leader_level_up`, immediately reverts the auto-assigned random trait, dynamically weights 4 eligible traits matching the game's define (`NON_PARAGON_TRAIT_OPTIONS_ON_LEVEL_UP = 4`), and presents an interactive **Leader Story Event Popup** (`bgltp.10`).
+   - The dialog displays the leader's portrait, title, and current skill level, and presents:
+     - **Existing Trait Upgrades (Tier II & III)** at the top.
+     - **4 Role-Weighted Traits** matching leader class, council position, ethics, and unlocked technologies.
+     - An optional **Browse All Categories** browser to inspect or select any valid trait.
+   - Multiple queued level-ups (e.g. from large quest XP rewards) are queued cleanly via `bgltp_pending_picks`.
 
 ---
 
-## Features on `main`
-- **Native Stellaris Yellow `[+]` Trait Picker:**
-  - When a leader levels up via XP (`on_leader_level_up`), the mod reverts the random trait auto-assigned by the C++ engine and triggers the native C++ trait selection drawer (`available_trait = 4 weighted options + existing trait upgrades`).
-- **Level-Up Toast Notification:**
-  - Sends a standard toast message notification (`MESSAGE_LEADER_LEVEL_UP`) alerting the player that the leader leveled up and has a trait selection waiting.
-- **Zero Background Loops (Native Hook Synchronization):**
-  - Newly picked traits are automatically registered via native game triggers: on the 1st of every month (`on_monthly_pulse_country`), on leader assignment/reassignment (`on_leader_assigned`), upon hiring (`on_leader_hired`), on game load, and right before story XP resolution on **anomaly research** (`anomaly_success`), **archaeological site stages** (`on_arch_stage_finished`), **astral rifts** (`on_astral_rift_exploration_complete`), **planet surveys** (`on_survey_planet`), and **space battles** (`on_fleet_exit_battle`). No custom background timers or event loops are needed.
-- **Starting Skill Bonus Compatible (*War Machines*, *Distinguished Admiralty*, etc.):**
-  - Leaders generated in the recruitment pool with higher starting levels keep their rolled traits without re-prompting.
-- **Save-Game Compatible & Negative Traits Untouched.**
+## Features
+- **4-Option Role-Weighted Level-Up Trait Selection:**
+  - Full player choice for all leader level-ups across Commanders, Scientists, Officials, Rulers, and Gestalt Central Nodes.
+- **Existing Trait Upgrades Supported:**
+  - Upgrading existing traits (Tier I -> Tier II -> Tier III) is always offered at the top of the selection dialog when eligible.
+- **Full Gestalt Consciousness Support:**
+  - Primary Link, Cognitive Node, Regulatory Node, Growth Node, and Legion Node are fully eligible for trait picks. Culled or reformatted nodes start fresh and gain picks normally.
+- **Zero Background Loops (Event-Driven Trait Synchronization):**
+  - Newly picked traits are automatically registered into the known traits registry via native game hooks:
+    - Monthly country pulse (`on_monthly_pulse_country`)
+    - Leader assignment & recruitment (`on_leader_assigned`, `on_leader_hired`)
+    - Save game loading (`on_game_start_country`)
+    - Anomaly completion (`anomaly_success`)
+    - Planet surveys (`on_survey_planet`)
+    - Archaeological site stage completion (`on_arch_stage_finished`, `on_arch_site_finished`)
+    - Astral rift completion (`on_astral_rift_exploration_complete`)
+    - Fleet combat victory/exit (`on_fleet_exit_battle`)
+- **203 Supported Traits (Base Game + Non-Paragon DLCs):**
+  - Supports all 186 Base Game level-up traits plus 17 traits from *Ancient Relics*, *Overlord*, *First Contact*, *Astral Planes*, *Grand Archive*, and *Shadows of the Shroud*.
+- **Save-Game Compatible & Negative Traits Untouched:**
+  - Negative traits are rolled by the vanilla yearly pulse (`paragon_2.1020`) based on leader age/lifespan and are never touched or altered.
 - **Built-in Dev Tool (`event bgltp.99`):**
-  - Allows granting exact XP to reach (Next Level - 1) or nudging with +5 XP for fast in-game testing.
+  - Allows console testing with instant exact level-up for the Ruler, random Commander, Scientist, Official, or ALL owned leaders.
