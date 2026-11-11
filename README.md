@@ -76,3 +76,9 @@ A self-rescheduling 1-day event syncs every owned leader that can still level up
 
 ### Count-gated scan
 The daily pass calls `bgltp_sync_if_changed_effect`, which stores a per-leader signature (`num_traits`*1000 + `num_trait_points`) and runs the full 207-trait scan only when it changes. Script has no on_action or trigger for non-level-up trait gains (only `on_random_trait_added` for species), so the signature is the change detector. Same-day swaps of equal-cost traits are not detected; hire/assign/battle hooks still do the full scan.
+
+### Gestalt Nodes and Gestalt Ruler Council Filtering (`bgltp_is_gestalt_councilor`)
+- Central Nodes (Legion, Cognitive, Regulatory, Growth) and Gestalt Rulers (`councilor_ruler_hive_mind`, `councilor_ruler_machine_intelligence`) can **never** be assigned outside the council to command fleets, armies, science ships, or govern planets (`can_manually_change_location = no`).
+- Field-only traits (e.g., fleet weapon modifiers like Careful, governor planet output like Energy Mogul) are completely useless on them.
+- All 56 field-only traits in the 4-choice roll effect are filtered out (`factor = 0 bgltp_is_gestalt_councilor = yes`), ensuring Nodes and Gestalt Rulers only roll active council-benefiting traits (`COUNCIL = yes` / `councilor_modifier`).
+- Non-Gestalt councilors and individualistic rulers (who can return to field commands when reassigned or after democratic elections) retain access to field traits with standard weighted penalties.

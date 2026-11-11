@@ -5859,3 +5859,37 @@ country_event = {
 		if = { limit = { NOT = { has_global_flag = game_started } } log = "BGLTP  game_started flag MISSING" }
 	}
 }
+# ==============================================================================
+# DEV TOOL: Console Event event bgltp.96 (Scope = Country)
+# Rolls vanilla random_common traits 100 times on the chosen leader, logging each
+# to game.log ("BGLTP_ROLL <trait>") and removing it again. Leader's real traits are untouched
+# unless their trait slots are full (then the add may fail and nothing is logged).
+# ==============================================================================
+country_event = {
+	id = bgltp.96
+	title = bgltp.96.name
+	desc = bgltp.96.desc
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_leader = { limit = { is_pool_leader = no is_ruler = yes } save_event_target_as = bgltp_roll_ruler }
+		random_owned_leader = { limit = { is_pool_leader = no leader_class = commander is_gestalt_node = no } save_event_target_as = bgltp_roll_commander }
+		random_owned_leader = { limit = { is_pool_leader = no leader_class = scientist is_gestalt_node = no } save_event_target_as = bgltp_roll_scientist }
+		random_owned_leader = { limit = { is_pool_leader = no leader_class = official is_gestalt_node = no } save_event_target_as = bgltp_roll_official }
+		random_owned_leader = { limit = { is_councilor_type = councilor_gestalt_legion } save_event_target_as = bgltp_roll_node_legion }
+		random_owned_leader = { limit = { is_councilor_type = councilor_gestalt_cognitive } save_event_target_as = bgltp_roll_node_cognitive }
+		random_owned_leader = { limit = { is_councilor_type = councilor_gestalt_regulatory } save_event_target_as = bgltp_roll_node_regulatory }
+		random_owned_leader = { limit = { is_councilor_type = councilor_gestalt_growth } save_event_target_as = bgltp_roll_node_growth }
+	}
+
+	option = { name = bgltp.96.ruler trigger = { exists = event_target:bgltp_roll_ruler } event_target:bgltp_roll_ruler = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.commander trigger = { exists = event_target:bgltp_roll_commander } event_target:bgltp_roll_commander = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.scientist trigger = { exists = event_target:bgltp_roll_scientist } event_target:bgltp_roll_scientist = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.official trigger = { exists = event_target:bgltp_roll_official } event_target:bgltp_roll_official = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.node_legion trigger = { exists = event_target:bgltp_roll_node_legion } event_target:bgltp_roll_node_legion = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.node_cognitive trigger = { exists = event_target:bgltp_roll_node_cognitive } event_target:bgltp_roll_node_cognitive = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.node_regulatory trigger = { exists = event_target:bgltp_roll_node_regulatory } event_target:bgltp_roll_node_regulatory = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.node_growth trigger = { exists = event_target:bgltp_roll_node_growth } event_target:bgltp_roll_node_growth = { bgltp_dbg_roll_many_effect = yes } }
+	option = { name = bgltp.96.close }
+}
