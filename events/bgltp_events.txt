@@ -12,6 +12,7 @@ country_event = {
 		has_global_flag = game_started
 		is_ai = no
 		has_paragon_dlc = no
+		NOT = { has_country_flag = bgltp_mining_active }
 		exists = from
 		from = {
 			has_base_skill > 1
@@ -20,6 +21,7 @@ country_event = {
 			NOT = {
 				has_leader_flag = retirement_is_default
 				has_leader_flag = block_leader_level_up_events
+				has_leader_flag = bgltp_mining_leader
 			}
 			OR = {
 				is_ruler = yes
@@ -1143,6 +1145,56 @@ leader_event = {
 		add_trait = { trait = leader_trait_whispering_mind_3 show_message = no }
 		hidden_effect = { bgltp_finish_pick_effect = yes }
 	}
+	option = {
+		name = bgltp_opt_leader_trait_archaeo_specialization_2
+		trigger = {
+			has_trait = leader_trait_archaeo_specialization
+			NOT = { has_trait = leader_trait_archaeo_specialization_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_archaeo_specialization }
+		add_trait = { trait = leader_trait_archaeo_specialization_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_trait_ruler_military_pioneer_2
+		trigger = {
+			has_trait = trait_ruler_military_pioneer
+			NOT = { has_trait = trait_ruler_military_pioneer_2 }
+		}
+		hidden_effect = { remove_trait = trait_ruler_military_pioneer }
+		add_trait = { trait = trait_ruler_military_pioneer_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_warden_2
+		trigger = {
+			has_trait = leader_trait_warden
+			NOT = { has_trait = leader_trait_warden_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_warden }
+		add_trait = { trait = leader_trait_warden_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_ambassador_pact_keeper_2
+		trigger = {
+			has_trait = leader_trait_ambassador_pact_keeper
+			NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_ambassador_pact_keeper }
+		add_trait = { trait = leader_trait_ambassador_pact_keeper_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_plunderer_2
+		trigger = {
+			has_trait = leader_trait_plunderer
+			NOT = { has_trait = leader_trait_plunderer_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_plunderer }
+		add_trait = { trait = leader_trait_plunderer_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
 
 	# 2. The 4 Randomly Rolled Eligible Traits for this Level-Up
 	option = {
@@ -1213,6 +1265,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_fleet_logistician
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_fleet_logistician
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_fleet_logistician }
 			has_paragon_dlc = no
 		}
@@ -1233,6 +1286,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_aggressive
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_aggressive
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_aggressive }
 			NOT = { has_trait = leader_trait_cautious }
 		}
@@ -1243,6 +1297,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_cautious
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_cautious
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_cautious }
 			NOT = { has_trait = leader_trait_aggressive }
 		}
@@ -1253,6 +1308,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_unyielding
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_unyielding
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_unyielding }
 			NOT = { has_trait = leader_trait_nervous }
 			NOT = { has_trait = leader_trait_nervous_2 }
@@ -1267,6 +1323,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_engineer
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_engineer
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_engineer }
 		}
 		add_trait = { trait = leader_trait_engineer show_message = no }
@@ -1276,6 +1333,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_trickster
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_trickster
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_trickster }
 			NOT = { has_trait = leader_trait_unyielding }
 			NOT = { has_trait = leader_trait_reckless }
@@ -1288,6 +1346,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_scout
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_scout
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_scout }
 			NOT = { has_trait = leader_trait_scout_2 }
 			OR = { has_paragon_dlc = no has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer }
@@ -1359,6 +1418,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_butcher
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_butcher
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_butcher }
 			NOT = { has_trait = leader_trait_armchair_commander }
 			NOT = { has_trait = leader_trait_armchair_commander_2 }
@@ -1372,6 +1432,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_restrained
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_restrained
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_restrained }
 			NOT = { has_trait = leader_trait_victory_or_death }
 			NOT = { has_trait = leader_trait_victory_or_death_2 }
@@ -1385,6 +1446,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_heavy_hitter
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_heavy_hitter
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_heavy_hitter }
 			NOT = { has_trait = leader_trait_heavy_hitter_2 }
 			trait_is_crisis_faction_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_general }
@@ -1420,6 +1482,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_warden
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_warden
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_warden }
 			trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
 		}
@@ -1430,6 +1493,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resilient
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resilient
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resilient }
 			trait_is_crisis_faction_check = no is_immortal = no owner? = { is_toxic_baths_empire = no }
 		}
@@ -1440,6 +1504,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_adaptable
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_adaptable
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_adaptable }
 			NOT = { has_trait = leader_trait_stubborn }
 			NOT = { has_trait = leader_trait_stubborn_2 }
@@ -1462,6 +1527,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_capitalist
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_capitalist
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_capitalist }
 			NOT = { has_trait = leader_trait_capitalist_2 }
 			NOT = { has_trait = leader_trait_private_mines }
@@ -1483,6 +1549,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_private_mines
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_private_mines
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_private_mines }
 			NOT = { has_trait = leader_trait_private_mines_2 }
 			NOT = { has_trait = leader_trait_capitalist }
@@ -1504,6 +1571,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_homesteader
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_homesteader
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_homesteader }
 			NOT = { has_trait = leader_trait_homesteader_2 }
 			NOT = { has_trait = leader_trait_capitalist }
@@ -1539,6 +1607,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_scrapper
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_scrapper
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_scrapper }
 			NOT = { has_trait = leader_trait_scrapper_2 }
 			NOT = { has_trait = leader_trait_capitalist }
@@ -1560,6 +1629,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_entrepreneur
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_entrepreneur
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_entrepreneur }
 			NOT = { has_trait = leader_trait_entrepreneur_2 }
 			NOT = { has_trait = leader_trait_capitalist }
@@ -1581,6 +1651,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_venerated
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_venerated
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_venerated }
 			NOT = { has_trait = leader_trait_venerated_2 }
 			NOT = { has_trait = leader_trait_capitalist }
@@ -1613,6 +1684,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_bureaucrat
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_bureaucrat
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_bureaucrat }
 			trait_is_crisis_faction_check = no
 		}
@@ -1634,6 +1706,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_righteous
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_righteous
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_righteous }
 			NOT = { has_trait = leader_trait_righteous_2 }
 			NOT = { has_trait = leader_trait_corrupt }
@@ -1647,6 +1720,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_iron_fist
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_iron_fist
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_iron_fist }
 			NOT = { has_trait = leader_trait_iron_fist_2 }
 			trait_is_crisis_faction_check = no trait_is_gestalt_check = no exists = owner owner = { allows_slavery = yes }
@@ -1658,6 +1732,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_environmental_engineer
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_environmental_engineer
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_environmental_engineer }
 			trait_is_crisis_faction_check = no trait_is_nomad_check = no exists = owner owner = { has_blocker_removal_tech = yes }
 		}
@@ -1668,6 +1743,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_enlister
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_enlister
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_enlister }
 			trait_is_crisis_faction_check = no
 		}
@@ -1690,6 +1766,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_architectural_interest
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_architectural_interest
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_architectural_interest }
 			NOT = { has_trait = leader_trait_procrastinator }
 			NOT = { has_trait = leader_trait_procrastinator_2 }
@@ -1774,6 +1851,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_carefree
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_carefree
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_carefree }
 			NOT = { has_trait = leader_trait_carefree_2 }
 			NOT = { has_trait = leader_trait_meticulous }
@@ -1789,6 +1867,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_roamer
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_roamer
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_roamer }
 			NOT = { has_trait = leader_trait_roamer_2 }
 			NOT = { has_trait = leader_trait_neurotic }
@@ -1802,6 +1881,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_archaeologist
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_archaeologist
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_archaeologist }
 			NOT = { has_trait = leader_trait_archaeologist_2 }
 		}
@@ -1812,6 +1892,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_meticulous
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_meticulous
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_meticulous }
 			NOT = { has_trait = leader_trait_meticulous_2 }
 			NOT = { has_trait = leader_trait_carefree }
@@ -1825,6 +1906,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_custom_AI_assistant
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_custom_AI_assistant
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_custom_AI_assistant }
 			NOT = { has_trait = leader_trait_sapient_AI_assistant }
 			exists = owner
@@ -1837,6 +1919,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_sapient_AI_assistant
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_sapient_AI_assistant
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_sapient_AI_assistant }
 			NOT = { has_trait = leader_trait_custom_AI_assistant }
 			exists = owner
@@ -1850,6 +1933,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_academic_dig_site_expert
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_academic_dig_site_expert
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_academic_dig_site_expert }
 			NOT = { has_trait = leader_trait_academic_dig_site_expert_2 }
 			OR = { has_paragon_dlc = no has_trait = subclass_scientist_scholar }
@@ -1861,6 +1945,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_academic_minor_artifacts_expert
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_academic_minor_artifacts_expert
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_academic_minor_artifacts_expert }
 			NOT = { has_trait = leader_trait_academic_minor_artifacts_expert_2 }
 			exists = owner
@@ -2268,6 +2353,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_commerce_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_commerce_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_commerce_focus }
 			NOT = { has_trait = leader_trait_resolution_category_commerce_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2279,6 +2365,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_industry_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_industry_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_industry_focus }
 			NOT = { has_trait = leader_trait_resolution_category_industry_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2290,6 +2377,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_politics_traditions_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_politics_traditions_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_politics_traditions_focus }
 			NOT = { has_trait = leader_trait_resolution_category_politics_traditions_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2301,6 +2389,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_greatergood_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_greatergood_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_greatergood_focus }
 			NOT = { has_trait = leader_trait_resolution_category_greatergood_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2312,6 +2401,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_galacticreforms_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticreforms_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_galacticreforms_focus }
 			NOT = { has_trait = leader_trait_resolution_category_galacticreforms_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2323,6 +2413,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_ecology_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_ecology_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_ecology_focus }
 			NOT = { has_trait = leader_trait_resolution_category_ecology_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2334,6 +2425,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_galacticstudies_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticstudies_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_galacticstudies_focus }
 			NOT = { has_trait = leader_trait_resolution_category_galacticstudies_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2345,6 +2437,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_divinity_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_divinity_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_divinity_focus }
 			NOT = { has_trait = leader_trait_resolution_category_divinity_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2356,6 +2449,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_mutualdefense_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_mutualdefense_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_mutualdefense_focus }
 			NOT = { has_trait = leader_trait_resolution_category_mutualdefense_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2367,6 +2461,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_rulesofwar_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_rulesofwar_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_rulesofwar_focus }
 			NOT = { has_trait = leader_trait_resolution_category_rulesofwar_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2378,6 +2473,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_defenseprivatization_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_defenseprivatization_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_defenseprivatization_focus }
 			NOT = { has_trait = leader_trait_resolution_category_defenseprivatization_focus_2 }
 			has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2389,6 +2485,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_intergalacticdirective_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_intergalacticdirective_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus }
 			NOT = { has_trait = leader_trait_resolution_category_intergalacticdirective_focus_2 }
 			has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2400,6 +2497,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_bureaucraticsurveillance_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_bureaucraticsurveillance_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus }
 			NOT = { has_trait = leader_trait_resolution_category_bureaucraticsurveillance_focus_2 }
 			has_overlord_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2411,6 +2509,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_pre_ftl_stances_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_pre_ftl_stances_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus }
 			NOT = { has_trait = leader_trait_resolution_category_pre_ftl_stances_focus_2 }
 			has_first_contact_dlc = yes OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2422,6 +2521,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_resolution_category_sanctions_focus
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_resolution_category_sanctions_focus
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_resolution_category_sanctions_focus }
 			NOT = { has_trait = leader_trait_resolution_category_sanctions_focus_2 }
 			OR = { AND = { exists = owner owner = { is_galactic_community_member = yes } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2433,6 +2533,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_federal_negotiator
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_federal_negotiator
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_federal_negotiator }
 			NOT = { has_trait = leader_trait_federal_negotiator_2 }
 			OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2444,6 +2545,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_federal_greeter
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_federal_greeter
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_federal_greeter }
 			NOT = { has_trait = leader_trait_federal_greeter_2 }
 			OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2455,6 +2557,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_federal_sweet_talker
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_federal_sweet_talker
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_federal_sweet_talker }
 			NOT = { has_trait = leader_trait_federal_sweet_talker_2 }
 			OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2466,6 +2569,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_federal_joint_navy
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_federal_joint_navy
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_federal_joint_navy }
 			NOT = { has_trait = leader_trait_federal_joint_navy_2 }
 			OR = { AND = { exists = owner owner = { exists = federation } has_paragon_dlc = no } has_trait = subclass_official_delegate }
@@ -2482,7 +2586,7 @@ leader_event = {
 			exists = owner
 			owner = { has_technology = tech_rift_sphere }
 			can_leader_get_council_trait_trigger = yes
-			has_astral_planes_dlc = yes is_ruler = no
+			has_astral_planes_dlc = yes is_heir = no is_ruler = no
 		}
 		add_trait = { trait = leader_trait_planar_theorist show_message = no }
 		hidden_effect = { bgltp_finish_pick_effect = yes }
@@ -2491,6 +2595,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_academic_astral_rift_expert
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_academic_astral_rift_expert
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_academic_astral_rift_expert }
 			NOT = { has_trait = leader_trait_academic_astral_rift_expert_2 }
 			exists = owner
@@ -2504,6 +2609,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_void_hunter
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_void_hunter
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_void_hunter }
 			NOT = { has_trait = leader_trait_void_hunter_2 }
 			has_grand_archive_dlc = yes exists = owner owner = { has_encountered_any_fauna = yes }
@@ -2515,6 +2621,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_void_tracker
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_void_tracker
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_void_tracker }
 			NOT = { has_trait = leader_trait_void_tracker_2 }
 			exists = owner
@@ -2528,12 +2635,28 @@ leader_event = {
 		name = bgltp_opt_leader_trait_whispering_mind
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_whispering_mind
+			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_whispering_mind }
 			NOT = { has_trait = leader_trait_whispering_mind_2 }
 			NOT = { has_trait = leader_trait_whispering_mind_3 }
 			has_shroud_dlc = yes exists = owner owner = { has_country_flag = knowledge_accord }
 		}
 		add_trait = { trait = leader_trait_whispering_mind show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_archaeo_specialization
+		trigger = {
+			has_leader_flag = bgltp_offered_leader_trait_archaeo_specialization
+			NOT = { has_trait = leader_trait_archaeo_specialization }
+			NOT = { has_trait = leader_trait_archaeo_specialization_2 }
+			can_leader_get_normal_trait_trigger = yes
+			has_ancrel = yes
+			OR = { has_paragon_dlc = no has_trait = subclass_commander_admiral }
+			exists = owner
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		add_trait = { trait = leader_trait_archaeo_specialization show_message = no }
 		hidden_effect = { bgltp_finish_pick_effect = yes }
 	}
 
@@ -2578,13 +2701,13 @@ leader_event = {
 	option = {
 		name = bgltp_cat_cmd_combat
 		custom_tooltip = bgltp_cat_cmd_combat_tooltip
-		trigger = { leader_class = commander }
+		trigger = { leader_class = commander can_leader_get_normal_trait_trigger = yes }
 		hidden_effect = { leader_event = { id = bgltp.21 } }
 	}
 	option = {
 		name = bgltp_cat_cmd_gov
 		custom_tooltip = bgltp_cat_cmd_gov_tooltip
-		trigger = { leader_class = commander }
+		trigger = { leader_class = commander can_leader_get_normal_trait_trigger = yes }
 		hidden_effect = { leader_event = { id = bgltp.22 } }
 	}
 	option = {
@@ -2602,13 +2725,13 @@ leader_event = {
 	option = {
 		name = bgltp_cat_sci_explore
 		custom_tooltip = bgltp_cat_sci_explore_tooltip
-		trigger = { leader_class = scientist }
+		trigger = { leader_class = scientist can_leader_get_normal_trait_trigger = yes }
 		hidden_effect = { leader_event = { id = bgltp.31 } }
 	}
 	option = {
 		name = bgltp_cat_sci_gov
 		custom_tooltip = bgltp_cat_sci_gov_tooltip
-		trigger = { leader_class = scientist }
+		trigger = { leader_class = scientist can_leader_get_normal_trait_trigger = yes }
 		hidden_effect = { leader_event = { id = bgltp.32 } }
 	}
 	option = {
@@ -2626,13 +2749,13 @@ leader_event = {
 	option = {
 		name = bgltp_cat_off_gov
 		custom_tooltip = bgltp_cat_off_gov_tooltip
-		trigger = { leader_class = official }
+		trigger = { leader_class = official can_leader_get_normal_trait_trigger = yes }
 		hidden_effect = { leader_event = { id = bgltp.41 } }
 	}
 	option = {
 		name = bgltp_cat_off_galcom
 		custom_tooltip = bgltp_cat_off_galcom_tooltip
-		trigger = { leader_class = official exists = owner owner = { OR = { is_galactic_community_member = yes exists = federation } } }
+		trigger = { leader_class = official can_leader_get_normal_trait_trigger = yes exists = owner owner = { OR = { is_galactic_community_member = yes exists = federation } } }
 		hidden_effect = { leader_event = { id = bgltp.42 } }
 	}
 	option = {
@@ -3591,6 +3714,56 @@ leader_event = {
 		add_trait = { trait = leader_trait_whispering_mind_3 show_message = no }
 		hidden_effect = { bgltp_finish_pick_effect = yes }
 	}
+	option = {
+		name = bgltp_opt_leader_trait_archaeo_specialization_2
+		trigger = {
+			has_trait = leader_trait_archaeo_specialization
+			NOT = { has_trait = leader_trait_archaeo_specialization_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_archaeo_specialization }
+		add_trait = { trait = leader_trait_archaeo_specialization_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_trait_ruler_military_pioneer_2
+		trigger = {
+			has_trait = trait_ruler_military_pioneer
+			NOT = { has_trait = trait_ruler_military_pioneer_2 }
+		}
+		hidden_effect = { remove_trait = trait_ruler_military_pioneer }
+		add_trait = { trait = trait_ruler_military_pioneer_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_warden_2
+		trigger = {
+			has_trait = leader_trait_warden
+			NOT = { has_trait = leader_trait_warden_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_warden }
+		add_trait = { trait = leader_trait_warden_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_ambassador_pact_keeper_2
+		trigger = {
+			has_trait = leader_trait_ambassador_pact_keeper
+			NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_ambassador_pact_keeper }
+		add_trait = { trait = leader_trait_ambassador_pact_keeper_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_plunderer_2
+		trigger = {
+			has_trait = leader_trait_plunderer
+			NOT = { has_trait = leader_trait_plunderer_2 }
+		}
+		hidden_effect = { remove_trait = leader_trait_plunderer }
+		add_trait = { trait = leader_trait_plunderer_2 show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
 }
 
 leader_event = {
@@ -3730,6 +3903,20 @@ leader_event = {
 			has_grand_archive_dlc = yes exists = owner owner = { has_encountered_any_fauna = yes }
 		}
 		add_trait = { trait = leader_trait_void_hunter show_message = no }
+		hidden_effect = { bgltp_finish_pick_effect = yes }
+	}
+	option = {
+		name = bgltp_opt_leader_trait_archaeo_specialization
+		trigger = {
+			NOT = { has_trait = leader_trait_archaeo_specialization }
+			NOT = { has_trait = leader_trait_archaeo_specialization_2 }
+			can_leader_get_normal_trait_trigger = yes
+			has_ancrel = yes
+			OR = { has_paragon_dlc = no has_trait = subclass_commander_admiral }
+			exists = owner
+			owner = { has_ascension_perk = ap_archaeoengineers }
+		}
+		add_trait = { trait = leader_trait_archaeo_specialization show_message = no }
 		hidden_effect = { bgltp_finish_pick_effect = yes }
 	}
 }
@@ -4906,7 +5093,7 @@ leader_event = {
 			exists = owner
 			owner = { has_technology = tech_rift_sphere }
 			can_leader_get_council_trait_trigger = yes
-			has_astral_planes_dlc = yes is_ruler = no
+			has_astral_planes_dlc = yes is_heir = no is_ruler = no
 		}
 		add_trait = { trait = leader_trait_planar_theorist show_message = no }
 		hidden_effect = { bgltp_finish_pick_effect = yes }
@@ -5838,6 +6025,11 @@ country_event = {
 	id = bgltp.97
 	hide_window = yes
 	is_triggered_only = yes
+	trigger = {
+		NOT = { has_country_flag = bgltp_mining_active }
+		exists = from
+		from = { NOT = { has_leader_flag = bgltp_mining_leader } }
+	}
 	immediate = {
 		from = {
 			log = "BGLTP levelup: [This.GetName]"
@@ -5892,4 +6084,93 @@ country_event = {
 	option = { name = bgltp.96.node_regulatory trigger = { exists = event_target:bgltp_roll_node_regulatory } event_target:bgltp_roll_node_regulatory = { bgltp_dbg_roll_many_effect = yes } }
 	option = { name = bgltp.96.node_growth trigger = { exists = event_target:bgltp_roll_node_growth } event_target:bgltp_roll_node_growth = { bgltp_dbg_roll_many_effect = yes } }
 	option = { name = bgltp.96.close }
+}
+
+# ==============================================================================
+# DEV TOOL: Console Event event bgltp.95 (Scope = Country)
+# Mines the real in-game C++ level-up pipeline (add_skill = 1 -> LevelUp ->
+# RollTraitOptions + AutopickTrait) across leader classes, occupations, flags,
+# rulers/heirs, and existing special leaders (Gestalt Ruler/Nodes, GalCom/Fed).
+# Logs structured BGLTP_MINE_* records to game.log.
+# ==============================================================================
+country_event = {
+	id = bgltp.95
+	title = bgltp.95.name
+	desc = bgltp.95.desc
+	picture = GFX_evt_throne_room
+	is_triggered_only = yes
+
+	option = {
+		name = bgltp.95.full
+		custom_tooltip = bgltp.95.full.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_commanders_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_scientists_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_officials_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_rulers_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_existing_effect = yes
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.temp_only
+		custom_tooltip = bgltp.95.temp_only.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_commanders_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_scientists_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_officials_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_suite_rulers_effect = { BASE_N = 5 SUB_N = 3 }
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.commanders
+		custom_tooltip = bgltp.95.commanders.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_commanders_effect = { BASE_N = 10 SUB_N = 5 }
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.scientists
+		custom_tooltip = bgltp.95.scientists.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_scientists_effect = { BASE_N = 10 SUB_N = 5 }
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.officials
+		custom_tooltip = bgltp.95.officials.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_officials_effect = { BASE_N = 10 SUB_N = 5 }
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.rulers
+		custom_tooltip = bgltp.95.rulers.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_rulers_effect = { BASE_N = 10 SUB_N = 5 }
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.existing
+		custom_tooltip = bgltp.95.existing.tt
+		hidden_effect = {
+			bgltp_mine_begin_effect = yes
+			bgltp_mine_suite_existing_effect = yes
+			bgltp_mine_end_effect = yes
+		}
+	}
+	option = {
+		name = bgltp.95.close
+	}
 }
