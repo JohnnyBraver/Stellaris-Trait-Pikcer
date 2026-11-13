@@ -6132,7 +6132,19 @@ leader_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
-		log = "BGLTP_MINE_CTX skill=[This.GetSkill]"
+		log = "BGLTP_MINE_CTX id=[event_target:bgltp_mine_country.bgltp_mine_scen_id] seq=[event_target:bgltp_mine_country.bgltp_mine_seq] skill=[This.GetSkill]"
+	}
+}
+
+# bgltp.78: unique per-roll trait logger (prevents game.log duplicate suppression)
+leader_event = {
+	id = bgltp.78
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = bgltp_mine_found value = 1 }
+		event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
+		log = "BGLTP_MINE_TRAIT id=[event_target:bgltp_mine_country.bgltp_mine_scen_id] seq=[event_target:bgltp_mine_country.bgltp_mine_seq] skill=[This.GetSkill] tid=[This.bgltp_mine_t_id]"
 	}
 }
 
@@ -6165,7 +6177,6 @@ leader_event = {
 	is_triggered_only = yes
 	immediate = {
 		set_variable = { which = bgltp_mine_found value = 0 }
-		leader_event = { id = bgltp.94 }
 		if = {
 			limit = { num_leader_traits = { value > 0 } }
 			bgltp_mine_ds_shared_effect = yes
@@ -6181,14 +6192,14 @@ leader_event = {
 		}
 		if = {
 			limit = { num_leader_traits = { value > 0 } }
-			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
-			log = "BGLTP_MINE_TRAIT trait=UNKNOWN_UNSTRIPPED"
+			set_variable = { which = bgltp_mine_t_id value = -1 }
+			leader_event = { id = bgltp.78 }
 			leader_event = { id = bgltp.80 }
 		}
 		else_if = {
 			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
-			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
-			log = "BGLTP_MINE_TRAIT trait=NONE"
+			set_variable = { which = bgltp_mine_t_id value = 0 }
+			leader_event = { id = bgltp.78 }
 		}
 	}
 }
@@ -6200,7 +6211,6 @@ leader_event = {
 	is_triggered_only = yes
 	immediate = {
 		set_variable = { which = bgltp_mine_found value = 0 }
-		leader_event = { id = bgltp.94 }
 		bgltp_mine_dp_shared_effect = yes
 		if = { limit = { leader_class = commander } bgltp_mine_dp_cmd_effect = yes }
 		else_if = { limit = { leader_class = scientist } bgltp_mine_dp_sci_effect = yes }
@@ -6213,8 +6223,8 @@ leader_event = {
 		}
 		if = {
 			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
-			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
-			log = "BGLTP_MINE_TRAIT trait=NONE"
+			set_variable = { which = bgltp_mine_t_id value = 0 }
+			leader_event = { id = bgltp.78 }
 		}
 	}
 }
@@ -6243,7 +6253,6 @@ leader_event = {
 	is_triggered_only = yes
 	immediate = {
 		set_variable = { which = bgltp_mine_found value = 0 }
-		leader_event = { id = bgltp.94 }
 		bgltp_mine_dec_shared_effect = yes
 		if = { limit = { leader_class = commander } bgltp_mine_dec_cmd_effect = yes }
 		else_if = { limit = { leader_class = scientist } bgltp_mine_dec_sci_effect = yes }
@@ -6256,8 +6265,8 @@ leader_event = {
 		}
 		if = {
 			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
-			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
-			log = "BGLTP_MINE_TRAIT trait=NONE"
+			set_variable = { which = bgltp_mine_t_id value = 0 }
+			leader_event = { id = bgltp.78 }
 		}
 		bgltp_mine_readd_shared_effect = yes
 		if = { limit = { leader_class = commander } bgltp_mine_readd_cmd_effect = yes }
@@ -6281,6 +6290,8 @@ leader_event = {
 		bgltp_mine_clr_restore_cmd_effect = yes
 		bgltp_mine_clr_restore_sci_effect = yes
 		bgltp_mine_clr_restore_off_effect = yes
+		clear_variable = bgltp_mine_found
+		clear_variable = bgltp_mine_t_id
 		remove_leader_flag = bgltp_mining_leader
 	}
 }
