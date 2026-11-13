@@ -6087,7 +6087,8 @@ country_event = {
 }
 
 # ==============================================================================
-# DEV TOOL LOG HELPERS FOR bgltp.95 (Events avoid scripted_effect metascript [ ])
+# DEV TOOL LOG & MODULAR RUNNER EVENTS FOR bgltp.95
+# Events avoid scripted_effect AST duplication and [ ] metascript stripping.
 # ==============================================================================
 country_event = {
 	id = bgltp.91
@@ -6135,6 +6136,372 @@ leader_event = {
 	}
 }
 
+# bgltp.80: strip_all (Leader)
+leader_event = {
+	id = bgltp.80
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { num_leader_traits = { value > 0 } }
+			bgltp_mine_sa_shared_effect = yes
+			if = { limit = { num_leader_traits = { value > 0 } leader_class = commander } bgltp_mine_sa_cmd_effect = yes }
+			else_if = { limit = { num_leader_traits = { value > 0 } leader_class = scientist } bgltp_mine_sa_sci_effect = yes }
+			else_if = { limit = { num_leader_traits = { value > 0 } leader_class = official } bgltp_mine_sa_off_effect = yes }
+			if = {
+				limit = { num_leader_traits = { value > 0 } }
+				if = { limit = { NOT = { leader_class = commander } } bgltp_mine_sa_cmd_effect = yes }
+				if = { limit = { NOT = { leader_class = scientist } } bgltp_mine_sa_sci_effect = yes }
+				if = { limit = { NOT = { leader_class = official } } bgltp_mine_sa_off_effect = yes }
+			}
+		}
+	}
+}
+
+# bgltp.81: diff_strip (Leader)
+leader_event = {
+	id = bgltp.81
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = bgltp_mine_found value = 0 }
+		leader_event = { id = bgltp.94 }
+		if = {
+			limit = { num_leader_traits = { value > 0 } }
+			bgltp_mine_ds_shared_effect = yes
+			if = { limit = { num_leader_traits = { value > 0 } leader_class = commander } bgltp_mine_ds_cmd_effect = yes }
+			else_if = { limit = { num_leader_traits = { value > 0 } leader_class = scientist } bgltp_mine_ds_sci_effect = yes }
+			else_if = { limit = { num_leader_traits = { value > 0 } leader_class = official } bgltp_mine_ds_off_effect = yes }
+			if = {
+				limit = { num_leader_traits = { value > 0 } }
+				if = { limit = { NOT = { leader_class = commander } } bgltp_mine_ds_cmd_effect = yes }
+				if = { limit = { NOT = { leader_class = scientist } } bgltp_mine_ds_sci_effect = yes }
+				if = { limit = { NOT = { leader_class = official } } bgltp_mine_ds_off_effect = yes }
+			}
+		}
+		if = {
+			limit = { num_leader_traits = { value > 0 } }
+			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
+			log = "BGLTP_MINE_TRAIT trait=UNKNOWN_UNSTRIPPED"
+			leader_event = { id = bgltp.80 }
+		}
+		else_if = {
+			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
+			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
+			log = "BGLTP_MINE_TRAIT trait=NONE"
+		}
+	}
+}
+
+# bgltp.82: diff_prog (Leader)
+leader_event = {
+	id = bgltp.82
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = bgltp_mine_found value = 0 }
+		leader_event = { id = bgltp.94 }
+		bgltp_mine_dp_shared_effect = yes
+		if = { limit = { leader_class = commander } bgltp_mine_dp_cmd_effect = yes }
+		else_if = { limit = { leader_class = scientist } bgltp_mine_dp_sci_effect = yes }
+		else_if = { limit = { leader_class = official } bgltp_mine_dp_off_effect = yes }
+		if = {
+			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
+			if = { limit = { NOT = { leader_class = commander } } bgltp_mine_dp_cmd_effect = yes }
+			if = { limit = { NOT = { leader_class = scientist } } bgltp_mine_dp_sci_effect = yes }
+			if = { limit = { NOT = { leader_class = official } } bgltp_mine_dp_off_effect = yes }
+		}
+		if = {
+			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
+			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
+			log = "BGLTP_MINE_TRAIT trait=NONE"
+		}
+	}
+}
+
+# bgltp.83: snapshot_orig (Leader)
+leader_event = {
+	id = bgltp.83
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		export_trigger_value_to_variable = { trigger = has_base_skill variable = bgltp_mine_orig_skill rounded = yes }
+		if = {
+			limit = { num_leader_traits = { value > 0 } }
+			bgltp_mine_snap_shared_effect = yes
+			bgltp_mine_snap_cmd_effect = yes
+			bgltp_mine_snap_sci_effect = yes
+			bgltp_mine_snap_off_effect = yes
+		}
+	}
+}
+
+# bgltp.84: diff_existing_clean (Leader)
+leader_event = {
+	id = bgltp.84
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_variable = { which = bgltp_mine_found value = 0 }
+		leader_event = { id = bgltp.94 }
+		bgltp_mine_dec_shared_effect = yes
+		if = { limit = { leader_class = commander } bgltp_mine_dec_cmd_effect = yes }
+		else_if = { limit = { leader_class = scientist } bgltp_mine_dec_sci_effect = yes }
+		else_if = { limit = { leader_class = official } bgltp_mine_dec_off_effect = yes }
+		if = {
+			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
+			if = { limit = { NOT = { leader_class = commander } } bgltp_mine_dec_cmd_effect = yes }
+			if = { limit = { NOT = { leader_class = scientist } } bgltp_mine_dec_sci_effect = yes }
+			if = { limit = { NOT = { leader_class = official } } bgltp_mine_dec_off_effect = yes }
+		}
+		if = {
+			limit = { check_variable = { which = bgltp_mine_found value = 0 } }
+			event_target:bgltp_mine_country = { change_variable = { which = bgltp_mine_seq value = 1 } }
+			log = "BGLTP_MINE_TRAIT trait=NONE"
+		}
+		bgltp_mine_readd_shared_effect = yes
+		if = { limit = { leader_class = commander } bgltp_mine_readd_cmd_effect = yes }
+		else_if = { limit = { leader_class = scientist } bgltp_mine_readd_sci_effect = yes }
+		else_if = { limit = { leader_class = official } bgltp_mine_readd_off_effect = yes }
+	}
+}
+
+# bgltp.85: cleanup_existing (Leader)
+leader_event = {
+	id = bgltp.85
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		bgltp_mine_restore_skill_effect = yes
+		bgltp_mine_clr_strip_shared_effect = yes
+		bgltp_mine_clr_strip_cmd_effect = yes
+		bgltp_mine_clr_strip_sci_effect = yes
+		bgltp_mine_clr_strip_off_effect = yes
+		bgltp_mine_clr_restore_shared_effect = yes
+		bgltp_mine_clr_restore_cmd_effect = yes
+		bgltp_mine_clr_restore_sci_effect = yes
+		bgltp_mine_clr_restore_off_effect = yes
+		remove_leader_flag = bgltp_mining_leader
+	}
+}
+
+# bgltp.86: level_9 runner (Leader)
+leader_event = {
+	id = bgltp.86
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		set_skill = 1
+		while = {
+			count = 9
+			add_skill = 1
+			if = {
+				limit = { event_target:bgltp_mine_country = { has_country_flag = bgltp_mine_mode_prog } }
+				leader_event = { id = bgltp.82 }
+			}
+			else_if = {
+				limit = { event_target:bgltp_mine_country = { has_country_flag = bgltp_mine_mode_exclean } }
+				leader_event = { id = bgltp.84 }
+			}
+			else = {
+				leader_event = { id = bgltp.81 }
+			}
+		}
+	}
+}
+
+# bgltp.87: suite_commanders (Country)
+country_event = {
+	id = bgltp.87
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		bgltp_mine_scen_idle_effect = { SCEN = cmd_idle CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_fleet CLASS = commander OCC = fleet SHIP_SETUP = bgltp_mine_ship_combat_effect FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_transport CLASS = commander OCC = transport SHIP_SETUP = bgltp_mine_ship_transport_effect FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_army_effect = { SCEN = cmd_army FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_gov_effect = { SCEN = cmd_gov CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_council_effect = { SCEN = cmd_council CLASS = commander POS = councilor_defense POS_NOM = councilor_defense_nomadic FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+
+		# Flag tests
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_fleet_no_pilot CLASS = commander OCC = fleet SHIP_SETUP = bgltp_mine_ship_combat_effect FLAGS = block_pilot_traits FLAG_EFFECT = bgltp_mine_flags_block_pilot_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_fleet_no_hw CLASS = commander OCC = fleet SHIP_SETUP = bgltp_mine_ship_combat_effect FLAGS = block_homeworld_traits FLAG_EFFECT = bgltp_mine_flags_block_homeworld_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_fleet_retire CLASS = commander OCC = fleet SHIP_SETUP = bgltp_mine_ship_combat_effect FLAGS = retirement_is_default FLAG_EFFECT = bgltp_mine_flags_retirement_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_fleet_no_ev CLASS = commander OCC = fleet SHIP_SETUP = bgltp_mine_ship_combat_effect FLAGS = block_leader_level_up_events FLAG_EFFECT = bgltp_mine_flags_block_level_events_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_army_effect = { SCEN = cmd_army_no_army FLAGS = block_army_traits FLAG_EFFECT = bgltp_mine_flags_block_army_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_trans_no_army CLASS = commander OCC = transport SHIP_SETUP = bgltp_mine_ship_transport_effect FLAGS = block_army_traits FLAG_EFFECT = bgltp_mine_flags_block_army_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_gov_effect = { SCEN = cmd_gov_no_gov CLASS = commander FLAGS = block_governor_traits FLAG_EFFECT = bgltp_mine_flags_block_governor_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_council_effect = { SCEN = cmd_counc_no_counc CLASS = commander POS = councilor_defense POS_NOM = councilor_defense_nomadic FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_idle_effect = { SCEN = cmd_idle_no_field CLASS = commander FLAGS = block_all_field FLAG_EFFECT = bgltp_mine_flags_block_all_field_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+
+		# Progression
+		bgltp_mine_scen_fleet_effect = { SCEN = cmd_fleet_prog CLASS = commander OCC = fleet SHIP_SETUP = bgltp_mine_ship_combat_effect FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_army_effect = { SCEN = cmd_army_prog FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_gov_effect = { SCEN = cmd_gov_prog CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_council_effect = { SCEN = cmd_counc_prog CLASS = commander POS = councilor_defense POS_NOM = councilor_defense_nomadic FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+	}
+}
+
+# bgltp.88: suite_scientists (Country)
+country_event = {
+	id = bgltp.88
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		bgltp_mine_scen_idle_effect = { SCEN = sci_idle CLASS = scientist FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = sci_ship CLASS = scientist OCC = ship SHIP_SETUP = bgltp_mine_ship_science_effect FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_gov_effect = { SCEN = sci_gov CLASS = scientist FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_council_effect = { SCEN = sci_council CLASS = scientist POS = councilor_research POS_NOM = councilor_research_nomadic FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+
+		# Flag tests
+		bgltp_mine_scen_fleet_effect = { SCEN = sci_ship_no_pilot CLASS = scientist OCC = ship SHIP_SETUP = bgltp_mine_ship_science_effect FLAGS = block_pilot_traits FLAG_EFFECT = bgltp_mine_flags_block_pilot_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = sci_ship_no_hw CLASS = scientist OCC = ship SHIP_SETUP = bgltp_mine_ship_science_effect FLAGS = block_homeworld_traits FLAG_EFFECT = bgltp_mine_flags_block_homeworld_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_fleet_effect = { SCEN = sci_ship_retire CLASS = scientist OCC = ship SHIP_SETUP = bgltp_mine_ship_science_effect FLAGS = retirement_is_default FLAG_EFFECT = bgltp_mine_flags_retirement_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_gov_effect = { SCEN = sci_gov_no_gov CLASS = scientist FLAGS = block_governor_traits FLAG_EFFECT = bgltp_mine_flags_block_governor_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_council_effect = { SCEN = sci_counc_no_counc CLASS = scientist POS = councilor_research POS_NOM = councilor_research_nomadic FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_idle_effect = { SCEN = sci_idle_no_field CLASS = scientist FLAGS = block_all_field FLAG_EFFECT = bgltp_mine_flags_block_all_field_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+
+		# Progression
+		bgltp_mine_scen_fleet_effect = { SCEN = sci_ship_prog CLASS = scientist OCC = ship SHIP_SETUP = bgltp_mine_ship_science_effect FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_gov_effect = { SCEN = sci_gov_prog CLASS = scientist FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_council_effect = { SCEN = sci_counc_prog CLASS = scientist POS = councilor_research POS_NOM = councilor_research_nomadic FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+	}
+}
+
+# bgltp.89: suite_officials (Country)
+country_event = {
+	id = bgltp.89
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		bgltp_mine_scen_idle_effect = { SCEN = off_idle CLASS = official FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_gov_effect = { SCEN = off_gov CLASS = official FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_council_effect = { SCEN = off_council CLASS = official POS = councilor_state POS_NOM = councilor_state_nomadic FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+
+		# Flag tests
+		bgltp_mine_scen_gov_effect = { SCEN = off_gov_no_gov CLASS = official FLAGS = block_governor_traits FLAG_EFFECT = bgltp_mine_flags_block_governor_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_gov_effect = { SCEN = off_gov_no_hw CLASS = official FLAGS = block_homeworld_traits FLAG_EFFECT = bgltp_mine_flags_block_homeworld_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_council_effect = { SCEN = off_counc_no_counc CLASS = official POS = councilor_state POS_NOM = councilor_state_nomadic FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_idle_effect = { SCEN = off_idle_no_galcom CLASS = official FLAGS = block_galcom_traits FLAG_EFFECT = bgltp_mine_flags_block_galcom_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_idle_effect = { SCEN = off_idle_no_fed CLASS = official FLAGS = block_federation_traits FLAG_EFFECT = bgltp_mine_flags_block_federation_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_idle_effect = { SCEN = off_idle_no_field CLASS = official FLAGS = block_all_field FLAG_EFFECT = bgltp_mine_flags_block_all_field_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_idle_effect = { SCEN = off_idle_retire CLASS = official FLAGS = retirement_is_default FLAG_EFFECT = bgltp_mine_flags_retirement_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+
+		# Progression
+		bgltp_mine_scen_gov_effect = { SCEN = off_gov_prog CLASS = official FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_council_effect = { SCEN = off_counc_prog CLASS = official POS = councilor_state POS_NOM = councilor_state_nomadic FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+	}
+}
+
+# bgltp.90: suite_rulers (Country)
+country_event = {
+	id = bgltp.90
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_cmd CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_sci CLASS = scientist FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_off CLASS = official FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+
+		# Ruler flag tests
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_cmd_no_counc CLASS = commander FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_sci_no_counc CLASS = scientist FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_off_no_counc CLASS = official FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_cmd_no_field CLASS = commander FLAGS = block_all_field FLAG_EFFECT = bgltp_mine_flags_block_all_field_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+
+		# Ruler progression
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_cmd_prog CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_sci_prog CLASS = scientist FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_ruler_effect = { SCEN = ruler_off_prog CLASS = official FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+
+		# Heirs (Imperial only)
+		bgltp_mine_scen_heir_effect = { SCEN = heir_cmd CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_heir_effect = { SCEN = heir_sci CLASS = scientist FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_heir_effect = { SCEN = heir_off CLASS = official FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_base_n }
+		bgltp_mine_scen_heir_effect = { SCEN = heir_cmd_no_counc CLASS = commander FLAGS = block_council_traits FLAG_EFFECT = bgltp_mine_flags_block_council_effect MODE = clean MODE_EFFECT = bgltp_mine_mode_clean_effect N_VAR = bgltp_mine_sub_n }
+		bgltp_mine_scen_heir_effect = { SCEN = heir_cmd_prog CLASS = commander FLAGS = clean FLAG_EFFECT = bgltp_mine_flags_clean_effect MODE = prog MODE_EFFECT = bgltp_mine_mode_prog_effect N_VAR = bgltp_mine_sub_n }
+	}
+}
+
+# bgltp.79: suite_existing (Country)
+country_event = {
+	id = bgltp.79
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { exists = ruler }
+			ruler = {
+				if = {
+					limit = { event_target:bgltp_mine_country = { is_gestalt = yes } }
+					if = { limit = { leader_class = commander } bgltp_mine_existing_leader_effect = { SCEN = existing_gestalt_ruler CLASS = commander OCC = gestalt_ruler BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 } }
+					else_if = { limit = { leader_class = scientist } bgltp_mine_existing_leader_effect = { SCEN = existing_gestalt_ruler CLASS = scientist OCC = gestalt_ruler BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 } }
+					else = { bgltp_mine_existing_leader_effect = { SCEN = existing_gestalt_ruler CLASS = official OCC = gestalt_ruler BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 } }
+				}
+				else = {
+					if = { limit = { leader_class = commander } bgltp_mine_existing_leader_effect = { SCEN = existing_ind_ruler CLASS = commander OCC = existing_ruler BLOCK_FLAG = block_council_traits CLEAN_N = 2 FLAG_N = 2 } }
+					else_if = { limit = { leader_class = scientist } bgltp_mine_existing_leader_effect = { SCEN = existing_ind_ruler CLASS = scientist OCC = existing_ruler BLOCK_FLAG = block_council_traits CLEAN_N = 2 FLAG_N = 2 } }
+					else = { bgltp_mine_existing_leader_effect = { SCEN = existing_ind_ruler CLASS = official OCC = existing_ruler BLOCK_FLAG = block_council_traits CLEAN_N = 2 FLAG_N = 2 } }
+				}
+			}
+		}
+		if = {
+			limit = { any_owned_leader = { is_councilor_type = councilor_gestalt_legion } }
+			random_owned_leader = {
+				limit = { is_councilor_type = councilor_gestalt_legion }
+				bgltp_mine_existing_leader_effect = { SCEN = node_legion CLASS = commander OCC = gestalt_node BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 }
+			}
+		}
+		if = {
+			limit = { any_owned_leader = { is_councilor_type = councilor_gestalt_cognitive } }
+			random_owned_leader = {
+				limit = { is_councilor_type = councilor_gestalt_cognitive }
+				bgltp_mine_existing_leader_effect = { SCEN = node_cognitive CLASS = scientist OCC = gestalt_node BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 }
+			}
+		}
+		if = {
+			limit = { any_owned_leader = { is_councilor_type = councilor_gestalt_regulatory } }
+			random_owned_leader = {
+				limit = { is_councilor_type = councilor_gestalt_regulatory }
+				bgltp_mine_existing_leader_effect = { SCEN = node_regulatory CLASS = official OCC = gestalt_node BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 }
+			}
+		}
+		if = {
+			limit = { any_owned_leader = { is_councilor_type = councilor_gestalt_growth } }
+			random_owned_leader = {
+				limit = { is_councilor_type = councilor_gestalt_growth }
+				bgltp_mine_existing_leader_effect = { SCEN = node_growth CLASS = official OCC = gestalt_node BLOCK_FLAG = block_council_traits CLEAN_N = 4 FLAG_N = 3 }
+			}
+		}
+		if = {
+			limit = { any_owned_leader = { leader_class = official is_assigned_to_galcom = yes } }
+			random_owned_leader = {
+				limit = { leader_class = official is_assigned_to_galcom = yes }
+				bgltp_mine_existing_leader_effect = { SCEN = existing_galcom_delegate CLASS = official OCC = galcom BLOCK_FLAG = block_galcom_traits CLEAN_N = 4 FLAG_N = 3 }
+			}
+		}
+		else = {
+			change_variable = { which = bgltp_mine_scen_id value = 1 }
+			country_event = { id = bgltp.93 }
+			log = "BGLTP_MINE_SCEN scen=existing_galcom_delegate class=official occ=galcom flags=clean mode=clean n=0"
+			log = "BGLTP_MINE_SKIP scen=existing_galcom_delegate reason=no_galcom_delegate_assigned"
+		}
+		if = {
+			limit = { any_owned_leader = { leader_class = official is_assigned_to_federation = yes } }
+			random_owned_leader = {
+				limit = { leader_class = official is_assigned_to_federation = yes }
+				bgltp_mine_existing_leader_effect = { SCEN = existing_fed_delegate CLASS = official OCC = federation BLOCK_FLAG = block_federation_traits CLEAN_N = 4 FLAG_N = 3 }
+			}
+		}
+		else = {
+			change_variable = { which = bgltp_mine_scen_id value = 1 }
+			country_event = { id = bgltp.93 }
+			log = "BGLTP_MINE_SCEN scen=existing_fed_delegate class=official occ=federation flags=clean mode=clean n=0"
+			log = "BGLTP_MINE_SKIP scen=existing_fed_delegate reason=no_fed_delegate_assigned"
+		}
+	}
+}
+
 # ==============================================================================
 # DEV TOOL: Console Event event bgltp.95 (Scope = Country)
 # Mines the real in-game C++ level-up pipeline (add_skill = 1 -> LevelUp ->
@@ -6153,12 +6520,14 @@ country_event = {
 		name = bgltp.95.full
 		custom_tooltip = bgltp.95.full.tt
 		hidden_effect = {
+			set_variable = { which = bgltp_mine_base_n value = 5 }
+			set_variable = { which = bgltp_mine_sub_n value = 3 }
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_commanders_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_scientists_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_officials_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_rulers_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_existing_effect = yes
+			country_event = { id = bgltp.87 }
+			country_event = { id = bgltp.88 }
+			country_event = { id = bgltp.89 }
+			country_event = { id = bgltp.90 }
+			country_event = { id = bgltp.79 }
 			bgltp_mine_end_effect = yes
 		}
 	}
@@ -6166,11 +6535,13 @@ country_event = {
 		name = bgltp.95.temp_only
 		custom_tooltip = bgltp.95.temp_only.tt
 		hidden_effect = {
+			set_variable = { which = bgltp_mine_base_n value = 5 }
+			set_variable = { which = bgltp_mine_sub_n value = 3 }
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_commanders_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_scientists_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_officials_effect = { BASE_N = 5 SUB_N = 3 }
-			bgltp_mine_suite_rulers_effect = { BASE_N = 5 SUB_N = 3 }
+			country_event = { id = bgltp.87 }
+			country_event = { id = bgltp.88 }
+			country_event = { id = bgltp.89 }
+			country_event = { id = bgltp.90 }
 			bgltp_mine_end_effect = yes
 		}
 	}
@@ -6178,8 +6549,10 @@ country_event = {
 		name = bgltp.95.commanders
 		custom_tooltip = bgltp.95.commanders.tt
 		hidden_effect = {
+			set_variable = { which = bgltp_mine_base_n value = 10 }
+			set_variable = { which = bgltp_mine_sub_n value = 5 }
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_commanders_effect = { BASE_N = 10 SUB_N = 5 }
+			country_event = { id = bgltp.87 }
 			bgltp_mine_end_effect = yes
 		}
 	}
@@ -6187,8 +6560,10 @@ country_event = {
 		name = bgltp.95.scientists
 		custom_tooltip = bgltp.95.scientists.tt
 		hidden_effect = {
+			set_variable = { which = bgltp_mine_base_n value = 10 }
+			set_variable = { which = bgltp_mine_sub_n value = 5 }
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_scientists_effect = { BASE_N = 10 SUB_N = 5 }
+			country_event = { id = bgltp.88 }
 			bgltp_mine_end_effect = yes
 		}
 	}
@@ -6196,8 +6571,10 @@ country_event = {
 		name = bgltp.95.officials
 		custom_tooltip = bgltp.95.officials.tt
 		hidden_effect = {
+			set_variable = { which = bgltp_mine_base_n value = 10 }
+			set_variable = { which = bgltp_mine_sub_n value = 5 }
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_officials_effect = { BASE_N = 10 SUB_N = 5 }
+			country_event = { id = bgltp.89 }
 			bgltp_mine_end_effect = yes
 		}
 	}
@@ -6205,8 +6582,10 @@ country_event = {
 		name = bgltp.95.rulers
 		custom_tooltip = bgltp.95.rulers.tt
 		hidden_effect = {
+			set_variable = { which = bgltp_mine_base_n value = 10 }
+			set_variable = { which = bgltp_mine_sub_n value = 5 }
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_rulers_effect = { BASE_N = 10 SUB_N = 5 }
+			country_event = { id = bgltp.90 }
 			bgltp_mine_end_effect = yes
 		}
 	}
@@ -6215,7 +6594,7 @@ country_event = {
 		custom_tooltip = bgltp.95.existing.tt
 		hidden_effect = {
 			bgltp_mine_begin_effect = yes
-			bgltp_mine_suite_existing_effect = yes
+			country_event = { id = bgltp.79 }
 			bgltp_mine_end_effect = yes
 		}
 	}
