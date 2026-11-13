@@ -4366,7 +4366,8 @@ bgltp_dbg_roll_ten_effect = {
 }
 
 bgltp_dbg_roll_many_effect = {
-	log = "BGLTP_TARGET [This.GetName] skill=[This.GetSkill]"
+	leader_event = { id = bgltp.94 }
+	log = "BGLTP_TARGET"
 	if = { limit = { is_ruler = yes } log = "BGLTP_TARGET is_ruler" }
 	if = { limit = { is_gestalt_node = yes } log = "BGLTP_TARGET is_gestalt_node" }
 	if = { limit = { leader_class = commander } log = "BGLTP_TARGET class commander" }

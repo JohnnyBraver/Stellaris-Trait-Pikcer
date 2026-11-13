@@ -6087,6 +6087,55 @@ country_event = {
 }
 
 # ==============================================================================
+# DEV TOOL LOG HELPERS FOR bgltp.95 (Events avoid scripted_effect metascript [ ])
+# ==============================================================================
+country_event = {
+	id = bgltp.91
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "BGLTP_MINE_BEGIN id=[This.bgltp_mine_scen_id] seq=[This.bgltp_mine_seq] empire=[This.GetName]"
+		if = { limit = { has_paragon_dlc = yes } log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] paragon=yes" }
+		else = { log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] paragon=no" }
+		if = { limit = { is_gestalt = yes } log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] gestalt=yes" }
+		else = { log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] gestalt=no" }
+		if = { limit = { is_imperial_authority = yes } log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] imperial=yes" }
+		else = { log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] imperial=no" }
+		if = { limit = { is_megacorp = yes } log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] megacorp=yes" }
+		else = { log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] megacorp=no" }
+		if = { limit = { blocks_minister_of_state = yes } log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] blocks_minister_of_state=yes" }
+		else = { log = "BGLTP_MINE_META seq=[This.bgltp_mine_seq] blocks_minister_of_state=no" }
+	}
+}
+
+country_event = {
+	id = bgltp.92
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "BGLTP_MINE_END seq=[This.bgltp_mine_seq] scens=[This.bgltp_mine_scen_id]"
+	}
+}
+
+country_event = {
+	id = bgltp.93
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "BGLTP_MINE_ID id=[This.bgltp_mine_scen_id] seq=[This.bgltp_mine_seq]"
+	}
+}
+
+leader_event = {
+	id = bgltp.94
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "BGLTP_MINE_CTX skill=[This.GetSkill]"
+	}
+}
+
+# ==============================================================================
 # DEV TOOL: Console Event event bgltp.95 (Scope = Country)
 # Mines the real in-game C++ level-up pipeline (add_skill = 1 -> LevelUp ->
 # RollTraitOptions + AutopickTrait) across leader classes, occupations, flags,
