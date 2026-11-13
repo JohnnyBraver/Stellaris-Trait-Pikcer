@@ -19,3 +19,14 @@ bgltp_xp_to_next_level = {
 	round = floor
 	min = 1
 }
+
+# Astral rift scaling factor matching vanilla trait_selectable_weight_per_rift_completed (scope = leader -> owner)
+bgltp_trait_weight_per_rift_completed = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = astral_rifts_completed
+		trigger_scope = owner
+		mode = add
+		mult = 0.05
+	}
+}

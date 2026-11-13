@@ -415,6 +415,20 @@ bgltp_sync_leader_traits_effect = {
 	else = { remove_leader_flag = bgltp_known_leader_trait_whispering_mind_2 }
 	if = { limit = { has_trait = leader_trait_whispering_mind_3 } set_leader_flag = bgltp_known_leader_trait_whispering_mind_3 }
 	else = { remove_leader_flag = bgltp_known_leader_trait_whispering_mind_3 }
+	if = { limit = { has_trait = leader_trait_archaeo_specialization } set_leader_flag = bgltp_known_leader_trait_archaeo_specialization }
+	else = { remove_leader_flag = bgltp_known_leader_trait_archaeo_specialization }
+	if = { limit = { has_trait = leader_trait_archaeo_specialization_2 } set_leader_flag = bgltp_known_leader_trait_archaeo_specialization_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_archaeo_specialization_2 }
+	if = { limit = { has_trait = trait_ruler_military_pioneer_2 } set_leader_flag = bgltp_known_trait_ruler_military_pioneer_2 }
+	else = { remove_leader_flag = bgltp_known_trait_ruler_military_pioneer_2 }
+	if = { limit = { has_trait = leader_trait_warden_2 } set_leader_flag = bgltp_known_leader_trait_warden_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_warden_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_pact_keeper_2 } set_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper_2 }
+	if = { limit = { has_trait = leader_trait_plunderer } set_leader_flag = bgltp_known_leader_trait_plunderer }
+	else = { remove_leader_flag = bgltp_known_leader_trait_plunderer }
+	if = { limit = { has_trait = leader_trait_plunderer_2 } set_leader_flag = bgltp_known_leader_trait_plunderer_2 }
+	else = { remove_leader_flag = bgltp_known_leader_trait_plunderer_2 }
 }
 
 # Clear rolled 4-trait draw flags on a single leader (Scope: Leader)
@@ -532,15 +546,17 @@ bgltp_clear_offered_traits_effect = {
 	remove_leader_flag = bgltp_offered_leader_trait_void_hunter
 	remove_leader_flag = bgltp_offered_leader_trait_void_tracker
 	remove_leader_flag = bgltp_offered_leader_trait_whispering_mind
+	remove_leader_flag = bgltp_offered_leader_trait_archaeo_specialization
 }
 
 # Roll 4 random eligible non-upgrade traits for the fallback popup (Scope: Leader)
 bgltp_roll_4_traits_effect = {
 	bgltp_clear_offered_traits_effect = yes
+	save_event_target_as = bgltp_roll_leader
 	while = {
 		count = 4
 		random_list = {
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -558,11 +574,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_corvette_focus
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -580,11 +598,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_destroyer_focus
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -602,11 +622,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_cruiser_focus
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -624,11 +646,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_battleship_focus
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -640,12 +664,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_fleet_logistician
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -657,11 +682,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_skirmisher
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -673,12 +700,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_aggressive
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -690,12 +718,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_cautious
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -711,12 +740,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_unyielding
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -730,12 +760,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_engineer
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -749,12 +780,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_trickster
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -770,12 +802,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 OR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer } }
 				set_leader_flag = bgltp_offered_leader_trait_scout
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -791,11 +825,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_gale_speed
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -809,11 +845,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_fortifier
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -827,11 +865,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_armada_logistician
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -839,16 +879,19 @@ bgltp_roll_4_traits_effect = {
 						NAND = {
 							leader_class = commander
 							NOT = { has_trait = trait_ruler_military_pioneer }
+							NOT = { has_trait = trait_ruler_military_pioneer_2 }
 							can_leader_get_council_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_military_pioneer
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -861,11 +904,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_defence_engineer
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -880,12 +925,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = owner OR = { AND = { exists = fleet fleet = { is_ship_class = shipclass_transport } } owner = { any_owned_army = { exists = leader leader = { is_same_value = event_target:bgltp_roll_leader } } } } }
+				modifier = { factor = 0.25 exists = owner NOT = { owner = { any_owned_army = { exists = leader leader = { is_same_value = event_target:bgltp_roll_leader } } } } }
+				modifier = { factor = 0 has_leader_flag = block_army_traits NOT = { has_trait = subclass_commander_general } }
+				modifier = { factor = 2 has_trait = subclass_commander_general }
 				set_leader_flag = bgltp_offered_leader_trait_butcher
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -900,12 +947,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = owner OR = { AND = { exists = fleet fleet = { is_ship_class = shipclass_transport } } owner = { any_owned_army = { exists = leader leader = { is_same_value = event_target:bgltp_roll_leader } } } } }
+				modifier = { factor = 0.25 exists = owner NOT = { owner = { any_owned_army = { exists = leader leader = { is_same_value = event_target:bgltp_roll_leader } } } } }
+				modifier = { factor = 0 has_leader_flag = block_army_traits NOT = { has_trait = subclass_commander_general } }
+				modifier = { factor = 2 has_trait = subclass_commander_general }
 				set_leader_flag = bgltp_offered_leader_trait_restrained
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -918,12 +967,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = owner OR = { AND = { exists = fleet fleet = { is_ship_class = shipclass_transport } } owner = { any_owned_army = { exists = leader leader = { is_same_value = event_target:bgltp_roll_leader } } } } }
+				modifier = { factor = 0.25 exists = owner NOT = { owner = { any_owned_army = { exists = leader leader = { is_same_value = event_target:bgltp_roll_leader } } } } }
+				modifier = { factor = 0 has_leader_flag = block_army_traits NOT = { has_trait = subclass_commander_general } }
+				modifier = { factor = 2 has_trait = subclass_commander_general }
 				set_leader_flag = bgltp_offered_leader_trait_heavy_hitter
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -937,11 +988,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_from_the_ranks
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -955,11 +1008,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_recruiter
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -967,16 +1022,19 @@ bgltp_roll_4_traits_effect = {
 						NAND = {
 							leader_class = commander
 							NOT = { has_trait = leader_trait_warden }
+							NOT = { has_trait = leader_trait_warden_2 }
 							trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_warden
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -992,12 +1050,10 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
 				set_leader_flag = bgltp_offered_leader_trait_resilient
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1014,12 +1070,10 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
 				set_leader_flag = bgltp_offered_leader_trait_adaptable
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1036,8 +1090,10 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_politician
 			}
 			10 = {
@@ -1067,9 +1123,8 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait_tier1or2 = { TRAIT = leader_trait_capitalist } } } }
 				set_leader_flag = bgltp_offered_leader_trait_capitalist
 			}
 			10 = {
@@ -1099,9 +1154,8 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait_tier1or2 = { TRAIT = leader_trait_private_mines } } } }
 				set_leader_flag = bgltp_offered_leader_trait_private_mines
 			}
 			10 = {
@@ -1131,12 +1185,11 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait_tier1or2 = { TRAIT = leader_trait_homesteader } } } }
 				set_leader_flag = bgltp_offered_leader_trait_homesteader
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1156,8 +1209,10 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_champion_of_the_people
 			}
 			10 = {
@@ -1187,9 +1242,8 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait_tier1or2 = { TRAIT = leader_trait_scrapper } } } }
 				set_leader_flag = bgltp_offered_leader_trait_scrapper
 			}
 			10 = {
@@ -1219,9 +1273,8 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait_tier1or2 = { TRAIT = leader_trait_entrepreneur } } } }
 				set_leader_flag = bgltp_offered_leader_trait_entrepreneur
 			}
 			10 = {
@@ -1251,12 +1304,11 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait_tier1or2 = { TRAIT = leader_trait_venerated } } } }
 				set_leader_flag = bgltp_offered_leader_trait_venerated
 			}
-			10 = {
+			200 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1269,11 +1321,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_frontier_spirit
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1289,12 +1343,15 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
+				modifier = { factor = 0.5 exists = owner owner = { any_owned_leader = { has_trait = leader_trait_bureaucrat } } }
 				set_leader_flag = bgltp_offered_leader_trait_bureaucrat
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1307,11 +1364,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_fertility_preacher
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1329,12 +1388,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_righteous
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1347,12 +1408,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_iron_fist
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1368,12 +1431,15 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
+				modifier = { factor = 0.8 exists = owner owner = { has_valid_civic = civic_environmentalist } }
 				set_leader_flag = bgltp_offered_leader_trait_environmental_engineer
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1385,12 +1451,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_enlister
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1404,11 +1472,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_shipwright
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1425,12 +1495,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = planet }
+				modifier = { factor = 0.25 NOT = { exists = planet } }
+				modifier = { factor = 2 has_governor_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_governor_traits has_governor_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_architectural_interest
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1446,11 +1518,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_investor
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1464,11 +1538,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_architectural_sense
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1482,11 +1558,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_deep_connections
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1500,11 +1578,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_reformer
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1517,11 +1597,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_space_miner
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1534,11 +1616,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_home_in_the_sky
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1555,12 +1639,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_scientist_scholar }
 				set_leader_flag = bgltp_offered_leader_trait_carefree
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1578,12 +1664,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_roamer
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1595,12 +1682,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_scientist_scholar }
 				set_leader_flag = bgltp_offered_leader_trait_archaeologist
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1615,12 +1704,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_scientist_explorer }
 				set_leader_flag = bgltp_offered_leader_trait_meticulous
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1634,12 +1725,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 OR = { has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_custom_AI_assistant
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1654,12 +1747,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 OR = { has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_sapient_AI_assistant
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1672,12 +1767,14 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_scientist_scholar }
 				set_leader_flag = bgltp_offered_leader_trait_academic_dig_site_expert
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1692,12 +1789,15 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_scientist_scholar }
+				modifier = { factor = 1.25 exists = owner owner = { has_ascension_perk = ap_archaeoengineers } }
 				set_leader_flag = bgltp_offered_leader_trait_academic_minor_artifacts_expert
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1713,11 +1813,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_maniacal
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1731,11 +1833,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_expansionist
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1749,11 +1853,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_materials
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1767,11 +1873,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_propulsion
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1785,11 +1893,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_voidcraft
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1803,11 +1913,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_industry
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1821,11 +1933,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_field_manipulation
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1839,11 +1953,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_particles
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1857,11 +1973,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_computing
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1875,11 +1993,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_psionics
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1893,11 +2013,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_new_worlds
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1911,11 +2033,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_statecraft
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1929,11 +2053,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_biology
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1947,11 +2073,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_military_theory
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1965,11 +2093,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_expertise_archaeostudies
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -1982,11 +2112,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_principled
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2001,11 +2133,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_fleet_organizer
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2018,11 +2152,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_spycraft
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2037,11 +2173,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_spark_of_genius
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2057,11 +2195,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_industrialist
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2074,11 +2214,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_warlike
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2095,11 +2237,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_charismatic
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2119,11 +2263,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_feedback_loop
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2140,11 +2286,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_logistic_understanding
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2161,11 +2309,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_trait_ruler_eye_for_talent
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2179,11 +2329,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_ear_to_the_ground
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2197,11 +2349,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_whisper_networks
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2215,11 +2369,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_bully
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2228,16 +2384,19 @@ bgltp_roll_4_traits_effect = {
 							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_favor_maker }
 							NOT = { has_trait = leader_trait_ambassador_favor_maker_2 }
-							can_leader_get_council_trait_trigger = yes
+							# Vanilla omits councilor_modifier / force_councilor_trait here, so C++ routes it through normal_trait instead of council_trait while still keeping council_weight_mult.
+							can_leader_get_normal_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_favor_maker
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2245,16 +2404,19 @@ bgltp_roll_4_traits_effect = {
 						NAND = {
 							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_pact_keeper }
+							NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 }
 							can_leader_get_council_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_pact_keeper
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2268,11 +2430,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_commercial_pact_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2286,11 +2450,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_research_pact_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2304,11 +2470,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_ambassador_extra_envoys
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2321,12 +2489,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_commerce_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2339,12 +2508,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_industry_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2357,12 +2527,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_politics_traditions_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2375,12 +2546,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_greatergood_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2393,12 +2565,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticreforms_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2411,12 +2584,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_ecology_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2429,12 +2603,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_galacticstudies_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2447,12 +2622,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_divinity_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2465,12 +2641,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_mutualdefense_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2483,12 +2660,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_rulesofwar_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2501,12 +2679,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_defenseprivatization_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2519,12 +2698,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_intergalacticdirective_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2537,12 +2717,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_bureaucraticsurveillance_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2555,12 +2736,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_pre_ftl_stances_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2573,12 +2755,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_galcom = yes }
+				modifier = { factor = 0.25 is_assigned_to_galcom = no }
+				modifier = { factor = 0 has_leader_flag = block_galcom_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_resolution_category_sanctions_focus
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2591,12 +2774,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_federation = yes }
+				modifier = { factor = 0.25 is_assigned_to_federation = no }
+				modifier = { factor = 0 has_leader_flag = block_federation_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_federal_negotiator
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2609,12 +2793,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_federation = yes }
+				modifier = { factor = 0.25 is_assigned_to_federation = no }
+				modifier = { factor = 0 has_leader_flag = block_federation_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_federal_greeter
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2627,12 +2812,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_federation = yes }
+				modifier = { factor = 0.25 is_assigned_to_federation = no }
+				modifier = { factor = 0 has_leader_flag = block_federation_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_federal_sweet_talker
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2645,12 +2831,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_assigned_to_federation = yes }
+				modifier = { factor = 0.25 is_assigned_to_federation = no }
+				modifier = { factor = 0 has_leader_flag = block_federation_traits NOT = { has_trait = subclass_official_delegate } }
 				set_leader_flag = bgltp_offered_leader_trait_federal_joint_navy
 			}
-			10 = {
+			50 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2662,15 +2849,21 @@ bgltp_roll_4_traits_effect = {
 							exists = owner
 							owner = { has_technology = tech_rift_sphere }
 							can_leader_get_council_trait_trigger = yes
-							has_astral_planes_dlc = yes is_ruler = no
+							has_astral_planes_dlc = yes is_heir = no is_ruler = no
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = yes }
-				modifier = { factor = 0.5 is_councilor = no }
+				modifier = { factor = 5 is_councilor = yes }
+				modifier = { factor = 0.25 is_councilor = no }
+				modifier = { factor = 2 has_council_subclass = yes }
+				modifier = { factor = 0 has_leader_flag = block_council_traits has_council_subclass = no }
+				modifier = { factor = value:bgltp_trait_weight_per_rift_completed exists = owner }
+				modifier = { factor = 1.25 exists = owner owner = { is_dimensional_worship_empire = yes } }
+				modifier = { factor = 1.25 exists = owner owner = { is_hyperspace_specialty_empire = yes } }
+				modifier = { factor = 1.25 exists = owner owner = { has_origin = origin_riftworld } }
 				set_leader_flag = bgltp_offered_leader_trait_planar_theorist
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2685,12 +2878,18 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_scientist_scholar }
+				modifier = { factor = value:bgltp_trait_weight_per_rift_completed exists = owner }
+				modifier = { factor = 1.25 exists = owner owner = { is_dimensional_worship_empire = yes } }
+				modifier = { factor = 1.25 exists = owner owner = { is_hyperspace_specialty_empire = yes } }
+				modifier = { factor = 1.25 exists = owner owner = { has_origin = origin_riftworld } }
 				set_leader_flag = bgltp_offered_leader_trait_academic_astral_rift_expert
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2703,12 +2902,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_void_hunter
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2723,12 +2923,13 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
 				set_leader_flag = bgltp_offered_leader_trait_void_tracker
 			}
-			10 = {
+			25 = {
 				modifier = {
 					factor = 0
 					OR = {
@@ -2746,10 +2947,34 @@ bgltp_roll_4_traits_effect = {
 						}
 					}
 				}
-				modifier = { factor = 2.0 is_councilor = no }
-				modifier = { factor = 0.5 is_councilor = yes }
-				modifier = { factor = 0 bgltp_is_gestalt_councilor = yes }
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 is_councilor = no }
+				modifier = { factor = 0.25 is_councilor = yes }
+				modifier = { factor = 2 has_council_subclass = no }
 				set_leader_flag = bgltp_offered_leader_trait_whispering_mind
+			}
+			200 = {
+				modifier = {
+					factor = 0
+					OR = {
+						has_leader_flag = bgltp_offered_leader_trait_archaeo_specialization
+						NAND = {
+							leader_class = commander
+							NOT = { has_trait = leader_trait_archaeo_specialization }
+							NOT = { has_trait = leader_trait_archaeo_specialization_2 }
+							has_ancrel = yes
+							OR = { has_paragon_dlc = no has_trait = subclass_commander_admiral }
+							exists = owner
+							owner = { has_ascension_perk = ap_archaeoengineers }
+						}
+					}
+				}
+				modifier = { factor = 0 NOT = { can_leader_get_normal_trait_trigger = yes } }
+				modifier = { factor = 5 exists = fleet NOT = { fleet = { is_ship_class = shipclass_transport } } }
+				modifier = { factor = 0.25 NOT = { exists = fleet } }
+				modifier = { factor = 0 has_leader_flag = block_pilot_traits NOR = { has_trait = subclass_commander_admiral has_trait = subclass_scientist_explorer has_trait = subclass_scientist_scholar } }
+				modifier = { factor = 2 has_trait = subclass_commander_admiral }
+				set_leader_flag = bgltp_offered_leader_trait_archaeo_specialization
 			}
 		}
 	}
@@ -3298,6 +3523,36 @@ bgltp_revert_auto_trait_effect = {
 		set_leader_flag = bgltp_known_leader_trait_whispering_mind_2
 	}
 	else_if = {
+		limit = { has_trait = leader_trait_archaeo_specialization_2 NOT = { has_leader_flag = bgltp_known_leader_trait_archaeo_specialization_2 } }
+		remove_trait = leader_trait_archaeo_specialization_2
+		add_trait = { trait = leader_trait_archaeo_specialization show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_archaeo_specialization
+	}
+	else_if = {
+		limit = { has_trait = trait_ruler_military_pioneer_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_military_pioneer_2 } }
+		remove_trait = trait_ruler_military_pioneer_2
+		add_trait = { trait = trait_ruler_military_pioneer show_message = no }
+		set_leader_flag = bgltp_known_trait_ruler_military_pioneer
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_warden_2 NOT = { has_leader_flag = bgltp_known_leader_trait_warden_2 } }
+		remove_trait = leader_trait_warden_2
+		add_trait = { trait = leader_trait_warden show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_warden
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_ambassador_pact_keeper_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper_2 } }
+		remove_trait = leader_trait_ambassador_pact_keeper_2
+		add_trait = { trait = leader_trait_ambassador_pact_keeper show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper
+	}
+	else_if = {
+		limit = { has_trait = leader_trait_plunderer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_plunderer_2 } }
+		remove_trait = leader_trait_plunderer_2
+		add_trait = { trait = leader_trait_plunderer show_message = no }
+		set_leader_flag = bgltp_known_leader_trait_plunderer
+	}
+	else_if = {
 		limit = { has_trait = trait_ruler_corvette_focus NOT = { has_leader_flag = bgltp_known_trait_ruler_corvette_focus } }
 		remove_trait = trait_ruler_corvette_focus
 	}
@@ -3749,6 +4004,10 @@ bgltp_revert_auto_trait_effect = {
 		limit = { has_trait = leader_trait_whispering_mind NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind } }
 		remove_trait = leader_trait_whispering_mind
 	}
+	else_if = {
+		limit = { has_trait = leader_trait_archaeo_specialization NOT = { has_leader_flag = bgltp_known_leader_trait_archaeo_specialization } }
+		remove_trait = leader_trait_archaeo_specialization
+	}
 	bgltp_sync_leader_traits_effect = yes
 }
 
@@ -4086,6 +4345,13 @@ bgltp_dbg_roll_once_effect = {
 	if = { limit = { has_trait = leader_trait_whispering_mind NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind } } log = "BGLTP_ROLL leader_trait_whispering_mind" remove_trait = leader_trait_whispering_mind }
 	if = { limit = { has_trait = leader_trait_whispering_mind_2 NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind_2 } } log = "BGLTP_ROLL leader_trait_whispering_mind_2" remove_trait = leader_trait_whispering_mind_2 }
 	if = { limit = { has_trait = leader_trait_whispering_mind_3 NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind_3 } } log = "BGLTP_ROLL leader_trait_whispering_mind_3" remove_trait = leader_trait_whispering_mind_3 }
+	if = { limit = { has_trait = leader_trait_archaeo_specialization NOT = { has_leader_flag = bgltp_known_leader_trait_archaeo_specialization } } log = "BGLTP_ROLL leader_trait_archaeo_specialization" remove_trait = leader_trait_archaeo_specialization }
+	if = { limit = { has_trait = leader_trait_archaeo_specialization_2 NOT = { has_leader_flag = bgltp_known_leader_trait_archaeo_specialization_2 } } log = "BGLTP_ROLL leader_trait_archaeo_specialization_2" remove_trait = leader_trait_archaeo_specialization_2 }
+	if = { limit = { has_trait = trait_ruler_military_pioneer_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_military_pioneer_2 } } log = "BGLTP_ROLL trait_ruler_military_pioneer_2" remove_trait = trait_ruler_military_pioneer_2 }
+	if = { limit = { has_trait = leader_trait_warden_2 NOT = { has_leader_flag = bgltp_known_leader_trait_warden_2 } } log = "BGLTP_ROLL leader_trait_warden_2" remove_trait = leader_trait_warden_2 }
+	if = { limit = { has_trait = leader_trait_ambassador_pact_keeper_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper_2 } } log = "BGLTP_ROLL leader_trait_ambassador_pact_keeper_2" remove_trait = leader_trait_ambassador_pact_keeper_2 }
+	if = { limit = { has_trait = leader_trait_plunderer NOT = { has_leader_flag = bgltp_known_leader_trait_plunderer } } log = "BGLTP_ROLL leader_trait_plunderer" remove_trait = leader_trait_plunderer }
+	if = { limit = { has_trait = leader_trait_plunderer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_plunderer_2 } } log = "BGLTP_ROLL leader_trait_plunderer_2" remove_trait = leader_trait_plunderer_2 }
 }
 
 # DEBUG: repeat bgltp_dbg_roll_once_effect COUNT times (Scope: Leader)
@@ -4104,7 +4370,8 @@ bgltp_dbg_roll_ten_effect = {
 }
 
 bgltp_dbg_roll_many_effect = {
-	log = "BGLTP_TARGET [This.GetName] skill=[This.GetSkill]"
+	leader_event = { id = bgltp.94 }
+	log = "BGLTP_TARGET"
 	if = { limit = { is_ruler = yes } log = "BGLTP_TARGET is_ruler" }
 	if = { limit = { is_gestalt_node = yes } log = "BGLTP_TARGET is_gestalt_node" }
 	if = { limit = { leader_class = commander } log = "BGLTP_TARGET class commander" }

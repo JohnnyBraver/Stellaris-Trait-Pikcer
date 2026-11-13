@@ -1,11 +1,3 @@
-# Gestalt nodes and gestalt rulers can never leave the council to take field assignments
-bgltp_is_gestalt_councilor = {
-	OR = {
-		is_gestalt_node = yes
-		is_gestalt_ruler = yes
-	}
-}
-
 # Largest single XP grant a non-Paragon leader can receive from game scripts is 3000
 # (@corporeal_imperial_heir_xp, Shadows of the Shroud), plus headroom for XP gain modifiers.
 # Leaders whose XP-to-next-level is within this window are synced every day.
@@ -120,6 +112,11 @@ bgltp_has_any_upgradable_trait = {
 		AND = { has_trait = leader_trait_treasure_hoarder_2 NOT = { has_trait = leader_trait_treasure_hoarder_3 } }
 		AND = { has_trait = leader_trait_whispering_mind NOT = { has_trait = leader_trait_whispering_mind_2 } }
 		AND = { has_trait = leader_trait_whispering_mind_2 NOT = { has_trait = leader_trait_whispering_mind_3 } }
+		AND = { has_trait = leader_trait_archaeo_specialization NOT = { has_trait = leader_trait_archaeo_specialization_2 } }
+		AND = { has_trait = trait_ruler_military_pioneer NOT = { has_trait = trait_ruler_military_pioneer_2 } }
+		AND = { has_trait = leader_trait_warden NOT = { has_trait = leader_trait_warden_2 } }
+		AND = { has_trait = leader_trait_ambassador_pact_keeper NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 } }
+		AND = { has_trait = leader_trait_plunderer NOT = { has_trait = leader_trait_plunderer_2 } }
 	}
 }
 
@@ -329,6 +326,12 @@ bgltp_has_unknown_trait = {
 		AND = { has_trait = leader_trait_whispering_mind NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind } }
 		AND = { has_trait = leader_trait_whispering_mind_2 NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind_2 } }
 		AND = { has_trait = leader_trait_whispering_mind_3 NOT = { has_leader_flag = bgltp_known_leader_trait_whispering_mind_3 } }
+		AND = { has_trait = leader_trait_archaeo_specialization NOT = { has_leader_flag = bgltp_known_leader_trait_archaeo_specialization } }
+		AND = { has_trait = leader_trait_archaeo_specialization_2 NOT = { has_leader_flag = bgltp_known_leader_trait_archaeo_specialization_2 } }
+		AND = { has_trait = trait_ruler_military_pioneer_2 NOT = { has_leader_flag = bgltp_known_trait_ruler_military_pioneer_2 } }
+		AND = { has_trait = leader_trait_warden_2 NOT = { has_leader_flag = bgltp_known_leader_trait_warden_2 } }
+		AND = { has_trait = leader_trait_ambassador_pact_keeper_2 NOT = { has_leader_flag = bgltp_known_leader_trait_ambassador_pact_keeper_2 } }
+		AND = { has_trait = leader_trait_plunderer_2 NOT = { has_leader_flag = bgltp_known_leader_trait_plunderer_2 } }
 	}
 }
 
