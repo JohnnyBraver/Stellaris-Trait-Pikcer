@@ -1397,6 +1397,7 @@ leader_event = {
 		trigger = {
 			has_leader_flag = bgltp_offered_trait_ruler_military_pioneer
 			NOT = { has_trait = trait_ruler_military_pioneer }
+			NOT = { has_trait = trait_ruler_military_pioneer_2 }
 			can_leader_get_council_trait_trigger = yes
 			OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
 		}
@@ -1484,6 +1485,7 @@ leader_event = {
 			has_leader_flag = bgltp_offered_leader_trait_warden
 			can_leader_get_normal_trait_trigger = yes
 			NOT = { has_trait = leader_trait_warden }
+			NOT = { has_trait = leader_trait_warden_2 }
 			trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
 		}
 		add_trait = { trait = leader_trait_warden show_message = no }
@@ -2296,7 +2298,8 @@ leader_event = {
 			has_leader_flag = bgltp_offered_leader_trait_ambassador_favor_maker
 			NOT = { has_trait = leader_trait_ambassador_favor_maker }
 			NOT = { has_trait = leader_trait_ambassador_favor_maker_2 }
-			can_leader_get_council_trait_trigger = yes
+			# Vanilla omits councilor_modifier / force_councilor_trait; C++ uses normal_trait rule
+			can_leader_get_normal_trait_trigger = yes
 			OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
 		}
 		add_trait = { trait = leader_trait_ambassador_favor_maker show_message = no }
@@ -2307,6 +2310,7 @@ leader_event = {
 		trigger = {
 			has_leader_flag = bgltp_offered_leader_trait_ambassador_pact_keeper
 			NOT = { has_trait = leader_trait_ambassador_pact_keeper }
+			NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 }
 			can_leader_get_council_trait_trigger = yes
 			OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
 		}
@@ -2767,7 +2771,7 @@ leader_event = {
 	option = {
 		name = bgltp_cat_off_diplomacy
 		custom_tooltip = bgltp_cat_off_diplomacy_tooltip
-		trigger = { leader_class = official can_leader_get_council_trait_trigger = yes }
+		trigger = { leader_class = official OR = { can_leader_get_council_trait_trigger = yes can_leader_get_normal_trait_trigger = yes } }
 		hidden_effect = { leader_event = { id = bgltp.44 } }
 	}
 }
@@ -3890,6 +3894,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_warden
 		trigger = {
 			NOT = { has_trait = leader_trait_warden }
+			NOT = { has_trait = leader_trait_warden_2 }
 			trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
 		}
 		add_trait = { trait = leader_trait_warden show_message = no }
@@ -4276,6 +4281,7 @@ leader_event = {
 		name = bgltp_opt_trait_ruler_military_pioneer
 		trigger = {
 			NOT = { has_trait = trait_ruler_military_pioneer }
+			NOT = { has_trait = trait_ruler_military_pioneer_2 }
 			can_leader_get_council_trait_trigger = yes
 			OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
 		}
@@ -5766,7 +5772,8 @@ leader_event = {
 		trigger = {
 			NOT = { has_trait = leader_trait_ambassador_favor_maker }
 			NOT = { has_trait = leader_trait_ambassador_favor_maker_2 }
-			can_leader_get_council_trait_trigger = yes
+			# Vanilla omits councilor_modifier / force_councilor_trait; C++ uses normal_trait rule
+			can_leader_get_normal_trait_trigger = yes
 			OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
 		}
 		add_trait = { trait = leader_trait_ambassador_favor_maker show_message = no }
@@ -5776,6 +5783,7 @@ leader_event = {
 		name = bgltp_opt_leader_trait_ambassador_pact_keeper
 		trigger = {
 			NOT = { has_trait = leader_trait_ambassador_pact_keeper }
+			NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 }
 			can_leader_get_council_trait_trigger = yes
 			OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
 		}

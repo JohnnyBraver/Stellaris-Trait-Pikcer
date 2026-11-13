@@ -1,17 +1,3 @@
-# Gestalt nodes and gestalt rulers can never leave the council to take field assignments
-bgltp_is_gestalt_councilor = {
-	OR = {
-		is_gestalt_node = yes
-		is_gestalt_ruler = yes
-	}
-}
-
-# Vanilla rule for non-council field traits: excludes Gestalt councilors/restored nodes,
-# Imperial/Dictatorial rulers (after game start), and Imperial heirs.
-bgltp_can_get_field_traits = {
-	can_leader_get_normal_trait_trigger = yes
-}
-
 # Largest single XP grant a non-Paragon leader can receive from game scripts is 3000
 # (@corporeal_imperial_heir_xp, Shadows of the Shroud), plus headroom for XP gain modifiers.
 # Leaders whose XP-to-next-level is within this window are synced every day.

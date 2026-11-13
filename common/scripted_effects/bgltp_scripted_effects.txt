@@ -879,6 +879,7 @@ bgltp_roll_4_traits_effect = {
 						NAND = {
 							leader_class = commander
 							NOT = { has_trait = trait_ruler_military_pioneer }
+							NOT = { has_trait = trait_ruler_military_pioneer_2 }
 							can_leader_get_council_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_commander_councilor }
 						}
@@ -1021,6 +1022,7 @@ bgltp_roll_4_traits_effect = {
 						NAND = {
 							leader_class = commander
 							NOT = { has_trait = leader_trait_warden }
+							NOT = { has_trait = leader_trait_warden_2 }
 							trait_is_crisis_faction_check = no trait_is_nomad_check = no OR = { has_paragon_dlc = no has_trait = subclass_commander_governor }
 						}
 					}
@@ -2382,7 +2384,8 @@ bgltp_roll_4_traits_effect = {
 							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_favor_maker }
 							NOT = { has_trait = leader_trait_ambassador_favor_maker_2 }
-							can_leader_get_council_trait_trigger = yes
+							# Vanilla omits councilor_modifier / force_councilor_trait here, so C++ routes it through normal_trait instead of council_trait while still keeping council_weight_mult.
+							can_leader_get_normal_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor }
 						}
 					}
@@ -2401,6 +2404,7 @@ bgltp_roll_4_traits_effect = {
 						NAND = {
 							leader_class = official
 							NOT = { has_trait = leader_trait_ambassador_pact_keeper }
+							NOT = { has_trait = leader_trait_ambassador_pact_keeper_2 }
 							can_leader_get_council_trait_trigger = yes
 							OR = { has_paragon_dlc = no has_trait = subclass_official_diplomacy_councilor } exists = owner owner = { NOR = { is_homicidal = yes has_valid_civic = civic_inwards_perfection } }
 						}
